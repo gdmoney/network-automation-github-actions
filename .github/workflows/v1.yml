@@ -1,0 +1,25 @@
+
+name: self-hosted-runner
+
+on:
+  push:
+    branches:
+    - master
+    paths:
+    - 'config_file'
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+    steps:
+
+    - name: Checkout source code
+      uses: actions/checkout@v2
+
+    - name: Set up Python 3.8
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8
+
+    - name: Run
+      run: python main-1.4.py
