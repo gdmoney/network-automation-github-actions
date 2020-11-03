@@ -1,0 +1,40 @@
+PowerShell (run as Admin)
+=========================
+Install
+-------
+mkdir actions-runner
+cd C:\actions-runner
+
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+
+Invoke-WebRequest -Uri https://github.com/actions/runner/releases/download/v2.273.6/actions-runner-win-x64-2.273.6.zip -OutFile actions-runner-win-x64-2.273.6.zip
+
+Add-Type -AssemblyName System.IO.Compression.FileSystem ; [System.IO.Compression.ZipFile]::ExtractToDirectory("$PWD/actions-runner-win-x64-2.273.6.zip", "$PWD")
+
+./config.cmd --url https://github.com/gdmoney/network-automation-github-actions --token ALDNW5JXWGPRNV2ERD3XZJK7UGWZQ
+
+./run.cmd
+
+
+Monitor
+-------
+Get-EventLog -LogName Application -Source ActionsRunnerService
+
+Get-Service "actions.runner.*"
+
+Start-Service "actions.runner.*"
+
+Stop-Service "actions.runner.*"
+
+
+Remove
+------
+Remove-Service "actions.runner.*"
+
+config.cmd remove
+
+
+
+
+
+
