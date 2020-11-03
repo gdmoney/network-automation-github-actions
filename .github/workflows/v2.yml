@@ -1,0 +1,16 @@
+name: self-hosted-runner-v2
+
+on:
+  push:
+    branches:
+    - master
+    paths:
+    - 'config_file'
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+    steps:
+
+    - name: Run
+      run: python main-1.4.py
