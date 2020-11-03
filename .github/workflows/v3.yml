@@ -1,4 +1,5 @@
-name: self-hosted-runner-v2
+  
+name: self-hosted-runner-v3
 
 on:
   push:
@@ -11,5 +12,7 @@ jobs:
   deploy:
     runs-on: self-hosted
     steps:
+    - name: Checkout source code
+      uses: actions/checkout@v2
     - name: Run
       run: python main-1.4.py
