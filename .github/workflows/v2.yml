@@ -11,6 +11,5 @@ jobs:
   deploy:
     runs-on: self-hosted
     steps:
-
     - name: Run
       run: python main-1.4.py
