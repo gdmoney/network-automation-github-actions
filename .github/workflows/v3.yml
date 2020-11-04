@@ -1,5 +1,4 @@
-  
-name: self-hosted-runner-v3
+ name: self-hosted-runner-v3
 
 on:
   push:
