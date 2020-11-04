@@ -6,6 +6,7 @@ on:
     - master
     paths:
     - 'config_file'
+    - '.github/workflows/v3.yml'
   pull_request:
     branches:
     - master
