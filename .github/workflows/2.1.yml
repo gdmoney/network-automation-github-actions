@@ -1,0 +1,16 @@
+name: self-hosted-2.x-code
+
+on:
+  push:
+    branches:
+    - master
+    paths:
+    - 'main-2.4.py'
+    - '.github/workflows/2.1.yml'
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+    steps:
+    - name: Run
+      run: python C:\Users\gdavitiani\Documents\GitHub\network-automation-github-actions\main-2.4.py
