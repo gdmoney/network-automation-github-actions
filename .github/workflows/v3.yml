@@ -7,7 +7,5 @@ jobs:
   deploy:
     runs-on: self-hosted
     steps:
-    - name: Checkout source code
-      uses: actions/checkout@v2
     - name: Run
       run: python C:\Users\gdavitiani\Documents\GitHub\network-automation-github-actions\main-1.4.py
