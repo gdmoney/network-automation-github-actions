@@ -10,4 +10,4 @@ for a_device in devices:
     session = ConnectHandler(**a_device)
     output = session.send_config_set(config_list)
     output += session.save_config()
-    print (output)
+    # print (output)
