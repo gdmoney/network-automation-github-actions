@@ -3,7 +3,7 @@ name: self-hosted-1.x-code
 on:
   push:
     branches:
-    - master
+    - main
     paths:
     - 'main-1.5.py'
     - '.github/workflows/1.1.yml'
