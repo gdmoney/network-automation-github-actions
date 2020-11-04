@@ -7,6 +7,7 @@ on:
     paths:
     - 'main-2.4.py'
     - '.github/workflows/2.1.yml'
+    - 'config_file'
 
 jobs:
   deploy:
