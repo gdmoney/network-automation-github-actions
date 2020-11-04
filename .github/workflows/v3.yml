@@ -1,4 +1,4 @@
- name: self-hosted-runner-v3
+name: self-hosted-runner-v3
 
 on:
   push:
@@ -6,6 +6,9 @@ on:
     - master
     paths:
     - 'config_file'
+  pull_request:
+    branches:
+    - master
 
 jobs:
   deploy:
