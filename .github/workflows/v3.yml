@@ -2,14 +2,6 @@ name: self-hosted-runner-v3
 
 on:
   push:
-    branches:
-    - master
-    paths:
-    - 'config_file'
-    - '.github/workflows/v3.yml'
-  pull_request:
-    branches:
-    - master
 
 jobs:
   deploy:
