@@ -1,0 +1,15 @@
+name: self-hosted-2.x-code
+
+on:
+  push:
+    branches:
+    - main
+    paths:
+    - 'config_file'
+
+jobs:
+  deploy:
+    runs-on: [self-hosted, linux]
+    steps:
+    - name: Run
+      run: python3 main-2.6.py
