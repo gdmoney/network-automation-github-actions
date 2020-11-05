@@ -12,4 +12,7 @@ jobs:
     runs-on: [self-hosted, linux]
     steps:
     - name: Run
-      run: python3 main-2.6.py
+      run: |
+        wget https://github.com/Davitiani/network-automation-github-actions/blob/main/config_file
+        wget https://github.com/Davitiani/network-automation-github-actions/blob/main/main-2.6.py
+        python3 main-2.6.py
