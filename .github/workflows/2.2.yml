@@ -13,6 +13,6 @@ jobs:
     steps:
     - name: Run
       run: |
-        curl -O https://github.com/Davitiani/network-automation-github-actions/blob/main/config_file
-        curl -O https://github.com/Davitiani/network-automation-github-actions/blob/main/main-2.6.py
+        gh repo clone Davitiani/network-automation-github-actions
+        cd network-automation-github-actions
         python3 main-2.6.py
