@@ -5,7 +5,7 @@ on:
     branches:
     - main
     paths:
-    - 'config_file'
+    - 'fake_file'
 
 jobs:
   deploy:
