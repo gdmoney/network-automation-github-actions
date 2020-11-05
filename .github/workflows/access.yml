@@ -1,0 +1,20 @@
+name: access switches
+
+on:
+  push:
+    branches:
+    - main
+    paths:
+    - 'config_file_core_access_switches'
+
+jobs:
+  deploy:
+    runs-on: [self-hosted, linux]
+    steps:
+    - name: Run
+      run: |
+        gh repo clone Davitiani/network-automation-github-actions
+        cd network-automation-github-actions
+        python3 2.access.py
+        cd ..
+        rm -rf network-automation-github-actions
