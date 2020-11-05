@@ -1,0 +1,20 @@
+name: router
+
+on:
+  push:
+    branches:
+    - main
+    paths:
+    - 'config_file_router'
+
+jobs:
+  deploy:
+    runs-on: [self-hosted, linux]
+    steps:
+    - name: Run
+      run: |
+        gh repo clone Davitiani/network-automation-github-actions
+        cd network-automation-github-actions
+        python3 2.router.py
+        cd ..
+        rm -rf network-automation-github-actions
