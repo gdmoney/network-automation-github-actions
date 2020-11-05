@@ -1,10 +1,9 @@
 # network-automation-github-actions
 
 
-### GHA self-hosted runner install on Linux
-Ubuntu 20
-Install
--------
+## GHA self-hosted runner install on Linux
+### Ubuntu 20
+**Install**
 ```
 apt install python3-pip
 sudo pip3 install --upgrade pip
@@ -23,12 +22,9 @@ tar xzf ./actions-runner-linux-x64-2.273.6.tar.gz
 ```
 
 
-
-### GHA self-hosted runner install on Windows
-PowerShell 7 (run as Admin)
-
-Install
--------
+## GHA self-hosted runner install on Windows
+### PowerShell 7 (run as Admin)
+**Install**
 ```
 mkdir actions-runner
 cd C:\actions-runner
@@ -44,18 +40,13 @@ Add-Type -AssemblyName System.IO.Compression.FileSystem ; [System.IO.Compression
 ./run.cmd
 ```
 
-
-Monitor
--------
+**Monitor**  
 `Get-EventLog -LogName Application -Source ActionsRunnerService`
 `Get-Service "actions.runner.*"`
 `Start-Service "actions.runner.*"`
 `Stop-Service "actions.runner.*"`
 
-
-
-Remove
-------
+**Remove**  
 `Remove-Service "actions.runner.gdmoney-network-automation-github-actions.SDGLWA9BB1E7B7"`
 
 `Remove-Service "actions.runner.*"`
