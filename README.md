@@ -4,7 +4,6 @@
 ### GHA self-hosted runner install on Linux
 Ubuntu 20
 Install
--------
 ```
 apt install python3-pip
 sudo pip3 install --upgrade pip
@@ -28,7 +27,6 @@ tar xzf ./actions-runner-linux-x64-2.273.6.tar.gz
 PowerShell 7 (run as Admin)
 
 Install
--------
 ```
 mkdir actions-runner
 cd C:\actions-runner
@@ -46,7 +44,6 @@ Add-Type -AssemblyName System.IO.Compression.FileSystem ; [System.IO.Compression
 
 
 Monitor
--------
 `Get-EventLog -LogName Application -Source ActionsRunnerService`
 `Get-Service "actions.runner.*"`
 `Start-Service "actions.runner.*"`
@@ -55,7 +52,6 @@ Monitor
 
 
 Remove
-------
 `Remove-Service "actions.runner.gdmoney-network-automation-github-actions.SDGLWA9BB1E7B7"`
 
 `Remove-Service "actions.runner.*"`
