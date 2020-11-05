@@ -1,0 +1,20 @@
+name: core switch
+
+on:
+  push:
+    branches:
+    - main
+    paths:
+    - 'config_file_core_switch'
+
+jobs:
+  deploy:
+    runs-on: [self-hosted, linux]
+    steps:
+    - name: Run
+      run: |
+        gh repo clone Davitiani/network-automation-github-actions
+        cd network-automation-github-actions
+        python3 2.core.py
+        cd ..
+        rm -rf network-automation-github-actions
