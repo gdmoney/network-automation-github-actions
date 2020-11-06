@@ -1,8 +1,28 @@
 # Network automation using GitHub Actions self-hosted runners and Netmiko
 
 
-## GitHub Actions self-hosted runner install on Linux
-### Ubuntu 20
+## Install on an Ubuntu 20 Docker container
+```
+docker pull ubuntu
+docker run -it ubuntu
+```
+```
+apt update
+apt upgrade
+
+apt install apt-utils
+apt install curl apt install iputils-ping
+apt install net-tools
+apt install python3-pip
+apt install software-properties-common
+apt install vim
+
+pip3 install --upgrade pip
+pip3 install netmiko
+```
+comment out sudo check in the `run.sh` and `config.sh` files
+
+## Install on an Ubuntu 20 laptop
 ```
 apt update
 apt install python3-pip
@@ -22,8 +42,7 @@ tar xzf ./actions-runner-linux-x64-2.273.6.tar.gz
 ```
 
 
-## GitHub Actions self-hosted runner install on Windows
-### PowerShell 7 (run as Admin)
+## Install on a Windows 10 laptop
 ```
 mkdir actions-runner
 cd C:\actions-runner
