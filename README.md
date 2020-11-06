@@ -1,9 +1,8 @@
 # Network automation using GitHub Actions self-hosted runners and Netmiko
 
 
-## GHA self-hosted runner install on Linux
+## GitHub Actions self-hosted runner install on Linux
 ### Ubuntu 20
-**Install**
 ```
 apt update
 apt install python3-pip
@@ -23,9 +22,8 @@ tar xzf ./actions-runner-linux-x64-2.273.6.tar.gz
 ```
 
 
-## GHA self-hosted runner install on Windows
+## GitHub Actions self-hosted runner install on Windows
 ### PowerShell 7 (run as Admin)
-**Install**
 ```
 mkdir actions-runner
 cd C:\actions-runner
