@@ -1,7 +1,17 @@
 # Network automation using GitHub Actions self-hosted runners and Netmiko
 
+## Project Overview
+adfadsfa
 
-## Install on an Ubuntu 20 Docker container
+## Components
+asdfasdf
+
+## Usage
+asdfadsf
+
+
+## Install
+### Ubuntu 20 Docker container
 **Download and install Ubuntu**
 ```
 docker pull ubuntu
@@ -41,7 +51,7 @@ sudo apt install gh
 ```
 - create a Personal Access Token: GitHub > profile pic > Settings > Developer settings > Personal access tokens > Generate new token
 
-## Install on an Ubuntu 20 laptop
+### Install Ubuntu 20 laptop
 **Update and install packages**
 ```
 sudo apt update
@@ -66,7 +76,7 @@ sudo apt update
 sudo apt install gh
 ```
 
-## Install on a Windows 10 laptop
+### Windows 10 laptop
 **Using PowerShell 7**
 ```
 mkdir actions-runner
