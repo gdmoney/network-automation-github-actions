@@ -17,10 +17,9 @@ Mass configuration push tool for networking devices using GitHub Actions self-ho
 ## Usage
 **Workflow using GitHub Desktop**  
 - clone this repo
-- create a new branch
+- create a new branch and publish it
 - modify device config file(s)
-- commit changes to the new branch
-- publish branch
+- commit changes to the new branch and push
 - create a pull request
 - pull request review/approval
 - merge pull request to update the Main branch
