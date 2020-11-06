@@ -10,7 +10,6 @@ on:
 jobs:
   deploy:
     runs-on: [self-hosted, linux]
-    if: github.event.pull_request.merged == true
     steps:
     - name: Run
       run: |
