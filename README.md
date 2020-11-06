@@ -1,7 +1,9 @@
 # Network automation using GitHub Actions
 
+
 ## Project Overview
 Mass configuration push tool for networking devices using GitHub Actions self-hosted runners and the Netmiko Python library.
+
 
 ## Components
 - GitHub Actions
@@ -11,9 +13,18 @@ Mass configuration push tool for networking devices using GitHub Actions self-ho
 - Opengear access server
 - Netmiko Python library
 
+
 ## Usage
-**Workflow**  
-`config file change > GitHub push/pull merge > GitHub Actions > GHA self-hosted runner agent running on an Ubuntu container on the Opengear access server > python scripts > lab networking devices`
+**Workflow using GitHub Desktop**  
+- clone this repo
+- create a new branch
+- modify device config file(s)
+- commit changes to the new branch
+- publish branch
+- create a pull request
+- pull request review/approval
+- merge pull request to update the Main branch
+- delete the branch
 
 
 ## Install
