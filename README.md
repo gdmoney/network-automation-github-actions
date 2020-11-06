@@ -19,7 +19,7 @@ Mass configuration push tool for networking devices using GitHub Actions self-ho
 - clone this repo
 - create a new branch and publish it
 - modify the device config file(s)
-- commit changes to the new branch and push
+- commit changes to the new branch and push to origin
 - create a pull request
 - pull request review/approval
 - merge pull request to update the Main branch
