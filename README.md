@@ -40,9 +40,9 @@ Add-Type -AssemblyName System.IO.Compression.FileSystem ; [System.IO.Compression
 ```
 
 **Monitor**  
-`Get-EventLog -LogName Application -Source ActionsRunnerService`
-`Get-Service "actions.runner.*"`
-`Start-Service "actions.runner.*"`
+`Get-EventLog -LogName Application -Source ActionsRunnerService`  
+`Get-Service "actions.runner.*"`  
+`Start-Service "actions.runner.*"`  
 `Stop-Service "actions.runner.*"`
 
 **Remove**  
