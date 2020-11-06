@@ -46,6 +46,6 @@ Add-Type -AssemblyName System.IO.Compression.FileSystem ; [System.IO.Compression
 `Stop-Service "actions.runner.*"`
 
 **Remove**  
-`Remove-Service "actions.runner.gdmoney-network-automation-github-actions.SDGLWA9BB1E7B7"`
-`Remove-Service "actions.runner.*"`
+`Remove-Service "actions.runner.gdmoney-network-automation-github-actions.SDGLWA9BB1E7B7"`  
+`Remove-Service "actions.runner.*"`  
 `config.cmd remove`
