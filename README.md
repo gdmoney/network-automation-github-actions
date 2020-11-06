@@ -24,6 +24,10 @@ Mass configuration push tool for networking devices using GitHub Actions self-ho
 - pull request review/approval
 - merge pull request to update the Main branch
 - delete the new branch
+- GitHub Actions workflow starts
+- self-hosted runner runs the jobs
+- python scripts are executed
+- networking devices are updated
 
 
 ## Install
