@@ -1,13 +1,19 @@
-# Network automation using GitHub Actions self-hosted runners and Netmiko
+# Network automation using GitHub Actions
 
 ## Project Overview
-adfadsfa
+Mass configuration push tool for networking devices using GitHub Actions self-hosted runners and the Netmiko Python library.
 
 ## Components
-asdfasdf
+- GitHub Actions
+- GHA self-hosted runners
+- Ubuntu 20.0.4
+- Docker engine
+- Opengear access server
+- Netmiko Python library
 
 ## Usage
-asdfadsf
+**Workflow**
+`GitHub push/pull merge > GitHub Actions > GHA self-hosted runner agent running on an Ubuntu container on the Opengear access server > python scripts > lab networking devices`
 
 
 ## Install
