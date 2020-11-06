@@ -24,7 +24,7 @@ pip3 install netmiko
 ```
 - comment out user sudo check in the `run.sh` and `config.sh` files  
 
-**Install the self-hosted agent**
+**Install and run the self-hosted agent**
 ```
 mkdir actions-runner && cd actions-runner
 
@@ -53,7 +53,7 @@ sudo apt install python3-pip
 sudo pip3 install --upgrade pip
 sudo pip3 install netmiko
 ```
-**Install the self-hosted agent**
+**Install and run the self-hosted agent**
 ```
 mkdir actions-runner && cd actions-runner
 
