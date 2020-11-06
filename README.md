@@ -43,6 +43,7 @@ sudo apt-add-repository https://cli.github.com/packages
 sudo apt update
 sudo apt install gh
 ```
+- create a Personal Access Token: GitHub > profile pic > Settings > Developer settings > Personal access tokens > Generate new token
 
 ## Install on an Ubuntu 20 laptop
 **Update and install packages**
