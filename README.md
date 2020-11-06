@@ -23,7 +23,7 @@ Mass configuration push tool for networking devices using GitHub Actions self-ho
 - create a pull request
 - pull request review/approval
 - merge pull request to update the Main branch
-- delete the branch
+- delete the new branch
 
 
 ## Install
