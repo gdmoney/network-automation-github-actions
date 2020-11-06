@@ -2,10 +2,12 @@
 
 
 ## Install on an Ubuntu 20 Docker container
+Download and install Ubuntu
 ```
 docker pull ubuntu
 docker run -it ubuntu
 ```
+Update and install packages
 ```
 apt update
 apt upgrade
@@ -21,6 +23,7 @@ pip3 install --upgrade pip
 pip3 install netmiko
 ```
 - comment out user sudo check in the `run.sh` and `config.sh` files
+Install the self-hosted agent
 ```
 mkdir actions-runner && cd actions-runner
 
@@ -32,7 +35,16 @@ tar xzf ./actions-runner-linux-x64-2.273.6.tar.gz
 
 ./run.sh
 ```
+[Install GitHub CLI](https://github.com/cli/cli/blob/trunk/docs/install_linux.md)
+```
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
+sudo apt-add-repository https://cli.github.com/packages
+sudo apt update
+sudo apt install gh
+```
+
 ## Install on an Ubuntu 20 laptop
+Update and install packages
 ```
 sudo apt update
 sudo apt upgrade
@@ -40,6 +52,7 @@ sudo apt install python3-pip
 sudo pip3 install --upgrade pip
 sudo pip3 install netmiko
 ```
+Install the self-hosted agent
 ```
 mkdir actions-runner && cd actions-runner
 
@@ -51,7 +64,13 @@ tar xzf ./actions-runner-linux-x64-2.273.6.tar.gz
 
 ./run.sh
 ```
-
+[Install GitHub CLI](https://github.com/cli/cli/blob/trunk/docs/install_linux.md)
+```
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
+sudo apt-add-repository https://cli.github.com/packages
+sudo apt update
+sudo apt install gh
+```
 
 ## Install on a Windows 10 laptop
 - using PowerShell 7
