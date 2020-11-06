@@ -1,7 +1,23 @@
-# Network automation using GitHub Actions self-hosted runners and Netmiko
+# Network automation using GitHub Actions
+
+## Project Overview
+Mass configuration push tool for networking devices using GitHub Actions self-hosted runners and the Netmiko Python library.
+
+## Components
+- GitHub Actions
+- GHA self-hosted runners
+- Ubuntu 20.0.4
+- Docker engine
+- Opengear access server
+- Netmiko Python library
+
+## Usage
+**Workflow**  
+`config file change > GitHub push/pull merge > GitHub Actions > GHA self-hosted runner agent running on an Ubuntu container on the Opengear access server > python scripts > lab networking devices`
 
 
-## Install on an Ubuntu 20 Docker container
+## Install
+### Ubuntu 20 Docker container
 **Download and install Ubuntu**
 ```
 docker pull ubuntu
@@ -41,7 +57,7 @@ sudo apt install gh
 ```
 - create a Personal Access Token: GitHub > profile pic > Settings > Developer settings > Personal access tokens > Generate new token
 
-## Install on an Ubuntu 20 laptop
+### Install Ubuntu 20 laptop
 **Update and install packages**
 ```
 sudo apt update
@@ -66,7 +82,7 @@ sudo apt update
 sudo apt install gh
 ```
 
-## Install on a Windows 10 laptop
+### Windows 10 laptop
 **Using PowerShell 7**
 ```
 mkdir actions-runner
