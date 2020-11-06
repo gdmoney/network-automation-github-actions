@@ -20,7 +20,7 @@ apt install vim
 pip3 install --upgrade pip
 pip3 install netmiko
 ```
-comment out sudo check in the `run.sh` and `config.sh` files
+- comment out user sudo check in the `run.sh` and `config.sh` files
 
 ## Install on an Ubuntu 20 laptop
 ```
