@@ -1,7 +1,7 @@
 name: access switches
 
 on:
-  pull_request:
+  push:
     branches:
     - main
     paths:
