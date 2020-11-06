@@ -5,7 +5,7 @@ on:
     branches:
     - main
     paths:
-    - 'config_file_router'
+    - 'config_file_routers'
 
 jobs:
   deploy:

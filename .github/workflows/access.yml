@@ -5,7 +5,7 @@ on:
     branches:
     - main
     paths:
-    - 'config_file_core_access_switches'
+    - 'config_file_access_switches'
 
 jobs:
   deploy:
