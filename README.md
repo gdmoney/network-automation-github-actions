@@ -12,7 +12,7 @@ Mass configuration push tool for networking devices using GitHub Actions self-ho
 - Netmiko Python library
 
 ## Usage
-**Workflow**
+**Workflow**  
 `GitHub push/pull merge > GitHub Actions > GHA self-hosted runner agent running on an Ubuntu container on the Opengear access server > python scripts > lab networking devices`
 
 
