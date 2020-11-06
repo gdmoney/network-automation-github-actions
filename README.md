@@ -22,7 +22,7 @@ apt install vim
 pip3 install --upgrade pip
 pip3 install netmiko
 ```
-- comment out user sudo check in the `run.sh` and `config.sh` files  
+- comment out user sudo check in the `run.sh` and `config.sh` files at the top  
 
 **Install and run the self-hosted agent**
 ```
