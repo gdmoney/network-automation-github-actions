@@ -74,7 +74,7 @@ sudo apt install gh
 ```
 
 ## Install on a Windows 10 laptop
-- using PowerShell 7
+**Using PowerShell 7**
 ```
 mkdir actions-runner
 cd C:\actions-runner
