@@ -34,8 +34,9 @@ tar xzf ./actions-runner-linux-x64-2.273.6.tar.gz
 ```
 ## Install on an Ubuntu 20 laptop
 ```
-apt update
-apt install python3-pip
+sudo apt update
+sudo apt upgrade
+sudo apt install python3-pip
 sudo pip3 install --upgrade pip
 sudo pip3 install netmiko
 ```
