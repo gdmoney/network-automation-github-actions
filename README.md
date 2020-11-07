@@ -81,7 +81,7 @@ sudo apt install python3-pip
 sudo pip3 install --upgrade pip
 sudo pip3 install netmiko
 ```
-**Install and run the self-hosted agent**
+**Install and run the GHA self-hosted agent**
 ```
 mkdir actions-runner && cd actions-runner
 curl -O -L https://github.com/actions/runner/releases/download/v2.273.6/actions-runner-linux-x64-2.273.6.tar.gz
