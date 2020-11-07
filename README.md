@@ -26,7 +26,7 @@ Mass configuration push tool for networking devices using GitHub Actions self-ho
 - delete the new branch
 - GitHub Actions workflow starts
 - self-hosted runner runs the jobs
-- python scripts are executed
+- Python scripts are executed
 - networking devices are updated
 
 
