@@ -55,7 +55,7 @@ pip3 install netmiko
 ```
 - comment out user sudo check in the `run.sh` and `config.sh` files at the top  
 
-**Install and run the self-hosted agent**
+**Install and run the GHA self-hosted agent**
 ```
 mkdir actions-runner && cd actions-runner
 curl -O -L https://github.com/actions/runner/releases/download/v2.273.6/actions-runner-linux-x64-2.273.6.tar.gz
@@ -72,7 +72,7 @@ sudo apt install gh
 ```
 - create a Personal Access Token: GitHub > profile pic > Settings > Developer settings > Personal access tokens > Generate new token
 
-### Install Ubuntu 20 laptop
+### Ubuntu 20 laptop
 **Update and install packages**
 ```
 sudo apt update
