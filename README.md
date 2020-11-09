@@ -57,8 +57,8 @@ pip3 install netmiko
 **Install and run a GHA self-hosted agent**
 ```
 mkdir actions-runner && cd actions-runner
-curl -O -L https://github.com/actions/runner/releases/download/v2.273.6/actions-runner-linux-x64-2.273.6.tar.gz
-tar xzf ./actions-runner-linux-x64-2.273.6.tar.gz
+curl -O -L https://github.com/actions/runner/releases/download/v<RUNNER_VERSION>/actions-runner-linux-x64-<RUNNER_VERSION>.tar.gz
+tar xzf ./actions-runner-linux-x64-<RUNNER_VERSION>.tar.gz
 ```
 - comment out user sudo check in the `run.sh` and `config.sh` files at the top  
 - get the token from: GitHub > repo > Settings > Actions > Add runner
@@ -88,8 +88,8 @@ sudo pip3 install netmiko
 **Install and run a GHA self-hosted agent**
 ```
 mkdir actions-runner && cd actions-runner
-curl -O -L https://github.com/actions/runner/releases/download/v2.273.6/actions-runner-linux-x64-2.273.6.tar.gz
-tar xzf ./actions-runner-linux-x64-2.273.6.tar.gz
+curl -O -L https://github.com/actions/runner/releases/download/v<RUNNER_VERSION>/actions-runner-linux-x64-<RUNNER_VERSION>.tar.gz
+tar xzf ./actions-runner-linux-x64-<RUNNER_VERSION>.tar.gz
 
 ./config.sh --url https://github.com/Davitiani/network-automation-github-actions --token <TOKEN>
 ./run.sh
@@ -109,8 +109,8 @@ mkdir actions-runner
 cd C:\actions-runner
 
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-Invoke-WebRequest -Uri https://github.com/actions/runner/releases/download/v2.273.6/actions-runner-win-x64-2.273.6.zip -OutFile actions-runner-win-x64-2.273.6.zip
-Add-Type -AssemblyName System.IO.Compression.FileSystem ; [System.IO.Compression.ZipFile]::ExtractToDirectory("$PWD/actions-runner-win-x64-2.273.6.zip", "$PWD")
+Invoke-WebRequest -Uri https://github.com/actions/runner/releases/download/v<RUNNER_VERSION>/actions-runner-win-x64-<RUNNER_VERSION>.zip -OutFile actions-runner-win-x64-<RUNNER_VERSION>.zip
+Add-Type -AssemblyName System.IO.Compression.FileSystem ; [System.IO.Compression.ZipFile]::ExtractToDirectory("$PWD\actions-runner-win-x64-<RUNNER_VERSION>.zip", "$PWD")
 
 ./config.cmd --url https://github.com/gdmoney/network-automation-github-actions --token <TOKEN>
 ./run.cmd
