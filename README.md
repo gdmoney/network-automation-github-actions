@@ -90,6 +90,7 @@ sudo pip3 install netmiko
 mkdir actions-runner && cd actions-runner
 curl -O -L https://github.com/actions/runner/releases/download/v2.273.6/actions-runner-linux-x64-2.273.6.tar.gz
 tar xzf ./actions-runner-linux-x64-2.273.6.tar.gz
+
 ./config.sh --url https://github.com/Davitiani/network-automation-github-actions --token <TOKEN>
 ./run.sh
 ```
@@ -110,6 +111,7 @@ cd C:\actions-runner
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 Invoke-WebRequest -Uri https://github.com/actions/runner/releases/download/v2.273.6/actions-runner-win-x64-2.273.6.zip -OutFile actions-runner-win-x64-2.273.6.zip
 Add-Type -AssemblyName System.IO.Compression.FileSystem ; [System.IO.Compression.ZipFile]::ExtractToDirectory("$PWD/actions-runner-win-x64-2.273.6.zip", "$PWD")
+
 ./config.cmd --url https://github.com/gdmoney/network-automation-github-actions --token <TOKEN>
 ./run.cmd
 ```
