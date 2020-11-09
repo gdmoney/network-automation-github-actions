@@ -69,10 +69,10 @@ tar xzf ./actions-runner-linux-x64-<RUNNER_VERSION>.tar.gz
 
 **[Install GitHub CLI](https://github.com/cli/cli/blob/trunk/docs/install_linux.md)**
 ```
-sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
-sudo apt-add-repository https://cli.github.com/packages
-sudo apt update
-sudo apt install gh
+apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
+apt-add-repository https://cli.github.com/packages
+apt update
+apt install gh
 ```
 - create a Personal Access Token: GitHub > profile pic > Settings > Developer settings > Personal access tokens > Generate new token
 
