@@ -75,6 +75,11 @@ apt update
 apt install gh
 ```
 - create a Personal Access Token: GitHub > profile pic > Settings > Developer settings > Personal access tokens > Generate new token
+- Cache GitHub credentials in Git
+```
+git config --global credential.heper cache
+git config --global credential.helper 'cache --timeout=28800'
+```
 
 ### Ubuntu 20 laptop
 **Update and install packages**
