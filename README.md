@@ -53,16 +53,19 @@ apt install vim
 pip3 install --upgrade pip
 pip3 install netmiko
 ```
-- comment out user sudo check in the `run.sh` and `config.sh` files at the top  
 
 **Install and run a GHA self-hosted agent**
 ```
 mkdir actions-runner && cd actions-runner
 curl -O -L https://github.com/actions/runner/releases/download/v2.273.6/actions-runner-linux-x64-2.273.6.tar.gz
 tar xzf ./actions-runner-linux-x64-2.273.6.tar.gz
+```
+- comment out user sudo check in the `run.sh` and `config.sh` files at the top  
+```
 ./config.sh --url https://github.com/Davitiani/network-automation-github-actions --token ALDNW5PAE54W7CXIDWRP7PS7URIDY
 ./run.sh
 ```
+
 **[Install GitHub CLI](https://github.com/cli/cli/blob/trunk/docs/install_linux.md)**
 ```
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
