@@ -15,6 +15,9 @@ Mass configuration push tool for networking devices using GitHub Actions self-ho
 
 
 ## Usage
+**Diagram**
+![](/diagram-network-automation-github-actions.png)
+
 **Workflow using GitHub Desktop**  
 - clone this repo
 - create a new branch and publish it
