@@ -60,11 +60,18 @@ pip3 install netmiko
 
 **Install and run a GHA self-hosted agent**
 ```
-mkdir actions-runner && cd actions-runner
+adduser siteadmin
+usermod -aG sudo siteadmin
+su siteadmin
+
+sudo mkdir actions-runner
+sudo chown siteadmin:siteadmin actions-runner
+cd actions-runner
+```
+```
 curl -O -L https://github.com/actions/runner/releases/download/v<RUNNER_VERSION>/actions-runner-linux-x64-<RUNNER_VERSION>.tar.gz
 tar xzf ./actions-runner-linux-x64-<RUNNER_VERSION>.tar.gz
 ```
-- comment out user sudo check in the `run.sh` and `config.sh` files at the top  
 - get the token from: GitHub > repo > Settings > Actions > Add runner
 ```
 ./config.sh --url https://github.com/Davitiani/network-automation-github-actions --token <TOKEN>
