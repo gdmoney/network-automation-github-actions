@@ -33,8 +33,7 @@ Mass configuration push tool for networking devices using GitHub Actions self-ho
 - networking devices are updated
 
 
-## Install
-### Ubuntu 20 Docker container
+## Install on Ubuntu 20 Docker container
 **Download and install Ubuntu**
 ```
 docker pull ubuntu
@@ -72,7 +71,7 @@ gh auth login (GitHub.com > Paste an authentication token > PASTE > HTTPS)
 
 *Cache GitHub credentials in Git*  
 ```
-git config --global credential.heper cache
+git config --global credential.helper cache
 git config --global credential.helper 'cache --timeout=28800'
 ```
 
@@ -98,47 +97,3 @@ tar xzf ./actions-runner-linux-x64-<RUNNER_VERSION>.tar.gz
 
 **Uninstall**  
 `./config.sh remove --token <TOKEN>`
-
-
-### Ubuntu 20 laptop
-**Update and install packages**
-```
-sudo apt update
-sudo apt upgrade
-sudo apt install python3-pip
-sudo pip3 install --upgrade pip
-sudo pip3 install netmiko
-```
-
-**[Install GitHub CLI](https://github.com/cli/cli/blob/trunk/docs/install_linux.md)**
-```
-sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
-sudo apt-add-repository https://cli.github.com/packages
-sudo apt update
-sudo apt install gh
-```
-
-**Install and run a GHA self-hosted agent**
-```
-mkdir actions-runner && cd actions-runner
-curl -O -L https://github.com/actions/runner/releases/download/v<RUNNER_VERSION>/actions-runner-linux-x64-<RUNNER_VERSION>.tar.gz
-tar xzf ./actions-runner-linux-x64-<RUNNER_VERSION>.tar.gz
-
-./config.sh --url https://github.com/Davitiani/network-automation-github-actions --token <TOKEN>
-./run.sh
-```
-
-
-### Windows 10 laptop
-**Using PowerShell 7**
-```
-mkdir actions-runner
-cd C:\actions-runner
-
-[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-Invoke-WebRequest -Uri https://github.com/actions/runner/releases/download/v<RUNNER_VERSION>/actions-runner-win-x64-<RUNNER_VERSION>.zip -OutFile actions-runner-win-x64-<RUNNER_VERSION>.zip
-Add-Type -AssemblyName System.IO.Compression.FileSystem ; [System.IO.Compression.ZipFile]::ExtractToDirectory("$PWD\actions-runner-win-x64-<RUNNER_VERSION>.zip", "$PWD")
-
-./config.cmd --url https://github.com/gdmoney/network-automation-github-actions --token <TOKEN>
-./run.cmd
-```
