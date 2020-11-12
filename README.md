@@ -70,8 +70,8 @@ tar xzf ./actions-runner-linux-x64-<RUNNER_VERSION>.tar.gz
 ./run.sh
 ```
 
-**Uninstall**
-`./config.sh remove --token <TOKEN>
+**Uninstall**  
+`./config.sh remove --token <TOKEN>`
 
 **[Install GitHub CLI](https://github.com/cli/cli/blob/trunk/docs/install_linux.md)**
 ```
