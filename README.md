@@ -58,6 +58,24 @@ pip3 install --upgrade pip
 pip3 install netmiko
 ```
 
+**[Install GitHub CLI](https://github.com/cli/cli/blob/trunk/docs/install_linux.md)**
+```
+apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
+apt-add-repository https://cli.github.com/packages
+apt update
+apt install gh
+```
+*Create a Personal Access Token: GitHub > profile pic > Settings > Developer settings > Personal access tokens > Generate new token*  
+```
+gh auth login (GitHub.com > Paste an authentication token > PASTE > HTTPS)
+```
+
+*Cache GitHub credentials in Git*  
+```
+git config --global credential.heper cache
+git config --global credential.helper 'cache --timeout=28800'
+```
+
 **Install and run a GHA self-hosted agent**
 ```
 adduser siteadmin
@@ -72,7 +90,7 @@ cd actions-runner
 curl -O -L https://github.com/actions/runner/releases/download/v<RUNNER_VERSION>/actions-runner-linux-x64-<RUNNER_VERSION>.tar.gz
 tar xzf ./actions-runner-linux-x64-<RUNNER_VERSION>.tar.gz
 ```
-- get the token from: GitHub > repo > Settings > Actions > Add runner
+*Get the token from: GitHub > repo > Settings > Actions > Add runner*
 ```
 ./config.sh --url https://github.com/Davitiani/network-automation-github-actions --token <TOKEN>
 ./run.sh
@@ -81,19 +99,6 @@ tar xzf ./actions-runner-linux-x64-<RUNNER_VERSION>.tar.gz
 **Uninstall**  
 `./config.sh remove --token <TOKEN>`
 
-**[Install GitHub CLI](https://github.com/cli/cli/blob/trunk/docs/install_linux.md)**
-```
-apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
-apt-add-repository https://cli.github.com/packages
-apt update
-apt install gh
-```
-- create a Personal Access Token: GitHub > profile pic > Settings > Developer settings > Personal access tokens > Generate new token
-- Cache GitHub credentials in Git
-```
-git config --global credential.heper cache
-git config --global credential.helper 'cache --timeout=28800'
-```
 
 ### Ubuntu 20 laptop
 **Update and install packages**
@@ -104,6 +109,15 @@ sudo apt install python3-pip
 sudo pip3 install --upgrade pip
 sudo pip3 install netmiko
 ```
+
+**[Install GitHub CLI](https://github.com/cli/cli/blob/trunk/docs/install_linux.md)**
+```
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
+sudo apt-add-repository https://cli.github.com/packages
+sudo apt update
+sudo apt install gh
+```
+
 **Install and run a GHA self-hosted agent**
 ```
 mkdir actions-runner && cd actions-runner
@@ -113,13 +127,7 @@ tar xzf ./actions-runner-linux-x64-<RUNNER_VERSION>.tar.gz
 ./config.sh --url https://github.com/Davitiani/network-automation-github-actions --token <TOKEN>
 ./run.sh
 ```
-**[Install GitHub CLI](https://github.com/cli/cli/blob/trunk/docs/install_linux.md)**
-```
-sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
-sudo apt-add-repository https://cli.github.com/packages
-sudo apt update
-sudo apt install gh
-```
+
 
 ### Windows 10 laptop
 **Using PowerShell 7**
