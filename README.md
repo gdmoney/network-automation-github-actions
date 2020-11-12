@@ -70,6 +70,9 @@ tar xzf ./actions-runner-linux-x64-<RUNNER_VERSION>.tar.gz
 ./run.sh
 ```
 
+**Uninstall**
+`./config.sh remove --token <TOKEN>
+
 **[Install GitHub CLI](https://github.com/cli/cli/blob/trunk/docs/install_linux.md)**
 ```
 apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
