@@ -65,7 +65,7 @@ apt-add-repository https://cli.github.com/packages
 apt update
 apt install gh
 ```
-*create a Personal Access Token: GitHub > profile pic > Settings > Developer settings > Personal access tokens > Generate new token*  
+*Create a Personal Access Token: GitHub > profile pic > Settings > Developer settings > Personal access tokens > Generate new token*  
 ```
 gh auth login (GitHub.com > Paste an authentication token > PASTE > HTTPS)
 ```
@@ -90,7 +90,7 @@ cd actions-runner
 curl -O -L https://github.com/actions/runner/releases/download/v<RUNNER_VERSION>/actions-runner-linux-x64-<RUNNER_VERSION>.tar.gz
 tar xzf ./actions-runner-linux-x64-<RUNNER_VERSION>.tar.gz
 ```
-- get the token from: GitHub > repo > Settings > Actions > Add runner
+*Get the token from: GitHub > repo > Settings > Actions > Add runner*
 ```
 ./config.sh --url https://github.com/Davitiani/network-automation-github-actions --token <TOKEN>
 ./run.sh
