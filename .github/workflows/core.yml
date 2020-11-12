@@ -15,7 +15,6 @@ jobs:
       run: |
         gh repo clone Davitiani/network-automation-github-actions
         cd network-automation-github-actions
-        #python3 1.core.py
         python3 2.core.py
         cd ..
         rm -rf network-automation-github-actions
