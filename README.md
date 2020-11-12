@@ -58,6 +58,24 @@ pip3 install --upgrade pip
 pip3 install netmiko
 ```
 
+**[Install GitHub CLI](https://github.com/cli/cli/blob/trunk/docs/install_linux.md)**
+```
+apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
+apt-add-repository https://cli.github.com/packages
+apt update
+apt install gh
+```
+- create a Personal Access Token: GitHub > profile pic > Settings > Developer settings > Personal access tokens > Generate new token  
+`gh auth login`
+- GitHub.com > Paste an authentication token > PASTE > HTTPS
+
+- Cache GitHub credentials in Git
+```
+git config --global credential.heper cache
+git config --global credential.helper 'cache --timeout=28800'
+```
+
+
 **Install and run a GHA self-hosted agent**
 ```
 adduser siteadmin
@@ -81,19 +99,6 @@ tar xzf ./actions-runner-linux-x64-<RUNNER_VERSION>.tar.gz
 **Uninstall**  
 `./config.sh remove --token <TOKEN>`
 
-**[Install GitHub CLI](https://github.com/cli/cli/blob/trunk/docs/install_linux.md)**
-```
-apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
-apt-add-repository https://cli.github.com/packages
-apt update
-apt install gh
-```
-- create a Personal Access Token: GitHub > profile pic > Settings > Developer settings > Personal access tokens > Generate new token
-- Cache GitHub credentials in Git
-```
-git config --global credential.heper cache
-git config --global credential.helper 'cache --timeout=28800'
-```
 
 ### Ubuntu 20 laptop
 **Update and install packages**
