@@ -75,7 +75,6 @@ git config --global credential.heper cache
 git config --global credential.helper 'cache --timeout=28800'
 ```
 
-
 **Install and run a GHA self-hosted agent**
 ```
 adduser siteadmin
@@ -109,6 +108,15 @@ sudo apt install python3-pip
 sudo pip3 install --upgrade pip
 sudo pip3 install netmiko
 ```
+
+**[Install GitHub CLI](https://github.com/cli/cli/blob/trunk/docs/install_linux.md)**
+```
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
+sudo apt-add-repository https://cli.github.com/packages
+sudo apt update
+sudo apt install gh
+```
+
 **Install and run a GHA self-hosted agent**
 ```
 mkdir actions-runner && cd actions-runner
@@ -118,13 +126,7 @@ tar xzf ./actions-runner-linux-x64-<RUNNER_VERSION>.tar.gz
 ./config.sh --url https://github.com/Davitiani/network-automation-github-actions --token <TOKEN>
 ./run.sh
 ```
-**[Install GitHub CLI](https://github.com/cli/cli/blob/trunk/docs/install_linux.md)**
-```
-sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
-sudo apt-add-repository https://cli.github.com/packages
-sudo apt update
-sudo apt install gh
-```
+
 
 ### Windows 10 laptop
 **Using PowerShell 7**
