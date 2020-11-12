@@ -67,9 +67,9 @@ apt install gh
 ```
 - create a Personal Access Token: GitHub > profile pic > Settings > Developer settings > Personal access tokens > Generate new token  
 ```
-gh auth login
+gh auth login (GitHub.com > Paste an authentication token > PASTE > HTTPS)
 ```
-- GitHub.com > Paste an authentication token > PASTE > HTTPS
+
 - Cache GitHub credentials in Git
 ```
 git config --global credential.heper cache
