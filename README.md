@@ -65,12 +65,12 @@ apt-add-repository https://cli.github.com/packages
 apt update
 apt install gh
 ```
-- create a Personal Access Token: GitHub > profile pic > Settings > Developer settings > Personal access tokens > Generate new token  
+*create a Personal Access Token: GitHub > profile pic > Settings > Developer settings > Personal access tokens > Generate new token*  
 ```
 gh auth login (GitHub.com > Paste an authentication token > PASTE > HTTPS)
 ```
 
-- Cache GitHub credentials in Git
+*Cache GitHub credentials in Git*  
 ```
 git config --global credential.heper cache
 git config --global credential.helper 'cache --timeout=28800'
