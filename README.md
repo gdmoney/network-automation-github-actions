@@ -107,5 +107,5 @@ git config --global credential.helper store
 - [x] standardize on deleting the repo folder vs keeping it and doing a git pull  
 - [x] git credentials cache timeout max value
   - decided to store credentials instead of caching
-- [x] jobs are failing with this error: /actions-runner/_work/_temp/78761644-b80a-41b9-9c0c-dd480bd61c8f.sh: line 1: cd: network-automation-github-actions: No such file or directory
+- [x] jobs are failing with this error: `/actions-runner/_work/_temp/78761644-b80a-41b9-9c0c-dd480bd61c8f.sh: line 1: cd: network-automation-github-actions: No such file or directory`
   - changed to absolute path in the yml files
