@@ -67,7 +67,7 @@ apt install gh
 ```
 - *Create a Personal Access Token: github.com > profile pic > Settings > Developer settings > Personal access tokens > Generate new token*  
 ```
-gh auth login (GitHub.com > Paste an authentication token > PASTE > HTTPS)
+gh auth login (GitHub.com > Paste an authentication token > <TOKEN> > HTTPS)
 ```
 
 **Install the GitHub Actions self-hosted agent**
