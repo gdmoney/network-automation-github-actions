@@ -106,9 +106,11 @@ git config --global credential.helper 'cache --timeout=28800'
 ```
 
 **Uninstall the agent**  
-`./config.sh remove --token <TOKEN>`
+```
+./config.sh remove --token <TOKEN>
+```
 
 
 ## Issues
 - [x] standardize on deleting the repo folder vs keeping it and doing a git pull  
-- [ ] git credentials cache timeout max value
+- [x] git credentials cache timeout max value (8 hours)
