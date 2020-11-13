@@ -6,7 +6,7 @@ Mass configuration push tool for networking devices using GitHub Actions self-ho
 
 
 ## Components
-- GitHub Actions using self-hosted runners
+- GitHub Actions using a self-hosted runner
 - Ubuntu 20 Docker container
 - Docker engine
 - Opengear access server
