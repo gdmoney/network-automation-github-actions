@@ -80,6 +80,7 @@ sudo mkdir actions-runner
 sudo chown siteadmin:siteadmin actions-runner
 cd actions-runner
 ```
+- *Get the runner version from: github.com > repo > Settings > Actions > Add runner*  
 ```
 curl -O -L https://github.com/actions/runner/releases/download/v<RUNNER_VERSION>/actions-runner-linux-x64-<RUNNER_VERSION>.tar.gz
 tar xzf ./actions-runner-linux-x64-<RUNNER_VERSION>.tar.gz
