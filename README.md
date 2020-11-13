@@ -83,16 +83,9 @@ curl -O -L https://github.com/actions/runner/releases/download/v<RUNNER_VERSION>
 tar xzf ./actions-runner-linux-x64-<RUNNER_VERSION>.tar.gz
 ```
 
-**Clone and update the repo**
+**Clone the repo and cache GitHub credentials in Git**
 ```
 git clone https://github.com/Davitiani/network-automation-github-actions.git
-cd network-automation-github-actions
-git pull
-cd ..
-```
-
-**Cache GitHub credentials in Git**  
-```
 git config --global credential.helper cache
 git config --global credential.helper 'cache --timeout=28800'
 ```
