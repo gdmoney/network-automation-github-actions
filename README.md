@@ -46,6 +46,7 @@ apt upgrade
 
 apt install apt-utils
 apt install curl 
+apt install git  
 apt install iputils-ping  
 apt install net-tools
 apt install python3-pip
