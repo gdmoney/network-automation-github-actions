@@ -66,7 +66,7 @@ apt-add-repository https://cli.github.com/packages
 apt update
 apt install gh
 ```
-*Create a Personal Access Token: GitHub > profile pic > Settings > Developer settings > Personal access tokens > Generate new token*  
+*Create a Personal Access Token: github.com > profile pic > Settings > Developer settings > Personal access tokens > Generate new token*  
 ```
 gh auth login (GitHub.com > Paste an authentication token > PASTE > HTTPS)
 ```
