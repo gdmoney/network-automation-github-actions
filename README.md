@@ -90,6 +90,7 @@ tar xzf ./actions-runner-linux-x64-<RUNNER_VERSION>.tar.gz
 git clone https://github.com/Davitiani/network-automation-github-actions.git
 cd network-automation-github-actions
 git pull
+cd ..
 ```
 *Cache GitHub credentials in Git*  
 ```
