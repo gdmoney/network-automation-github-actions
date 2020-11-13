@@ -70,7 +70,7 @@ apt install gh
 gh auth login (GitHub.com > Paste an authentication token > <TOKEN> > HTTPS)
 ```
 
-**Install the GitHub Actions self-hosted agent**
+**Download a GitHub Actions self-hosted agent**
 ```
 adduser siteadmin
 usermod -aG sudo siteadmin
