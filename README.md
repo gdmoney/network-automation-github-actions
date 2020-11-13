@@ -33,7 +33,8 @@ Mass configuration push tool for networking devices using GitHub Actions self-ho
 - networking devices are updated
 
 
-## Install on Ubuntu 20 Docker container
+## Build
+### Ubuntu 20.04.1 LTS Docker container
 **Download and install Ubuntu**
 ```
 docker pull ubuntu
