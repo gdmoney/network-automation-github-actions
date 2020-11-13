@@ -13,9 +13,7 @@ jobs:
     steps:
     - name: Run
       run: |
-        #gh repo clone Davitiani/network-automation-github-actions
         cd network-automation-github-actions
         git pull
-        python3 2.access.py
+        python3 access.py
         cd ..
-        #rm -rf network-automation-github-actions
