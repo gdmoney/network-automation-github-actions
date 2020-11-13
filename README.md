@@ -2,7 +2,7 @@
 
 
 ## Project Overview
-Mass configuration push tool for networking devices using GitHub Actions self-hosted runners and the Netmiko Python library.
+Mass configuration push tool for networking devices using GitHub Actions self-hosted runners installed on the Opengear OOB server and the Netmiko Python library.
 
 
 ## Components
