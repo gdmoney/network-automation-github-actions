@@ -69,13 +69,7 @@ apt install gh
 gh auth login (GitHub.com > Paste an authentication token > PASTE > HTTPS)
 ```
 
-*Cache GitHub credentials in Git*  
-```
-git config --global credential.helper cache
-git config --global credential.helper 'cache --timeout=28800'
-```
-
-**Install and run a GHA self-hosted agent**
+**Install the GitHub Actions self-hosted agent**
 ```
 adduser siteadmin
 usermod -aG sudo siteadmin
@@ -89,13 +83,26 @@ cd actions-runner
 curl -O -L https://github.com/actions/runner/releases/download/v<RUNNER_VERSION>/actions-runner-linux-x64-<RUNNER_VERSION>.tar.gz
 tar xzf ./actions-runner-linux-x64-<RUNNER_VERSION>.tar.gz
 ```
+
+**Clone and update the repo**
+```
+git clone https://github.com/Davitiani/network-automation-github-actions.git
+git pull
+```
+*Cache GitHub credentials in Git*  
+```
+git config --global credential.helper cache
+git config --global credential.helper 'cache --timeout=28800'
+```
+
+**Run the GitHub Actions self-hosted agent**
 *Get the token from: GitHub > repo > Settings > Actions > Add runner*
 ```
 ./config.sh --url https://github.com/Davitiani/network-automation-github-actions --token <TOKEN>
 ./run.sh
 ```
 
-**Uninstall**  
+**Uninstall the agent**  
 `./config.sh remove --token <TOKEN>`
 
 
