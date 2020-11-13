@@ -99,8 +99,8 @@ git config --global credential.helper cache
 git config --global credential.helper 'cache --timeout=28800'
 ```
 
-**Run the GitHub Actions self-hosted agent**
-*Get the token from: github.com > repo > Settings > Actions > Add runner*
+**Run the GitHub Actions self-hosted agent**  
+*Get the token from: github.com > repo > Settings > Actions > Add runner*  
 ```
 ./config.sh --url https://github.com/Davitiani/network-automation-github-actions --token <TOKEN>
 ./run.sh
