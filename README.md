@@ -70,15 +70,12 @@ apt install gh
 gh auth login (GitHub.com > Paste an authentication token > <TOKEN> > HTTPS)
 ```
 
-**Download a GitHub Actions self-hosted agent**
+**Create a new user and download a GitHub Actions self-hosted agent**
 ```
 adduser siteadmin
-usermod -aG sudo siteadmin
 su siteadmin
-
-sudo mkdir actions-runner
-sudo chown siteadmin:siteadmin actions-runner
-cd actions-runner
+cd home/siteadmin/
+mkdir actions-runner && cd actions-runner
 ```
 - *Get the runner version from: github.com > repo > Settings > Actions > Add runner*  
 ```
