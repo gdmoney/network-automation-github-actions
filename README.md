@@ -65,7 +65,7 @@ apt-add-repository https://cli.github.com/packages
 apt update
 apt install gh
 ```
-*Create a Personal Access Token: github.com > profile pic > Settings > Developer settings > Personal access tokens > Generate new token*  
+- *Create a Personal Access Token: github.com > profile pic > Settings > Developer settings > Personal access tokens > Generate new token*  
 ```
 gh auth login (GitHub.com > Paste an authentication token > PASTE > HTTPS)
 ```
@@ -100,14 +100,14 @@ git config --global credential.helper 'cache --timeout=28800'
 ```
 
 **Run the GitHub Actions self-hosted agent**  
-*Get the token from: github.com > repo > Settings > Actions > Add runner*  
+- *Get the token from: github.com > repo > Settings > Actions > Add runner*  
 ```
 ./config.sh --url https://github.com/Davitiani/network-automation-github-actions --token <TOKEN>
 ./run.sh
 ```
 
 **Uninstall the agent**  
-*Get the token from: github.com > repo > Settings > Actions > ... > Remove*
+- *Get the token from: github.com > repo > Settings > Actions > ... > Remove*
 ```
 ./config.sh remove --token <TOKEN>
 ```
