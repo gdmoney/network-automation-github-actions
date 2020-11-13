@@ -93,14 +93,15 @@ cd network-automation-github-actions
 git pull
 cd ..
 ```
-*Cache GitHub credentials in Git*  
+
+**Cache GitHub credentials in Git**  
 ```
 git config --global credential.helper cache
 git config --global credential.helper 'cache --timeout=28800'
 ```
 
 **Run the GitHub Actions self-hosted agent**
-*Get the token from: GitHub > repo > Settings > Actions > Add runner*
+*Get the token from: github.com > repo > Settings > Actions > Add runner*
 ```
 ./config.sh --url https://github.com/Davitiani/network-automation-github-actions --token <TOKEN>
 ./run.sh
