@@ -100,5 +100,5 @@ tar xzf ./actions-runner-linux-x64-<RUNNER_VERSION>.tar.gz
 
 
 ## Issues
-- [ ] standardize on deleting the repo folder vs keeping it and doing a git pull  
+- [x] standardize on deleting the repo folder vs keeping it and doing a git pull  
 - [ ] git credentials cache timeout max value
