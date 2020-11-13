@@ -83,11 +83,10 @@ curl -O -L https://github.com/actions/runner/releases/download/v<RUNNER_VERSION>
 tar xzf ./actions-runner-linux-x64-<RUNNER_VERSION>.tar.gz
 ```
 
-**Clone the repo and cache GitHub credentials in Git**
+**Clone the repo and store GitHub credentials in Git**
 ```
 git clone https://github.com/Davitiani/network-automation-github-actions.git
-git config --global credential.helper cache
-git config --global credential.helper 'cache --timeout=28800'
+git config --global credential.helper store
 ```
 
 **Configure and run the GitHub Actions self-hosted agent**  
