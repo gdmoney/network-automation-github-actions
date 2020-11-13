@@ -29,7 +29,7 @@ Mass configuration push tool for networking devices using GitHub Actions self-ho
 - GitHub Actions workflow starts
 - self-hosted runner runs the jobs
 - Python scripts are executed
-- networking devices are updated
+- networking devices' configuration is updated
 
 
 ## Build
