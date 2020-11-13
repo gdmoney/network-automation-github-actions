@@ -15,5 +15,5 @@ jobs:
       run: |
         cd network-automation-github-actions
         git pull
-        python3 access.py
+        python3 _access.py
         cd ..
