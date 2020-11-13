@@ -1,4 +1,3 @@
-no alias exec i  show  ip route
-no alias exec ii show  ip interface brief
-no alias exec i* clear ip route *
-no username test
+alias exec i  show  ip route
+alias exec ii show  ip interface brief
+alias exec i* clear ip route *
