@@ -1,3 +1,4 @@
 alias exec i  show  ip route
 alias exec ii show  ip interface brief
 alias exec i* clear ip route *
+
