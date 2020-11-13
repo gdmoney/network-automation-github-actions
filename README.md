@@ -6,9 +6,8 @@ Mass configuration push tool for networking devices using GitHub Actions self-ho
 
 
 ## Components
-- GitHub Actions
-- GitHub Actions self-hosted runners
-- Ubuntu 20
+- GitHub Actions using self-hosted runners
+- Ubuntu 20 Docker container
 - Docker engine
 - Opengear access server
 - Netmiko Python library
