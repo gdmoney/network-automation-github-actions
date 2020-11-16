@@ -47,15 +47,16 @@ apt upgrade
 apt install apt-utils
 apt install curl 
 apt install git  
-apt install iputils-ping  
-apt install net-tools
 apt install python3-pip
 apt install software-properties-common
-apt install sudo
-apt install vim
-
 pip3 install --upgrade pip
 pip3 install netmiko
+
+Optional
+apt install iputils-ping  
+apt install net-tools
+apt install sudo
+apt install vim
 ```
 
 **[Install GitHub CLI](https://github.com/cli/cli/blob/trunk/docs/install_linux.md)**
