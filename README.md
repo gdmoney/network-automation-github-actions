@@ -49,6 +49,7 @@ apt install curl
 apt install git  
 apt install python3-pip
 apt install software-properties-common
+
 pip3 install --upgrade pip
 pip3 install netmiko
 
