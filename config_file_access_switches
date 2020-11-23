@@ -1,3 +1,495 @@
-alias exec i  show  ip route
-alias exec ii show  ip interface brief
-alias exec i* clear ip route *
+version 16.12
+no service pad
+service timestamps debug datetime msec localtime
+service timestamps log datetime msec localtime
+service call-home
+no platform punt-keepalive disable-kernel-core
+!
+hostname SWITCH_ACCESS_6
+!
+vrf definition Mgmt-vrf
+ !
+ address-family ipv4
+ exit-address-family
+ !
+ address-family ipv6
+ exit-address-family
+!
+no aaa new-model
+boot system switch all flash:cat9k_iosxe.16.12.04.SPA.bin
+clock timezone PST -8 0
+clock summer-time PDT recurring
+switch 1 provision c9300-48uxm
+!
+call-home
+ ! If contact email address in call-home is configured as sch-smart-licensing@cisco.com
+ ! the email address configured in Cisco Smart License Portal will be used as contact email address to send SCH notifications.
+ contact-email-addr sch-smart-licensing@cisco.com
+ source-interface GigabitEthernet0/0
+ vrf Mgmt-vrf
+ profile "CiscoTAC-1"
+  active
+  anonymous-reporting-only
+  destination transport-method http
+  no destination transport-method email
+!
+ip name-server 8.8.8.8
+ip name-server vrf Mgmt-vrf 8.8.8.8
+ip domain name event.tech
+ip domain name vrf Mgmt-vrf event.tech
+!
+login block-for 60 attempts 3 within 10
+login delay 3
+login on-success log
+!
+no device-tracking logging theft
+!
+crypto pki trustpoint SLA-TrustPoint
+ enrollment terminal
+ revocation-check crl
+!
+license boot level network-essentials addon dna-essentials
+license smart transport smart
+license smart privacy hostname
+license smart privacy version
+!
+diagnostic bootup level minimal
+!
+spanning-tree mode rapid-pvst
+spanning-tree extend system-id
+archive
+ log config
+  logging enable
+  notify syslog contenttype plaintext
+ path tftp://192.168.255.5/$h
+ write-memory
+ time-period 1440
+memory free low-watermark processor 134344
+!
+username siteadmin privilege 15 secret 9 $14$AofX$6sMZVA0kaJbn5E$jfkHIpPHnQbsbSajBPz/A5ExCD3Ox.jKDuL3NxvSM4g
+!
+redundancy
+ mode sso
+!
+transceiver type all
+ monitoring
+lldp run
+!
+class-map match-any system-cpp-police-ewlc-control
+  description EWLC Control 
+class-map match-any system-cpp-police-topology-control
+  description Topology control
+class-map match-any system-cpp-police-sw-forward
+  description Sw forwarding, L2 LVX data packets, LOGGING, Transit Traffic
+class-map match-any system-cpp-default
+  description EWLC Data, Inter FED Traffic 
+class-map match-any system-cpp-police-sys-data
+  description Openflow, Exception, EGR Exception, NFL Sampled Data, RPF Failed
+class-map match-any system-cpp-police-punt-webauth
+  description Punt Webauth
+class-map match-any system-cpp-police-l2lvx-control
+  description L2 LVX control packets
+class-map match-any system-cpp-police-forus
+  description Forus Address resolution and Forus traffic
+class-map match-any system-cpp-police-multicast-end-station
+  description MCAST END STATION
+class-map match-any system-cpp-police-high-rate-app
+  description High Rate Applications 
+class-map match-any system-cpp-police-multicast
+  description MCAST Data
+class-map match-any system-cpp-police-l2-control
+  description L2 control
+class-map match-any system-cpp-police-dot1x-auth
+  description DOT1X Auth
+class-map match-any system-cpp-police-data
+  description ICMP redirect, ICMP_GEN and BROADCAST
+class-map match-any system-cpp-police-stackwise-virt-control
+  description Stackwise Virtual OOB
+class-map match-any non-client-nrt-class
+class-map match-any system-cpp-police-routing-control
+  description Routing control and Low Latency
+class-map match-any system-cpp-police-protocol-snooping
+  description Protocol snooping
+class-map match-any system-cpp-police-dhcp-snooping
+  description DHCP snooping
+class-map match-any system-cpp-police-ios-routing
+  description L2 control, Topology control, Routing control, Low Latency
+class-map match-any system-cpp-police-system-critical
+  description System Critical and Gold Pkt
+class-map match-any system-cpp-police-ios-feature
+  description ICMPGEN,BROADCAST,ICMP,L2LVXCntrl,ProtoSnoop,PuntWebauth,MCASTData,Transit,DOT1XAuth,Swfwd,LOGGING,L2LVXData,ForusTraffic,ForusARP,McastEndStn,Openflow,Exception,EGRExcption,NflSampled,RpfFailed
+!
+policy-map system-cpp-policy
+!
+interface Port-channel1
+ description SWITCH_CORE
+ switchport mode trunk
+!
+interface GigabitEthernet0/0
+ vrf forwarding Mgmt-vrf
+ ip address 192.168.255.16 255.255.255.0
+ negotiation auto
+!
+interface TwoGigabitEthernet1/0/1
+ switchport access vlan 10
+ switchport mode access
+ power inline port 2-event
+ spanning-tree portfast
+!
+interface TwoGigabitEthernet1/0/2
+ switchport access vlan 10
+ switchport mode access
+ power inline port 2-event
+ spanning-tree portfast
+!
+interface TwoGigabitEthernet1/0/3
+ switchport access vlan 10
+ switchport mode access
+ power inline port 2-event
+ spanning-tree portfast
+!
+interface TwoGigabitEthernet1/0/4
+ switchport access vlan 10
+ switchport mode access
+ power inline port 2-event
+ spanning-tree portfast
+!
+interface TwoGigabitEthernet1/0/5
+ switchport access vlan 10
+ switchport mode access
+ power inline port 2-event
+ spanning-tree portfast
+!
+interface TwoGigabitEthernet1/0/6
+ switchport access vlan 10
+ switchport mode access
+ power inline port 2-event
+ spanning-tree portfast
+!
+interface TwoGigabitEthernet1/0/7
+ switchport access vlan 10
+ switchport mode access
+ power inline port 2-event
+ spanning-tree portfast
+!
+interface TwoGigabitEthernet1/0/8
+ switchport access vlan 10
+ switchport mode access
+ power inline port 2-event
+ spanning-tree portfast
+!
+interface TwoGigabitEthernet1/0/9
+ switchport access vlan 10
+ switchport mode access
+ power inline port 2-event
+ spanning-tree portfast
+!
+interface TwoGigabitEthernet1/0/10
+ switchport access vlan 10
+ switchport mode access
+ power inline port 2-event
+ spanning-tree portfast
+!
+interface TwoGigabitEthernet1/0/11
+ switchport access vlan 10
+ switchport mode access
+ power inline port 2-event
+ spanning-tree portfast
+!
+interface TwoGigabitEthernet1/0/12
+ switchport access vlan 10
+ switchport mode access
+ power inline port 2-event
+ spanning-tree portfast
+!
+interface TwoGigabitEthernet1/0/13
+ switchport access vlan 10
+ switchport mode access
+ power inline port 2-event
+ spanning-tree portfast
+!
+interface TwoGigabitEthernet1/0/14
+ switchport access vlan 10
+ switchport mode access
+ power inline port 2-event
+ spanning-tree portfast
+!
+interface TwoGigabitEthernet1/0/15
+ switchport access vlan 10
+ switchport mode access
+ power inline port 2-event
+ spanning-tree portfast
+!
+interface TwoGigabitEthernet1/0/16
+ switchport access vlan 10
+ switchport mode access
+ power inline port 2-event
+ spanning-tree portfast
+!
+interface TwoGigabitEthernet1/0/17
+ switchport access vlan 10
+ switchport mode access
+ power inline port 2-event
+ spanning-tree portfast
+!
+interface TwoGigabitEthernet1/0/18
+ switchport access vlan 10
+ switchport mode access
+ power inline port 2-event
+ spanning-tree portfast
+!
+interface TwoGigabitEthernet1/0/19
+ switchport access vlan 10
+ switchport mode access
+ power inline port 2-event
+ spanning-tree portfast
+!
+interface TwoGigabitEthernet1/0/20
+ switchport access vlan 10
+ switchport mode access
+ power inline port 2-event
+ spanning-tree portfast
+!
+interface TwoGigabitEthernet1/0/21
+ switchport access vlan 10
+ switchport mode access
+ power inline port 2-event
+ spanning-tree portfast
+!
+interface TwoGigabitEthernet1/0/22
+ switchport access vlan 10
+ switchport mode access
+ power inline port 2-event
+ spanning-tree portfast
+!
+interface TwoGigabitEthernet1/0/23
+ switchport access vlan 10
+ switchport mode access
+ power inline port 2-event
+ spanning-tree portfast
+!
+interface TwoGigabitEthernet1/0/24
+ switchport access vlan 10
+ switchport mode access
+ power inline port 2-event
+ spanning-tree portfast
+!
+interface TwoGigabitEthernet1/0/25
+ switchport access vlan 10
+ switchport mode access
+ power inline port 2-event
+ spanning-tree portfast
+!
+interface TwoGigabitEthernet1/0/26
+ switchport access vlan 10
+ switchport mode access
+ power inline port 2-event
+ spanning-tree portfast
+!
+interface TwoGigabitEthernet1/0/27
+ switchport access vlan 10
+ switchport mode access
+ power inline port 2-event
+ spanning-tree portfast
+!
+interface TwoGigabitEthernet1/0/28
+ switchport access vlan 10
+ switchport mode access
+ power inline port 2-event
+ spanning-tree portfast
+!
+interface TwoGigabitEthernet1/0/29
+ switchport access vlan 10
+ switchport mode access
+ power inline port 2-event
+ spanning-tree portfast
+!
+interface TwoGigabitEthernet1/0/30
+ switchport access vlan 10
+ switchport mode access
+ power inline port 2-event
+ spanning-tree portfast
+!
+interface TwoGigabitEthernet1/0/31
+ switchport access vlan 10
+ switchport mode access
+ power inline port 2-event
+ spanning-tree portfast
+!
+interface TwoGigabitEthernet1/0/32
+ switchport access vlan 10
+ switchport mode access
+ power inline port 2-event
+ spanning-tree portfast
+!
+interface TwoGigabitEthernet1/0/33
+ switchport access vlan 10
+ switchport mode access
+ power inline port 2-event
+ spanning-tree portfast
+!
+interface TwoGigabitEthernet1/0/34
+ switchport access vlan 10
+ switchport mode access
+ power inline port 2-event
+ spanning-tree portfast
+!
+interface TwoGigabitEthernet1/0/35
+ switchport access vlan 10
+ switchport mode access
+ power inline port 2-event
+ spanning-tree portfast
+!
+interface TwoGigabitEthernet1/0/36
+ switchport access vlan 10
+ switchport mode access
+ power inline port 2-event
+ spanning-tree portfast
+!
+interface TenGigabitEthernet1/0/37
+ switchport mode trunk
+ power inline port 2-event
+ spanning-tree portfast
+!
+interface TenGigabitEthernet1/0/38
+ switchport mode trunk
+ power inline port 2-event
+ spanning-tree portfast
+!
+interface TenGigabitEthernet1/0/39
+ switchport mode trunk
+ power inline port 2-event
+ spanning-tree portfast
+!
+interface TenGigabitEthernet1/0/40
+ switchport mode trunk
+ power inline port 2-event
+ spanning-tree portfast
+!
+interface TenGigabitEthernet1/0/41
+ switchport mode trunk
+ power inline port 2-event
+ spanning-tree portfast
+!
+interface TenGigabitEthernet1/0/42
+ switchport mode trunk
+ power inline port 2-event
+ spanning-tree portfast
+!
+interface TenGigabitEthernet1/0/43
+ switchport mode trunk
+ power inline port 2-event
+ spanning-tree portfast
+!
+interface TenGigabitEthernet1/0/44
+ switchport mode trunk
+ power inline port 2-event
+ spanning-tree portfast
+!
+interface TenGigabitEthernet1/0/45
+ switchport mode trunk
+ power inline port 2-event
+ spanning-tree portfast
+!
+interface TenGigabitEthernet1/0/46
+ switchport mode trunk
+ power inline port 2-event
+ spanning-tree portfast
+!
+interface TenGigabitEthernet1/0/47
+ switchport mode trunk
+ power inline port 2-event
+ spanning-tree portfast
+!
+interface TenGigabitEthernet1/0/48
+ switchport mode trunk
+ power inline port 2-event
+ spanning-tree portfast
+!
+interface GigabitEthernet1/1/1
+!
+interface GigabitEthernet1/1/2
+!
+interface GigabitEthernet1/1/3
+!
+interface GigabitEthernet1/1/4
+!
+interface TenGigabitEthernet1/1/1
+ description SWITCH_CORE
+ switchport mode trunk
+ channel-group 1 mode on
+!
+interface TenGigabitEthernet1/1/2
+ description SWITCH_CORE
+ switchport mode trunk
+ channel-group 1 mode on
+!
+interface TenGigabitEthernet1/1/3
+!
+interface TenGigabitEthernet1/1/4
+!
+interface TenGigabitEthernet1/1/5
+!
+interface TenGigabitEthernet1/1/6
+!
+interface TenGigabitEthernet1/1/7
+!
+interface TenGigabitEthernet1/1/8
+!
+interface FortyGigabitEthernet1/1/1
+!
+interface FortyGigabitEthernet1/1/2
+!
+interface TwentyFiveGigE1/1/1
+!
+interface TwentyFiveGigE1/1/2
+!
+interface AppGigabitEthernet1/0/1
+!
+interface Vlan1
+ no ip address
+!
+ip forward-protocol nd
+no ip http server
+no ip http secure-server
+ip http client source-interface GigabitEthernet0/0
+ip tftp source-interface GigabitEthernet0/0
+ip route vrf Mgmt-vrf 0.0.0.0 0.0.0.0 192.168.255.1
+ip ssh time-out 30
+ip ssh authentication-retries 2
+ip ssh version 2
+!
+ip access-list standard SSH
+ 10 permit 192.168.255.0 0.0.0.255
+!
+control-plane
+ service-policy input system-cpp-policy
+!
+line con 0
+ session-timeout 10 
+ logging synchronous
+ login local
+ transport preferred none
+ transport output ssh
+ stopbits 1
+line vty 0 4
+ session-timeout 10 
+ access-class SSH in vrf-also
+ logging synchronous
+ login local
+ transport preferred ssh
+ transport input ssh
+ transport output ssh
+line vty 5 15
+ session-timeout 10 
+ access-class SSH in vrf-also
+ logging synchronous
+ login local
+ transport preferred ssh
+ transport input ssh
+ transport output ssh
+!
+ntp server vrf Mgmt-vrf time.google.com
+ntp server time.google.com
+!
+end
