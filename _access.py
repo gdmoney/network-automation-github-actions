@@ -8,7 +8,7 @@ from all_devices import access_switches as devices
 
 def task(a_device):
     session = ConnectHandler(**a_device)
-    output = session.send_config_set('config replace tftp://172.17.0.3/config_file_access_switches force')
+    output = session.send_command('config replace tftp://172.17.0.3/config_file_access_switches force')
     output += session.save_config()
     # print (output)
 
