@@ -7,8 +7,11 @@ from netmiko import ConnectHandler
 from all_devices import access_switches as devices
 
 def task(a_device):
+    with open('config_script') as f:
+        config_list = f.read().splitlines()
+
     session = ConnectHandler(**a_device)
-    output = session.send_config_set('config replace tftp://172.17.0.3/config_file_access_switches force')
+    output = session.send_config_set(config_list)
     output += session.save_config()
     # print (output)
 
