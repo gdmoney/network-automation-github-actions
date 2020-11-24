@@ -1,3 +1,219 @@
-alias exec i  show  ip route
-alias exec ii show  ip interface brief
-alias exec i* clear ip route *
+version 16.6
+service timestamps debug datetime msec localtime
+service timestamps log datetime msec localtime
+platform qfp utilization monitor load 80
+no platform punt-keepalive disable-kernel-core
+!
+hostname ROUTER_1
+!
+boot-start-marker
+boot-end-marker
+!
+vrf definition Mgmt-intf
+ !
+ address-family ipv4
+ exit-address-family
+ !
+ address-family ipv6
+ exit-address-family
+!
+no aaa new-model
+clock timezone PST -8 0
+clock summer-time PDT recurring
+!
+ip name-server 8.8.8.8
+ip domain name event.tech
+!
+login block-for 60 attempts 3 within 10
+login delay 3
+!
+subscriber templating
+!
+multilink bundle-name authenticated
+!
+crypto pki trustpoint TP-self-signed-1257261861
+ enrollment selfsigned
+ subject-name cn=IOS-Self-Signed-Certificate-1257261861
+ revocation-check none
+ rsakeypair TP-self-signed-1257261861
+!
+crypto pki certificate chain TP-self-signed-1257261861
+!
+!
+license udi pid ISR4431/K9 sn FOC230163PX
+diagnostic bootup level minimal
+spanning-tree extend system-id
+archive
+ log config
+  logging enable
+  notify syslog contenttype plaintext
+ path tftp://192.168.255.5/$h
+ write-memory
+ time-period 1440
+!
+username siteadmin privilege 15 secret 9 $9$8BxcXuyWur86w.$cNQlzKnWV8hxAc0yAITmD.5Zf4ruzOSMpDbKok/2ZbM
+!
+redundancy
+ mode none
+!
+vlan internal allocation policy ascending
+!
+track 1 ip sla 1 reachability
+ delay down 3 up 30
+!
+track 2 ip sla 2 reachability
+ delay down 3 up 30
+!
+track 3 ip sla 3 reachability
+ delay down 3 up 30
+!
+track 10 list boolean or
+ object 1
+ object 2
+ object 3
+!
+interface Loopback1
+ ip address 169.254.1.1 255.255.255.255
+!
+interface Port-channel1
+ ip address 192.168.254.1 255.255.255.252
+ ip nat inside
+ ip ospf network point-to-point
+ no negotiation auto
+!
+interface GigabitEthernet0/0/0
+ description ISP_1
+ ip address 100.64.1.2 255.255.255.252
+ ip nat outside
+ load-interval 30
+ negotiation auto
+ no cdp enable
+!
+interface GigabitEthernet0/0/1
+ description ROUTER_2
+ ip address 192.168.254.13 255.255.255.252
+ ip nat inside
+ ip ospf network point-to-point
+ negotiation auto
+!
+interface GigabitEthernet0/0/2
+ no ip address
+ negotiation auto
+ channel-group 1
+!
+interface GigabitEthernet0/0/3
+ no ip address
+ negotiation auto
+ channel-group 1
+!
+interface GigabitEthernet0/1/0
+ shutdown
+!
+interface GigabitEthernet0/1/1
+ shutdown
+!
+interface GigabitEthernet0/1/2
+ shutdown
+!
+interface GigabitEthernet0/1/3
+ shutdown
+!
+interface GigabitEthernet0
+ vrf forwarding Mgmt-intf
+ no ip address
+ shutdown
+ negotiation auto
+!
+interface Vlan1
+ no ip address
+!
+interface Dialer1
+!
+router ospf 1
+ router-id 169.254.1.1
+ passive-interface default
+ no passive-interface GigabitEthernet0/0/1
+ no passive-interface Port-channel1
+ network 192.168.254.1 0.0.0.0 area 0
+ network 192.168.254.13 0.0.0.0 area 0
+ default-information originate
+!
+ip nat pool NAT_POOL 12.9.181.113 12.9.181.114 prefix-length 30
+ip nat inside source list NAT_ACL pool NAT_POOL overload
+ip forward-protocol nd
+no ip http server
+no ip http secure-server
+ip http client source-interface Port-channel1
+ip tftp source-interface Port-channel1
+ip route 0.0.0.0 0.0.0.0 100.64.1.1 track 10
+ip route 1.1.1.1 255.255.255.255 100.64.1.1
+ip route 4.2.2.2 255.255.255.255 100.64.1.1
+ip route 9.9.9.9 255.255.255.255 100.64.1.1
+!
+ip ssh time-out 30
+ip ssh authentication-retries 2
+ip ssh version 2
+!
+ip access-list standard SSH
+ permit 192.168.255.0 0.0.0.255
+!
+ip access-list extended NAT_ACL
+ permit ip 10.10.0.0 0.0.7.255 any
+ permit ip 10.20.0.0 0.0.7.255 any
+ permit ip 192.168.255.0 0.0.0.255 any
+ permit ip 192.168.254.0 0.0.0.255 any
+ip sla 1
+ icmp-echo 1.1.1.1 source-ip 192.168.254.1
+ frequency 5
+ip sla schedule 1 life forever start-time now
+ip sla 2
+ icmp-echo 4.2.2.2 source-ip 192.168.254.1
+ frequency 5
+ip sla schedule 2 life forever start-time now
+ip sla 3
+ icmp-echo 9.9.9.9 source-ip 192.168.254.1
+ frequency 5
+ip sla schedule 3 life forever start-time now
+!
+control-plane
+!
+line con 0
+ session-timeout 20 
+ exec-timeout 20 0
+ logging synchronous
+ login local
+ transport preferred none
+ transport input none
+ transport output ssh
+ stopbits 1
+line aux 0
+ stopbits 1
+line vty 0 4
+ session-timeout 20 
+ access-class SSH in
+ exec-timeout 20 0
+ logging synchronous
+ login local
+ transport preferred ssh
+ transport input ssh
+ transport output ssh
+line vty 5 15
+ session-timeout 20 
+ access-class SSH in
+ exec-timeout 20 0
+ logging synchronous
+ login local
+ transport preferred ssh
+ transport input ssh
+ transport output ssh
+!
+ntp server time.google.com
+wsma agent exec
+!
+wsma agent config
+!
+wsma agent filesys
+!
+wsma agent notify
+!
+end
