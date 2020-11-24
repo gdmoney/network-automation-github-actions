@@ -1,5 +1,3 @@
-// variables are `hostname` and `vlan 1 ip address`
-
 version 16.12
 no service pad
 service timestamps debug datetime msec localtime
