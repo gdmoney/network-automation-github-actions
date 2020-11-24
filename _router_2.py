@@ -7,7 +7,7 @@ from netmiko import ConnectHandler
 from all_devices import router_2 as devices
 
 def task(a_device):
-    with open('config_file_routers') as f:
+    with open('config_file_router_2') as f:
         config_list = f.read().splitlines()
 
     session = ConnectHandler(**a_device)
