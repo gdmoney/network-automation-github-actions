@@ -1,3 +1,5 @@
+// variables are `hostname` and `vlan 1 ip address`
+
 version 16.12
 no service pad
 service timestamps debug datetime msec localtime
@@ -5,7 +7,7 @@ service timestamps log datetime msec localtime
 service call-home
 no platform punt-keepalive disable-kernel-core
 !
-hostname SWITCH_ACCESS_6
+hostname SWITCH_ACCESS_1
 !
 vrf definition Mgmt-vrf
  !
@@ -25,8 +27,7 @@ call-home
  ! If contact email address in call-home is configured as sch-smart-licensing@cisco.com
  ! the email address configured in Cisco Smart License Portal will be used as contact email address to send SCH notifications.
  contact-email-addr sch-smart-licensing@cisco.com
- source-interface GigabitEthernet0/0
- vrf Mgmt-vrf
+ source-interface Vlan1
  profile "CiscoTAC-1"
   active
   anonymous-reporting-only
@@ -34,9 +35,7 @@ call-home
   no destination transport-method email
 !
 ip name-server 8.8.8.8
-ip name-server vrf Mgmt-vrf 8.8.8.8
 ip domain name event.tech
-ip domain name vrf Mgmt-vrf event.tech
 !
 login block-for 60 attempts 3 within 10
 login delay 3
@@ -127,7 +126,8 @@ interface Port-channel1
 !
 interface GigabitEthernet0/0
  vrf forwarding Mgmt-vrf
- ip address 192.168.255.16 255.255.255.0
+ no ip address
+ shutdown
  negotiation auto
 !
 interface TwoGigabitEthernet1/0/1
@@ -447,14 +447,14 @@ interface TwentyFiveGigE1/1/2
 interface AppGigabitEthernet1/0/1
 !
 interface Vlan1
- no ip address
+ ip address 192.168.255.11 255.255.255.0
 !
 ip forward-protocol nd
 no ip http server
 no ip http secure-server
-ip http client source-interface GigabitEthernet0/0
-ip tftp source-interface GigabitEthernet0/0
-ip route vrf Mgmt-vrf 0.0.0.0 0.0.0.0 192.168.255.1
+ip http client source-interface Vlan1
+ip tftp source-interface Vlan1
+ip route 0.0.0.0 0.0.0.0 192.168.255.1
 ip ssh time-out 30
 ip ssh authentication-retries 2
 ip ssh version 2
@@ -474,7 +474,7 @@ line con 0
  stopbits 1
 line vty 0 4
  session-timeout 10 
- access-class SSH in vrf-also
+ access-class SSH in
  logging synchronous
  login local
  transport preferred ssh
@@ -482,14 +482,13 @@ line vty 0 4
  transport output ssh
 line vty 5 15
  session-timeout 10 
- access-class SSH in vrf-also
+ access-class SSH in
  logging synchronous
  login local
  transport preferred ssh
  transport input ssh
  transport output ssh
 !
-ntp server vrf Mgmt-vrf time.google.com
 ntp server time.google.com
 !
 end

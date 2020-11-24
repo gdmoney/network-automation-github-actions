@@ -1,11 +1,11 @@
-name: core switch
+name: router_2
 
 on:
   push:
     branches:
     - main
     paths:
-    - 'config_file_core_switch'
+    - 'config_file_router_2'
 
 jobs:
   deploy:
@@ -15,5 +15,5 @@ jobs:
       run: |
         cd /home/siteadmin/actions-runner/network-automation-github-actions
         git pull
-        # python3 _core.py
+        # python3 _router_2.py
         cd ..
