@@ -7,11 +7,12 @@ from netmiko import ConnectHandler
 from all_devices import router_2 as devices
 
 def task(a_device):
-    with open('config_file_router_2') as f:
-        config_list = f.read().splitlines()
+    # with open('config_file_router_1') as f:
+        # config_list = f.read().splitlines()
 
     session = ConnectHandler(**a_device)
-    output = session.send_config_set(config_list)
+    # output = session.send_config_set(config_list)
+    output = session.send_command('config replace tftp://172.17.0.3/config_file_router_2 force')
     output += session.save_config()
     # print (output)
 

@@ -7,11 +7,12 @@ from netmiko import ConnectHandler
 from all_devices import core_switch as devices
 
 def task(a_device):
-    with open('config_file_core_switch') as f:
-        config_list = f.read().splitlines()
+    # with open('config_file_core_switch') as f:
+        # config_list = f.read().splitlines()
 
     session = ConnectHandler(**a_device)
-    output = session.send_config_set(config_list)
+    # output = session.send_config_set(config_list)
+    output = session.send_command('config replace tftp://172.17.0.3/config_file_core_switch force')
     output += session.save_config()
     # print (output)
 
