@@ -1,0 +1,118 @@
+version 15.2
+no service pad
+service timestamps debug datetime msec localtime
+service timestamps log datetime msec localtime
+no service password-encryption
+!
+hostname SWITCH_Desktop
+!
+boot-start-marker
+boot-end-marker
+!
+username siteadmin privilege 15 secret 5 $1$jdO0$npL69Z.0Xrelnv67Dj4hj1
+no aaa new-model
+clock timezone PST -8 0
+clock summer-time PDT recurring
+system mtu routing 1500
+!
+ip domain-name event.tech
+login block-for 60 attempts 3 within 10
+login delay 3
+!
+spanning-tree mode rapid-pvst
+spanning-tree extend system-id
+!
+vlan internal allocation policy ascending
+!
+lldp run       
+!
+interface GigabitEthernet0/1
+ switchport access vlan 10
+ switchport mode access
+ spanning-tree portfast edge
+!
+interface GigabitEthernet0/2
+ switchport access vlan 10
+ switchport mode access
+ spanning-tree portfast edge
+!
+interface GigabitEthernet0/3
+ switchport access vlan 10
+ switchport mode access
+ spanning-tree portfast edge
+!
+interface GigabitEthernet0/4
+ switchport access vlan 10
+ switchport mode access
+ spanning-tree portfast edge
+!
+interface GigabitEthernet0/5
+ switchport access vlan 20
+ switchport mode access
+ spanning-tree portfast edge
+!
+interface GigabitEthernet0/6
+ switchport access vlan 20
+ switchport mode access
+ spanning-tree portfast edge
+!
+interface GigabitEthernet0/7
+ switchport access vlan 20
+ switchport mode access
+ spanning-tree portfast edge
+!
+interface GigabitEthernet0/8
+ switchport mode trunk
+ spanning-tree portfast edge
+!
+interface GigabitEthernet0/9
+ switchport mode trunk
+ spanning-tree portfast edge
+!
+interface GigabitEthernet0/10
+ switchport mode trunk
+ spanning-tree portfast edge
+!
+interface Vlan1
+ description Net_Mgmt
+ ip address dhcp
+!
+ip forward-protocol nd
+no ip http server
+no ip http secure-server
+!
+ip ssh time-out 30
+ip ssh authentication-retries 2
+ip ssh version 2
+!
+ip access-list standard SSH
+ permit 192.168.255.0 0.0.0.255
+!
+no vstack
+!
+line con 0
+ session-timeout 10 
+ logging synchronous
+ login local
+ transport preferred none
+ transport output ssh
+line vty 0 4
+ session-timeout 10 
+ access-class SSH in
+ logging synchronous
+ login local
+ transport preferred ssh
+ transport input ssh
+ transport output ssh
+line vty 5 15
+ session-timeout 10 
+ access-class SSH in
+ logging synchronous
+ login local
+ transport preferred ssh
+ transport input ssh
+ transport output ssh
+!
+ntp server time.google.com
+!
+end

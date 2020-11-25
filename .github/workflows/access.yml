@@ -1,11 +1,11 @@
-name: access switches
+name: access switch
 
 on:
   push:
     branches:
     - main
     paths:
-    - 'config_file_access_switches'
+    - 'config_file_access_switch'
 
 jobs:
   deploy:
