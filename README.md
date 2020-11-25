@@ -60,6 +60,24 @@ apt install sudo
 apt install vim
 ```
 
+**Install TFTP server**
+```
+apt install tftpd-hpa
+
+cat /etc/default/tftpd-hpa
+vi /etc/default/tftpd-hpa
+
+TFTP_USERNAME="siteadmin"
+TFTP_DIRECTORY="/home/siteadmin/actions-runner/network-automation-github-actions"
+TFTP_ADDRESS=":69"
+TFTP_OPTIONS="--secure"
+
+/etc/init.d/tftpd-hpa start
+/etc/init.d/tftpd-hpa restart
+
+service --status-all
+```
+
 **[Install GitHub CLI](https://github.com/cli/cli/blob/trunk/docs/install_linux.md)**
 ```
 apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
