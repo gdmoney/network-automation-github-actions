@@ -74,7 +74,6 @@ interface GigabitEthernet0/10
  spanning-tree portfast edge
 !
 interface Vlan1
- description Net_Mgmt
  ip address dhcp
 !
 ip forward-protocol nd
