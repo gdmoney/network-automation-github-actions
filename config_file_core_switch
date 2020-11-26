@@ -42,8 +42,8 @@ ip dhcp excluded-address 192.168.255.1 192.168.255.20
 !
 ip dhcp pool Net_Mgmt
  network 192.168.255.0 255.255.255.0
- bootfile config-switch-desktop
- next-server 192.168.255.1 
+ bootfile config_file_desktop_switch
+ next-server 172.17.0.3 
  default-router 192.168.255.1 
  dns-server 8.8.8.8 8.8.4.4 
  domain-name event.tech
@@ -62,6 +62,30 @@ ip dhcp pool Video
  dns-server 8.8.8.8 8.8.4.4 
  domain-name event.tech
  lease 0 2
+!
+ip dhcp pool SWITCH_ACCESS_1
+ host 192.168.255.11 255.255.255.0
+ client-identifier 01d0.ec35.52f2.c7
+!
+ip dhcp pool SWITCH_ACCESS_2
+ host 192.168.255.12 255.255.255.0
+ client-identifier 012c.73a0.84c3.c7
+!
+ip dhcp pool SWITCH_ACCESS_3
+ host 192.168.255.13 255.255.255.0
+ client-identifier 012c.01b5.6920.47
+!
+ip dhcp pool SWITCH_ACCESS_4
+ host 192.168.255.14 255.255.255.0
+ client-identifier 01d0.ec35.5361.c7
+!
+ip dhcp pool SWITCH_ACCESS_5
+ host 192.168.255.15 255.255.255.0
+ client-identifier 01d0.ec35.4f6c.47
+!
+ip dhcp pool SWITCH_ACCESS_6
+ host 192.168.255.16 255.255.255.0
+ client-identifier 012c.73a0.9c6c.c7
 !
 login block-for 60 attempts 3 within 10
 login delay 3
@@ -683,8 +707,6 @@ ip access-list extended Video
 route-map Video permit 10 
  match ip address Video
  set ip next-hop 192.168.254.5
-!
-tftp-server flash:config-switch-desktop
 !
 control-plane
  service-policy input system-cpp-policy      
