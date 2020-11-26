@@ -114,4 +114,6 @@ line vty 5 15
 !
 ntp server time.google.com
 !
+crypto key generate rsa modulus 2096
+!
 end
