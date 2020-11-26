@@ -1,0 +1,18 @@
+name: desktop switch
+
+on:
+  push:
+    branches:
+    - main
+    paths:
+    - 'config_file_desktop_switch'
+
+jobs:
+  deploy:
+    runs-on: [self-hosted, linux]
+    steps:
+    - name: Run
+      run: |
+        cd /home/siteadmin/actions-runner/network-automation-github-actions
+        git pull
+        cd ..
