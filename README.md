@@ -20,6 +20,7 @@
 - Ubuntu Docker container
 - Docker engine
 - Opengear OOB access server
+- [Unimus](https://github.intuit.com/t4i-event-tech/Unimus)
 - Netmiko Python library
 
 
