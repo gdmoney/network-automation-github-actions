@@ -1,8 +1,13 @@
-# Network automation using GitHub Actions
+# Network Automation Using GitHub Actions
 
 
 ## Project Overview
-Mass configuration push tool for networking devices using GitHub Actions self-hosted runners installed on the Opengear OOB access server and the Netmiko Python library.
+GitOps based network automation framework using the following principles:
+- all device configurations are defined as `code` and are stored in GitHub repositories - [a distributed version control system](https://en.wikipedia.org/wiki/Distributed_version_control)
+- configuration files are in a [declarative language format](https://en.wikipedia.org/wiki/Declarative_programming) and describe the **desired** system state
+- adfaf
+- GitHub is assumed to be the [Single Source of Truth](https://en.wikipedia.org/wiki/Single_source_of_truth)
+- 
 
 
 ## Components
