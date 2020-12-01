@@ -5,7 +5,8 @@
 **GitOps** based network automation framework using the following principles:
 - all device configurations are defined as `code` and are stored in GitHub repositories - [a distributed version control system](https://en.wikipedia.org/wiki/Distributed_version_control)
 - configuration files are in a [declarative](https://en.wikipedia.org/wiki/Declarative_programming) language format and describe the **desired** system state
-- adfaf
+- systems' **current** state is continuously monitored and compared to the **desired** state
+- alerts are generated if any configuration changes resulting in deviations from the desired state are detected
 - GitHub is assumed to be the [Single Source of Truth](https://en.wikipedia.org/wiki/Single_source_of_truth)
 - 
 
