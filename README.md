@@ -6,7 +6,7 @@ Mass configuration push tool for networking devices using GitHub Actions self-ho
 
 
 ## Components
-- GitHub Actions self-hosted runner
+- GitHub Actions self-hosted runners
 - Ubuntu Docker container
 - Docker engine
 - Opengear OOB access server
@@ -28,7 +28,7 @@ Mass configuration push tool for networking devices using GitHub Actions self-ho
 - delete the new branch
 - GitHub Actions workflow starts
 - self-hosted runner runs the jobs
-- Python scripts are executed
+- Python script is executed
 - networking devices' configuration is updated
 
 
@@ -114,6 +114,9 @@ git config --global credential.helper store
 ```
 ./config.sh --url https://github.com/Davitiani/network-automation-github-actions --token <TOKEN>
 ./run.sh
+
+Connected to GitHub
+Listening for Jobs
 ```
 
 **Uninstall the agent**  
