@@ -8,7 +8,8 @@
 - systems' **current** state is continuously monitored and compared to the **desired** state
 - alerts are generated if any configuration changes resulting in deviations from the desired state are detected
 - GitHub is assumed to be the [Single Source of Truth](https://en.wikipedia.org/wiki/Single_source_of_truth)
-- 
+- all configuration changes are initiated via **Git** `git push` and are implemented programmatically via **GitHub Actions**
+- asdfasdfasdfasdf
 
 
 ## Components
