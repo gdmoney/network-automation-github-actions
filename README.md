@@ -11,7 +11,7 @@
 - all configuration changes are initiated via **Git** (`git push`) and are implemented programmatically via **GitHub Actions**
 - no manual changes by manipulating device configurations directly are permitted
 - devices' configurations are [immutable](https://en.wikipedia.org/wiki/Immutable_object) - no incremental changes are permitted
-- the entire configuration is either replaced with `configuration replace` or is wiped clean and the a configuration is loaded upon reboot
+- the entire configuration is either replaced with `configuration replace` or is wiped clean and the new configuration is loaded upon reboot
 - GitHub preserves the entire history of past changes (who did what, when, and why) and all team communication (pull requests, issue tracking, comments)
 
 
