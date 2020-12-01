@@ -9,9 +9,10 @@
 - alerts are generated if any configuration changes resulting in deviations from the desired state are detected
 - GitHub is assumed to be the [Single Source of Truth](https://en.wikipedia.org/wiki/Single_source_of_truth)
 - all configuration changes are initiated via **Git** (`git push`) and are implemented programmatically via **GitHub Actions**
-- no manual changes by manipulating device configs directly
-- devices' configurations are [immutable](https://en.wikipedia.org/wiki/Immutable_object) - no incremental changes
+- no manual changes by manipulating device configurations directly are permitted
+- devices' configurations are [immutable](https://en.wikipedia.org/wiki/Immutable_object) - no incremental changes are permitted
 - the entire configuration is either replaced with `configuration replace` or is wiped clean and the a configuration is loaded upon reboot
+- GitHub preserves the entire history of past changes (who did what, when, and why) and all team communication (pull requests, issue tracking, comments)
 
 
 ## Components
