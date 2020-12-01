@@ -2,7 +2,7 @@
 
 
 ## Project Overview
-**GitOps** based network automation framework using the following principles:
+**GitOps** based network automation framework based on the following principles:
 - all device configurations are defined as `code` and stored in GitHub - [a distributed version control system](https://en.wikipedia.org/wiki/Distributed_version_control)
 - these text files are in a [declarative](https://en.wikipedia.org/wiki/Declarative_programming) language format and describe the **desired** system state
 - systems' **current** state is continuously monitored and compared to the **desired** state
