@@ -10,7 +10,8 @@
 - GitHub is assumed to be the [Single Source of Truth](https://en.wikipedia.org/wiki/Single_source_of_truth)
 - all configuration changes are initiated via **Git** (`git push`) and are implemented programmatically via **GitHub Actions**
 - no manual changes by manipulating device configs directly
-- 
+- devices' configurations are [immutable](https://en.wikipedia.org/wiki/Immutable_object) - no incremental changes
+- the entire configuration is either replaced with a new one via `configuration replace` or is wiped clean and the new configuration is loaded upon reboot
 
 
 ## Components
