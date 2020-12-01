@@ -64,7 +64,7 @@ apt install software-properties-common
 pip3 install --upgrade pip
 pip3 install netmiko
 
-Optional
+-optional-
 apt install iputils-ping  
 apt install net-tools
 apt install sudo
