@@ -64,7 +64,7 @@ apt install software-properties-common
 
 pip3 install --upgrade pip
 pip3 install netmiko
-pip3 install keyring
+pip3 install keyring.alt
 
 -optional-
 apt install iputils-ping  
@@ -114,6 +114,13 @@ mkdir actions-runner && cd actions-runner
 ```
 curl -O -L https://github.com/actions/runner/releases/download/v<RUNNER_VERSION>/actions-runner-linux-x64-<RUNNER_VERSION>.tar.gz
 tar xzf ./actions-runner-linux-x64-<RUNNER_VERSION>.tar.gz
+```
+
+**Store and encrypt device login credentials**
+```
+python3
+import keyring
+keyring.set_password('cisco', 'siteadmin', '<PASSWORD>')
 ```
 
 **Clone the repo and store GitHub credentials in Git**
