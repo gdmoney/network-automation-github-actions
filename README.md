@@ -12,7 +12,7 @@ Network automation framework based on the following **GitOps** principles:
 - no manual changes by directly altering device configurations are permitted
 - devices configurations are [immutable](https://en.wikipedia.org/wiki/Immutable_object) - no incremental changes are permitted
 - the entire configuration is either replaced (`configuration replace`) or is wiped clean and the new configuration is loaded upon reboot
-- GitHub preserves the entire history of past changes (who did what, when, and why) and all team communication (pull requests, issue tracking, comments)
+- GitHub documents the entire history of past changes (who did what, when, and why) and all team communication (pull requests, issue tracking, comments)
 
 
 ## Components
