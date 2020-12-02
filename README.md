@@ -33,7 +33,7 @@ Network automation framework based on the following **GitOps** principles:
 - create a new branch and publish it
 - modify the device config text file(s)
 - commit changes to the new branch and push to origin
-- create a pull request
+- create a pull request to submit proposed changes
 - pull request review/approval
 - merge pull request to update the Main branch
 - delete the new branch
