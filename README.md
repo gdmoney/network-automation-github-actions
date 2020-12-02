@@ -40,7 +40,7 @@ Network automation framework based on the following **GitOps** principles:
 - GitHub Actions workflow starts
 - self-hosted runner runs the jobs
 - Python script is executed
-- networking devices' configuration is updated
+- devices' configuration is updated
 
 
 ## Build
