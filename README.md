@@ -40,7 +40,8 @@ Network automation framework based on the following **GitOps** principles:
 - GitHub Actions workflow starts
 - self-hosted runner runs the jobs
 - Python script is executed
-- devices' configuration is updated
+- devices' configuration is replaced
+- Unimus continuously audits configs and generates change-based alerts
 
 
 ## Build
