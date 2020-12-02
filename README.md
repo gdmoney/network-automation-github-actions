@@ -31,7 +31,7 @@ Network automation framework based on the following **GitOps** principles:
 **Workflow steps using GitHub Desktop**  
 - clone this repo
 - create a new branch and publish it
-- modify the device config file(s)
+- modify the device config text file(s)
 - commit changes to the new branch and push to origin
 - create a pull request
 - pull request review/approval
