@@ -64,6 +64,7 @@ apt install software-properties-common
 
 pip3 install --upgrade pip
 pip3 install netmiko
+pip3 install keyring
 
 -optional-
 apt install iputils-ping  
