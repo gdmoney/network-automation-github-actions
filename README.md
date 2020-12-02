@@ -3,7 +3,7 @@
 
 ## Project Overview
 Network automation framework based on the following **GitOps** principles:
-- all device configurations are defined as `code` and stored in GitHub - [a distributed version control system](https://en.wikipedia.org/wiki/Distributed_version_control)
+- all device configurations are defined as `code` and stored in GitHub - a [distributed version control system](https://en.wikipedia.org/wiki/Distributed_version_control)
 - these text files are in a [declarative](https://en.wikipedia.org/wiki/Declarative_programming) language format and describe the **desired** system state
 - systems' **current** state is continuously monitored and compared to the **desired** state
 - alerts are generated if any configuration changes resulting in deviations from the desired state are detected
