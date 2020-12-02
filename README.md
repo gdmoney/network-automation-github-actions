@@ -7,8 +7,8 @@ Network automation framework based on the following **GitOps** principles:
 - these text files are in a [declarative](https://en.wikipedia.org/wiki/Declarative_programming) language format and describe the **desired** system state
 - GitHub is assumed to be the [Single Source of Truth](https://en.wikipedia.org/wiki/Single_source_of_truth)
 - all configuration changes are initiated via **Git** (`git push`) and are implemented programmatically via **GitHub Actions**
-- no manual changes by directly modifying device configurations are permitted
-- devices configurations are [immutable](https://en.wikipedia.org/wiki/Immutable_object) - no incremental changes are permitted
+- manual changes by directly modifying device configurations are not permitted
+- devices configurations are [immutable](https://en.wikipedia.org/wiki/Immutable_object) - incremental changes are not permitted
 - the entire configuration is either replaced (`configuration replace`) or is wiped clean and the new configuration is loaded upon reboot
 - systems' **current** state is continuously monitored and compared to the **desired** state
 - alerts are generated if any configuration changes resulting in deviations from the desired state are detected
