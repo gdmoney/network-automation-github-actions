@@ -17,7 +17,7 @@ Network automation framework based on the following **GitOps** principles:
 
 ## Solution Components
 - GitHub Actions self-hosted runners
-- Ubuntu Docker container
+- Ubuntu 20.04 Docker container
 - Docker engine
 - Opengear OOB access server
 - [Unimus](https://github.intuit.com/t4i-event-tech/Unimus)
@@ -45,7 +45,6 @@ Network automation framework based on the following **GitOps** principles:
 
 
 ## Build
-### Ubuntu 20.04.1 LTS Docker container
 **Download and install Ubuntu**
 ```
 docker pull ubuntu
