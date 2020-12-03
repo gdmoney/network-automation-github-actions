@@ -47,14 +47,14 @@ Network automation framework based on the following **GitOps** principles:
 ## Build
 ### Ubuntu 20.04.1 LTS Docker container
 **Download and install Ubuntu**
-- In Docker
+- *In Docker*
 ```
 docker pull ubuntu
 docker run -it ubuntu
 ```
 
 **Update and install packages**
-- In Ubuntu
+- *In Ubuntu*
 ```
 apt update
 apt upgrade
