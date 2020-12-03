@@ -11,7 +11,7 @@ Network automation framework based on the following **GitOps** principles:
 - devices configurations are [immutable](https://en.wikipedia.org/wiki/Immutable_object) - incremental changes are **not permitted**
 - the entire configuration is either replaced (`configuration replace`) or the device is wiped clean and the new config is loaded upon reboot
 - systems' **current** state is continuously monitored and compared to the **desired** state
-- alerts are generated if any configuration changes resulting in deviations from the desired state are detected
+- alerts are generated if any configuration changes resulting in deviation from the desired state are detected
 - GitHub documents the entire history of past changes (who did what, when, and why) and all team communication (pull requests, issue tracking, comments)
 
 
