@@ -5,7 +5,7 @@
 Network automation framework based on the following **GitOps** principles:
 - all device configurations are defined as `code` and stored in a [distributed version control system](https://en.wikipedia.org/wiki/Distributed_version_control) repository
 - these files are in **raw format** and use a [declarative](https://en.wikipedia.org/wiki/Declarative_programming) language syntax to describe the **desired** system state
-- GitHub is assumed to be the [Single Source of Truth](https://en.wikipedia.org/wiki/Single_source_of_truth) - everything related to the entire environment is documented there
+- GitHub is assumed to be the [Single Source of Truth](https://en.wikipedia.org/wiki/Single_source_of_truth) - everything related to the application and the environment is documented here
 - all configuration changes are initiated via **Git** (`git push`) and are implemented programmatically via **GitHub Actions**
 - manual changes by directly modifying device configurations are **not permitted**
 - devices configurations are [immutable](https://en.wikipedia.org/wiki/Immutable_object) - incremental changes are **not permitted**
