@@ -16,12 +16,12 @@ Network automation framework based on the following **GitOps** principles:
 
 
 ## Solution Components
-- GitHub Actions self-hosted runners
+- [GitHub Actions self-hosted runners](https://docs.github.com/en/free-pro-team@latest/actions/hosting-your-own-runners/about-self-hosted-runners)
 - Ubuntu 20.04 Docker container
 - Docker engine
-- Opengear OOB access server
+- [Opengear OOB access server](https://opengear.com/products/om2200-operations-manager/)
 - [Unimus](https://github.intuit.com/t4i-event-tech/Unimus)
-- Netmiko Python library
+- [Netmiko Python library](https://github.com/ktbyers/netmiko)
 
 
 ## Usage
