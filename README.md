@@ -50,13 +50,11 @@ Network automation framework based on the following **GitOps** principles:
 ```
 docker pull ubuntu
 docker run -it ubuntu
-```
-
-**Update and install packages**
-```
 docker ps
 docker container attach <CONTAINER_ID>
 ```
+
+**Update and install packages**
 ```
 apt update
 apt upgrade
