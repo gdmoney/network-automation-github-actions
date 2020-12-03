@@ -20,7 +20,7 @@ Network automation framework based on the following **GitOps** principles:
 - Ubuntu 20.04 Docker container
 - Docker engine
 - [Opengear OOB access server](https://opengear.com/products/om2200-operations-manager/)
-- [Unimus](https://github.intuit.com/t4i-event-tech/Unimus)
+- [Unimus](https://unimus.net/)
 - [Netmiko Python library](https://github.com/ktbyers/netmiko)
 
 
