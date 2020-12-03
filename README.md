@@ -93,7 +93,7 @@ TFTP_OPTIONS="--secure"
 service --status-all
 ```
 
-**[Install GitHub CLI](https://github.com/cli/cli/blob/trunk/docs/install_linux.md)**
+**Install [GitHub CLI](https://github.com/cli/cli/blob/trunk/docs/install_linux.md)**
 ```
 apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
 apt-add-repository https://cli.github.com/packages
