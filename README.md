@@ -56,7 +56,8 @@ docker run -it ubuntu
 ```
 docker ps
 docker container attach <CONTAINER_ID>
-
+```
+```
 apt update
 apt upgrade
 
