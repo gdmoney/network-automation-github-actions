@@ -53,7 +53,7 @@ docker ps
 docker container attach <CONTAINER_ID>
 ```
 
-**Update and install required packages**
+**Install required packages**
 ```
 apt update
 apt upgrade
