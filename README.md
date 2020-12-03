@@ -63,16 +63,16 @@ apt install curl
 apt install git  
 apt install python3-pip
 apt install software-properties-common
+apt install vim
 
-pip3 install --upgrade pip
-pip3 install netmiko
-pip3 install keyring.alt
+pip3 install --upgrade pip  
+pip3 install keyring.alt  
+pip3 install netmiko  
 
 -optional-
 apt install iputils-ping  
-apt install net-tools
+apt install net-tools  
 apt install sudo
-apt install vim
 ```
 
 **Install TFTP server**
