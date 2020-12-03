@@ -15,7 +15,7 @@ Network automation framework based on the following **GitOps** principles:
 - GitHub documents the entire history of past changes (who did what, when, and why) and all team communication (pull requests, issue tracking, comments)
 
 
-## Components
+## Solution Components
 - GitHub Actions self-hosted runners
 - Ubuntu Docker container
 - Docker engine
