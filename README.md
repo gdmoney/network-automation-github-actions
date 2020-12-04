@@ -68,11 +68,6 @@ apt install vim
 pip3 install --upgrade pip  
 pip3 install keyring.alt  
 pip3 install netmiko  
-
--optional-
-apt install iputils-ping  
-apt install net-tools  
-apt install sudo
 ```
 
 **Install TFTP server**
