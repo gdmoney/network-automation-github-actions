@@ -8,7 +8,7 @@ Network automation framework based on the following **GitOps** principles:
 - GitHub is assumed to be the [Single Source of Truth](https://en.wikipedia.org/wiki/Single_source_of_truth) - everything related to the application and the environment is documented here
 - all configuration changes are initiated via **Git** (`git push`) and are implemented programmatically via **GitHub Actions**
 - manual changes by directly modifying device configurations are **not permitted**
-- devices configurations are [immutable](https://en.wikipedia.org/wiki/Immutable_object) - incremental changes are **not permitted**
+- configurations are [immutable](https://en.wikipedia.org/wiki/Immutable_object) - incremental changes are **not permitted**
 - configuration is either fully replaced (`configuration replace`) or the device is wiped clean and the new config is loaded upon reboot
 - devices' **current** state is continuously monitored and compared to the **desired** state
 - alerts are generated if any configuration changes resulting in deviation from the desired state are detected
