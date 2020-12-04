@@ -17,7 +17,7 @@ Network automation framework based on the following **GitOps** principles:
 
 ## Solution Components
 - [GitHub Actions self-hosted runners](https://docs.github.com/en/free-pro-team@latest/actions/hosting-your-own-runners/about-self-hosted-runners)
-- Ubuntu 20.04 Docker container
+- [Ubuntu 20.04 Docker container](https://hub.docker.com/_/ubuntu)
 - Docker engine
 - [Opengear OOB access server](https://opengear.com/products/om2200-operations-manager/)
 - [Unimus](https://unimus.net/)
