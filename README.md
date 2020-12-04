@@ -117,7 +117,7 @@ tar xzf ./actions-runner-linux-x64-<RUNNER_VERSION>.tar.gz
 ```
 python3
 import keyring
-keyring.set_password('<SYSTEM_NAME>', '<USERNAME', '<PASSWORD>')
+keyring.set_password('<SYSTEM_NAME>', '<USERNAME>', '<PASSWORD>')
 ```
 
 **Clone the repo and store GitHub credentials in Git**
