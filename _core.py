@@ -4,7 +4,7 @@
 
 import threading
 from netmiko import ConnectHandler
-from all_devices import core_switch as devices
+from _all_devices import core_switch as devices
 
 def task(a_device):
     # with open('config_file_core_switch') as f:
