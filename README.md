@@ -38,7 +38,7 @@ Network automation framework based on the following **GitOps** principles:
 - runtime testing (functional/integration/performance) in non-prod (if applicable)
 - pull request approval
 - merge pull request to update the Main branch
-- GitHub Actions workflow starts
+- GitHub Actions workflow is triggered
 - self-hosted runner runs the jobs
 - Python script is executed
 - static testing (syntax check/config verification) by the device OS
