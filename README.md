@@ -72,6 +72,13 @@ pip3 install keyring.alt
 pip3 install netmiko  
 ```
 
+**Store and encrypt device login credentials**
+```
+python3
+import keyring
+keyring.set_password('<SYSTEM_NAME>', '<USERNAME>', '<PASSWORD>')
+```
+
 **Install TFTP server**
 ```
 apt install tftpd-hpa
@@ -113,13 +120,6 @@ mkdir actions-runner && cd actions-runner
 ```
 curl -O -L https://github.com/actions/runner/releases/download/v<RUNNER_VERSION>/actions-runner-linux-x64-<RUNNER_VERSION>.tar.gz
 tar xzf ./actions-runner-linux-x64-<RUNNER_VERSION>.tar.gz
-```
-
-**Store and encrypt device login credentials**
-```
-python3
-import keyring
-keyring.set_password('<SYSTEM_NAME>', '<USERNAME>', '<PASSWORD>')
 ```
 
 **Clone the repo and store GitHub credentials in Git**
