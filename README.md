@@ -34,7 +34,9 @@ Network automation framework based on the following **GitOps** principles:
 - modify the device configuration files(s)
 - commit changes to the new branch and push to origin
 - create a pull request to submit proposed changes
-- pull request review/approval
+- pull request review
+- testing in non-prod (if applicable)
+- pull request approval
 - merge pull request to update the Main branch
 - delete the new branch
 - GitHub Actions workflow starts
