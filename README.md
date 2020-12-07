@@ -72,6 +72,12 @@ pip3 install keyring.alt
 pip3 install netmiko  
 ```
 
+**Create a new user**
+```
+adduser siteadmin
+su siteadmin
+```
+
 **Store and encrypt device login credentials**
 ```
 python3
@@ -109,10 +115,8 @@ apt install gh
 gh auth login (GitHub.com > Paste an authentication token > <TOKEN> > HTTPS)
 ```
 
-**Create a new user and download a GitHub Actions self-hosted agent**
+**Download the GitHub Actions self-hosted agent**
 ```
-adduser siteadmin
-su siteadmin
 cd home/siteadmin/
 mkdir actions-runner && cd actions-runner
 ```
