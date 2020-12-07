@@ -35,13 +35,14 @@ Network automation framework based on the following **GitOps** principles:
 - commit changes to the new branch and push to origin
 - create a pull request to submit proposed changes
 - pull request review
-- testing in non-prod (if applicable)
+- runtime testing (functional/integration/performance) in non-prod (if applicable)
 - pull request approval
 - merge pull request to update the Main branch
 - delete the new branch
 - GitHub Actions workflow starts
 - self-hosted runner runs the jobs
 - Python script is executed
+- static testing (syntax check/config verification) by the device OS
 - devices' configuration is replaced
 - Unimus continuously audits device configs and generates change-based alerts
 
