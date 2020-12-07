@@ -28,13 +28,13 @@ Network automation framework based on the following **GitOps** principles:
 **Workflow diagram**
 ![](/diagram-network-automation-github-actions.png)
 
-**Workflow steps using GitHub Desktop**  
+**Workflow steps**  
 - clone this repo
 - create a new branch and publish it
 - modify the device configuration files(s)
 - commit changes to the new branch and push to origin
 - create a pull request to submit proposed changes
-- pull request review
+- pull request peer review
 - runtime testing (functional/integration/performance) in non-prod (if applicable)
 - pull request approval
 - merge pull request to update the Main branch
