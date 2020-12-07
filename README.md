@@ -39,7 +39,7 @@ Network automation framework based on the following **GitOps** principles:
 - pull request approval
 - merge pull request to update the Main branch
 - GitHub Actions workflow is triggered
-- self-hosted runner runs the jobs
+- self-hosted runner starts running the job(s)
 - Python script is executed
 - static testing (syntax check/config verification) by the device OS
 - devices' configuration is replaced
