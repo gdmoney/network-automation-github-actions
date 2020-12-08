@@ -33,7 +33,7 @@ Network automation framework based on the following **[GitOps](https://www.gitop
 - create a new branch and publish it
 - modify the device configuration files(s)
 - commit changes to the new branch and push to origin
-- create a pull request to submit proposed changes
+- create a pull request to submit proposed change(s)
 - pull request peer review
 - runtime testing (functional/integration/performance) in non-prod (if applicable)
 - pull request approval
