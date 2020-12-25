@@ -20,7 +20,7 @@ Network automation framework based on the following **[GitOps](https://www.gitop
 - [Ubuntu 20.04 Docker container](https://hub.docker.com/_/ubuntu)
 - Docker engine
 - [Opengear OOB access server](https://opengear.com/products/om2200-operations-manager/)
-- [Unimus](https://unimus.net/)
+- [Unimus network automation tool](https://unimus.net/)
 - [Netmiko Python library](https://github.com/ktbyers/netmiko)
 
 
