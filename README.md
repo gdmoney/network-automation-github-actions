@@ -128,14 +128,14 @@ tar xzf ./actions-runner-linux-x64-<RUNNER_VERSION>.tar.gz
 
 **Clone the repo and store GitHub credentials in Git**
 ```
-git clone https://github.com/Davitiani/network-automation-github-actions.git
+git clone https://github.com/gdmoney/network-automation-github-actions.git
 git config --global credential.helper store
 ```
 
 **Configure and run the GitHub Actions self-hosted agent**  
 - *Get the token from: github.com > repo > Settings > Actions > Add runner*  
 ```
-./config.sh --url https://github.com/Davitiani/network-automation-github-actions --token <TOKEN>
+./config.sh --url https://github.com/gdmoney/network-automation-github-actions --token <TOKEN>
 ./run.sh
 
 Connected to GitHub
