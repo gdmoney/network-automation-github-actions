@@ -2,8 +2,12 @@
 # sudo pip3 install --upgrade pip
 # sudo pip3 install netmiko
 
+import importlib
 import threading
 from netmiko import ConnectHandler
+
+import _all_devices
+importlib.reload(_all_devices)
 from _all_devices import router_1 as devices
 
 def task(a_device):
