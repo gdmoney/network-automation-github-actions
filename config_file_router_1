@@ -126,8 +126,6 @@ interface GigabitEthernet0
 interface Vlan1
  no ip address
 !
-interface Dialer1
-!
 router ospf 1
  router-id 169.254.1.1
  passive-interface default

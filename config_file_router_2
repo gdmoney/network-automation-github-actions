@@ -37,6 +37,8 @@ crypto pki trustpoint TP-self-signed-2157498849
  revocation-check none
  rsakeypair TP-self-signed-2157498849
 !
+crypto pki certificate chain TP-self-signed-2157498849
+!
 license udi pid ISR4431/K9 sn FOC230274YQ
 diagnostic bootup level minimal
 spanning-tree extend system-id
