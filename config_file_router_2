@@ -31,14 +31,13 @@ subscriber templating
 !
 multilink bundle-name authenticated
 !
-crypto pki trustpoint TP-self-signed-1257261861
+crypto pki trustpoint TP-self-signed-2157498849
  enrollment selfsigned
- subject-name cn=IOS-Self-Signed-Certificate-1257261861
+ subject-name cn=IOS-Self-Signed-Certificate-2157498849
  revocation-check none
- rsakeypair TP-self-signed-1257261861
+ rsakeypair TP-self-signed-2157498849
 !
-!
-crypto pki certificate chain TP-self-signed-1257261861
+crypto pki certificate chain TP-self-signed-2157498849
 !
 license udi pid ISR4431/K9 sn FOC230274YQ
 diagnostic bootup level minimal
