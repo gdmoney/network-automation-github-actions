@@ -185,6 +185,7 @@ line con 0
  stopbits 1
 line aux 0
  stopbits 1
+ no login
 line vty 0 4
  session-timeout 20 
  access-class SSH in
