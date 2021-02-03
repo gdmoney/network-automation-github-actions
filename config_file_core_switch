@@ -677,6 +677,7 @@ interface Vlan20
 !
 router ospf 1
  router-id 169.254.1.10
+ redistribute static
  passive-interface default
  no passive-interface Port-channel1
  no passive-interface Port-channel2
