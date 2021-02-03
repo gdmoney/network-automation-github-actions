@@ -4,7 +4,7 @@ service timestamps log datetime msec localtime
 platform qfp utilization monitor load 80
 no platform punt-keepalive disable-kernel-core
 !
-hostname ROUTER_4
+hostname ROUTER_6
 !
 boot-start-marker
 boot-end-marker
