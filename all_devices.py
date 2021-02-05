@@ -75,11 +75,11 @@ SWITCH_ACCESS_6 = {
     'default_enter': '\r\n'
     }
 
-router_1 = [
+r_1 = [
         ROUTER_1
         ]
 
-router_2 = [
+r_2 = [
         ROUTER_1
         ]
 
