@@ -4,7 +4,7 @@
 
 import threading
 from netmiko import ConnectHandler
-from _all_devices import r_1 as devices
+from _all_devices import router_1 as devices
 
 def task(a_device):
     # with open('config_file_router_1') as f:
