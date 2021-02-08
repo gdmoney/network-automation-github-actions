@@ -69,7 +69,7 @@ apt install tftpd-hpa
 apt install vim
 
 pip3 install --upgrade pip
-pip3 install --upgrade keyrings.alt
+pip3 install keyring
 pip3 install netmiko
 ```
 
@@ -82,7 +82,7 @@ su siteadmin
 **Store and encrypt device login credentials**
 ```
 python3
-import keyrings
+import keyring
 keyring.set_password('<SYSTEM_NAME>', '<USERNAME>', '<PASSWORD>')
 
 keyring.get_password('cisco', 'siteadmin')
