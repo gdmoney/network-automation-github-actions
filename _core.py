@@ -1,7 +1,3 @@
-# apt install python3-pip
-# sudo pip3 install --upgrade pip
-# sudo pip3 install netmiko
-
 import threading
 from netmiko import ConnectHandler
 from _all_devices import core_switch as devices
