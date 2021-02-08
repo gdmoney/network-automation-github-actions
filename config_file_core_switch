@@ -5,7 +5,7 @@ service timestamps log datetime msec localtime
 service call-home
 no platform punt-keepalive disable-kernel-core
 !
-hostname SWITCH_CORE2
+hostname SWITCH_CORE
 !
 vrf definition Mgmt-vrf
  !
@@ -106,6 +106,8 @@ crypto pki trustpoint TP-self-signed-1349214491
 crypto pki certificate chain SLA-TrustPoint
 !
 crypto pki certificate chain TP-self-signed-1349214491
+!
+crypto pki certificate pool
 !
 license boot level network-advantage addon dna-advantage
 license smart url default
