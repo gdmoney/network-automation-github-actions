@@ -68,7 +68,7 @@ apt install software-properties-common
 apt install vim
 
 pip3 install --upgrade pip
-pip3 install keyring.alt
+pip3 install --upgrade keyrings.alt
 pip3 install netmiko
 ```
 
