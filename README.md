@@ -125,16 +125,12 @@ git clone https://github.com/gdmoney/network-automation-github-actions.git
 git config --global credential.helper store
 ```
 
-**Download the GitHub Actions self-hosted agent**
-- *Get the runner version from: github.com > repo > Settings > Actions > Add runner*  
+**Download, extract, configure, and run the GitHub Actions self-hosted agent**
+- *Get the runner version and token from: github.com > repo > Settings > Actions > Add runner*  
 ```
 curl -O -L https://github.com/actions/runner/releases/download/v<RUNNER_VERSION>/actions-runner-linux-x64-<RUNNER_VERSION>.tar.gz
 tar xzf ./actions-runner-linux-x64-<RUNNER_VERSION>.tar.gz
-```
 
-**Configure and run the GitHub Actions self-hosted agent**  
-- *Get the token from: github.com > repo > Settings > Actions > Add runner*  
-```
 ./config.sh --url https://github.com/gdmoney/network-automation-github-actions --token <TOKEN>
 ./run.sh
 
