@@ -105,11 +105,9 @@ apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
 apt-add-repository https://cli.github.com/packages
 apt update
 apt install gh
-```
-- *Create a Personal Access Token: github.com > profile pic > Settings > Developer settings > Personal access tokens > Generate new token*  
-```
 gh auth login (GitHub.com > Paste an authentication token > <TOKEN> > HTTPS)
 ```
+- *Create a Personal Access Token: github.com > profile pic > Settings > Developer settings > Personal access tokens > Generate new token*  
 
 **Create a new user**
 ```
