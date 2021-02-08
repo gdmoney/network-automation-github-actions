@@ -82,7 +82,7 @@ su siteadmin
 **Store and encrypt device login credentials**
 ```
 python3
-import keyring
+import keyrings
 keyring.set_password('<SYSTEM_NAME>', '<USERNAME>', '<PASSWORD>')
 
 keyring.get_password('cisco', 'siteadmin')
