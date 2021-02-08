@@ -61,15 +61,15 @@ apt update
 apt upgrade
 
 apt install apt-utils
-apt install curl 
-apt install git  
+apt install curl
+apt install git
 apt install python3-pip
 apt install software-properties-common
 apt install vim
 
-pip3 install --upgrade pip  
-pip3 install keyring.alt  
-pip3 install netmiko  
+pip3 install --upgrade pip
+pip3 install keyring.alt
+pip3 install netmiko
 ```
 
 **Create a new user**
