@@ -15,5 +15,5 @@ jobs:
       run: |
         cd /home/siteadmin/actions-runner/network-automation-github-actions
         git pull
-        # python3 _core.py
+        python3 _core.py
         cd ..
