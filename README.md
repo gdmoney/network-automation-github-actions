@@ -92,11 +92,6 @@ TFTP_USERNAME="siteadmin"
 TFTP_DIRECTORY="/home/siteadmin/actions-runner/network-automation-github-actions"
 TFTP_ADDRESS=":69"
 TFTP_OPTIONS="--secure"
-
-/etc/init.d/tftpd-hpa start
-/etc/init.d/tftpd-hpa restart
-
-service --status-all
 ```
 
 **Install [GitHub CLI](https://github.com/cli/cli/blob/trunk/docs/install_linux.md)**
@@ -128,6 +123,16 @@ tar xzf ./actions-runner-linux-x64-<RUNNER_VERSION>.tar.gz
 ```
 git clone https://github.com/gdmoney/network-automation-github-actions.git
 git config --global credential.helper store
+```
+
+**Start the TFTP service as root**
+```
+exit
+/etc/init.d/tftpd-hpa start
+service --status-all
+
+su siteadmin
+cd /home/siteadmin/actions-runner/
 ```
 
 **Configure and run the GitHub Actions self-hosted agent**  
