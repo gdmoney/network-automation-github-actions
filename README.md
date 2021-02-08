@@ -83,17 +83,6 @@ keyring.set_password('<SYSTEM_NAME>', '<USERNAME>', '<PASSWORD>')
 keyring.get_password('cisco', 'siteadmin')
 ```
 
-**Configure TFTP server**
-```
-cat /etc/default/tftpd-hpa
-vi /etc/default/tftpd-hpa
-
-TFTP_USERNAME="siteadmin"
-TFTP_DIRECTORY="/home/siteadmin/actions-runner/network-automation-github-actions"
-TFTP_ADDRESS=":69"
-TFTP_OPTIONS="--secure"
-```
-
 **Install [GitHub CLI](https://github.com/cli/cli/blob/trunk/docs/install_linux.md)**
 - *Create a Personal Access Token: github.com > profile pic > Settings > Developer settings > Personal access tokens > Generate new token: repo, read:org*
 ```
@@ -125,9 +114,17 @@ git clone https://github.com/gdmoney/network-automation-github-actions.git
 git config --global credential.helper store
 ```
 
-**Start the TFTP service as root**
+**Configure and start the TFTP service as root**
 ```
 exit
+cat /etc/default/tftpd-hpa
+vi /etc/default/tftpd-hpa
+
+TFTP_USERNAME="siteadmin"
+TFTP_DIRECTORY="/home/siteadmin/actions-runner/network-automation-github-actions"
+TFTP_ADDRESS=":69"
+TFTP_OPTIONS="--secure"
+
 /etc/init.d/tftpd-hpa start
 service --status-all
 
