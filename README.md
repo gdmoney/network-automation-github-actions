@@ -100,13 +100,13 @@ service --status-all
 ```
 
 **Install [GitHub CLI](https://github.com/cli/cli/blob/trunk/docs/install_linux.md)**
-- *Create a Personal Access Token: github.com > profile pic > Settings > Developer settings > Personal access tokens > Generate new token*  
+- *Create a Personal Access Token: github.com > profile pic > Settings > Developer settings > Personal access tokens > Generate new token: repo, read:org*
 ```
 apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
 apt-add-repository https://cli.github.com/packages
 apt update
 apt install gh
-gh auth login (GitHub.com > Paste an authentication token > <TOKEN> > HTTPS)
+gh auth login (GitHub.com > Paste an authentication token > <TOKEN> > HTTPS > Y)
 ```
 
 **Create a new user**
