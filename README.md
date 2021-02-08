@@ -77,7 +77,6 @@ pip3 install netmiko
 ```
 python3
 import keyring
-import cryptography
 keyring.set_password('<SYSTEM_NAME>', '<USERNAME>', '<PASSWORD>')
 
 keyring.get_password('cisco', 'siteadmin')
