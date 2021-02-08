@@ -108,7 +108,7 @@ curl -O -L https://github.com/actions/runner/releases/download/v<RUNNER_VERSION>
 tar xzf ./actions-runner-linux-x64-<RUNNER_VERSION>.tar.gz
 ```
 
-**Clone the repo and store GitHub credentials in Git**
+**Clone this repo and store GitHub credentials in Git**
 ```
 git clone https://github.com/gdmoney/network-automation-github-actions.git
 git config --global credential.helper store
