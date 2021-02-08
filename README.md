@@ -100,6 +100,7 @@ service --status-all
 ```
 
 **Install [GitHub CLI](https://github.com/cli/cli/blob/trunk/docs/install_linux.md)**
+- *Create a Personal Access Token: github.com > profile pic > Settings > Developer settings > Personal access tokens > Generate new token*  
 ```
 apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
 apt-add-repository https://cli.github.com/packages
@@ -107,7 +108,6 @@ apt update
 apt install gh
 gh auth login (GitHub.com > Paste an authentication token > <TOKEN> > HTTPS)
 ```
-- *Create a Personal Access Token: github.com > profile pic > Settings > Developer settings > Personal access tokens > Generate new token*  
 
 **Create a new user**
 ```
@@ -118,11 +118,11 @@ mkdir actions-runner && cd actions-runner
 ```
 
 **Download the GitHub Actions self-hosted agent**
+- *Get the runner version from: github.com > repo > Settings > Actions > Add runner*  
 ```
 curl -O -L https://github.com/actions/runner/releases/download/v<RUNNER_VERSION>/actions-runner-linux-x64-<RUNNER_VERSION>.tar.gz
 tar xzf ./actions-runner-linux-x64-<RUNNER_VERSION>.tar.gz
 ```
-- *Get the runner version from: github.com > repo > Settings > Actions > Add runner*  
 
 **Clone the repo and store GitHub credentials in Git**
 ```
