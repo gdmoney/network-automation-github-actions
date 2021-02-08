@@ -80,7 +80,7 @@ router_1 = [
         ]
 
 router_2 = [
-        ROUTER_1
+        ROUTER_2
         ]
 
 core_switch = [
