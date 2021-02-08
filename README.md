@@ -65,6 +65,7 @@ apt install curl
 apt install git
 apt install python3-pip
 apt install software-properties-common
+apt install tftpd-hpa
 apt install vim
 
 pip3 install --upgrade pip
@@ -87,10 +88,8 @@ keyring.set_password('<SYSTEM_NAME>', '<USERNAME>', '<PASSWORD>')
 keyring.get_password('cisco', 'siteadmin')
 ```
 
-**Install TFTP server**
+**Configure TFTP server**
 ```
-apt install tftpd-hpa
-
 cat /etc/default/tftpd-hpa
 vi /etc/default/tftpd-hpa
 
