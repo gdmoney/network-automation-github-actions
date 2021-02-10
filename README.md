@@ -47,8 +47,9 @@ Network automation framework based on the following **[GitOps](https://www.gitop
 
 
 ## Build
-**Download and install Ubuntu**
+**Download and run Ubuntu on Opengear**
 ```
+sudo -i
 docker pull ubuntu
 docker run -it ubuntu
 docker ps
