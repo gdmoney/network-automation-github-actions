@@ -3,6 +3,7 @@ service timestamps debug datetime msec localtime
 service timestamps log datetime msec localtime
 platform qfp utilization monitor load 80
 no platform punt-keepalive disable-kernel-core
+platform hardware throughput level 1000000
 !
 hostname ROUTER_1
 !
