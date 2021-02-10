@@ -40,6 +40,7 @@ crypto pki trustpoint TP-self-signed-2157498849
 crypto pki certificate chain TP-self-signed-2157498849
 !
 license udi pid ISR4431/K9 sn FOC230274YQ
+license accept end user agreement
 diagnostic bootup level minimal
 spanning-tree extend system-id
 archive
