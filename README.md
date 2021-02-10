@@ -67,6 +67,7 @@ apt install python3-pip
 apt install software-properties-common
 apt install tftpd-hpa
 apt install vim
+apt install wget
 
 pip3 install --upgrade pip
 pip3 install keyring
