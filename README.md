@@ -72,6 +72,7 @@ apt install wget
 
 pip3 install --upgrade pip
 pip3 install keyring
+pip3 install keyrings.alt
 pip3 install netmiko
 ```
 
