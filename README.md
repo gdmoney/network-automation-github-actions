@@ -103,11 +103,11 @@ adduser siteadmin
 su siteadmin
 cd home/siteadmin/
 mkdir actions-runner
+exit
 ```
 
 **Configure and start the TFTP service as root**
 ```
-exit
 cat /etc/default/tftpd-hpa
 vi /etc/default/tftpd-hpa
 
