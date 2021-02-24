@@ -80,7 +80,7 @@ pip3 install netmiko
 - *Create a Personal Access Token: github.com > profile pic > Settings > Developer settings > Personal access tokens > Generate new token: repo, read:org*
 ```
 apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
-or
+-or-
 apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-key C99B11DEB97541F0
 apt-add-repository https://cli.github.com/packages
 apt update
