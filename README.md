@@ -133,7 +133,7 @@ git config --global credential.helper store
 ```
 
 **Download, extract, configure, and run the GitHub Actions self-hosted agent**
-- *Get the runner version and token from: github.com > repo > Settings > Actions > Add runner*  
+- *Get the runner version and the token from: github.com > repo > Settings > Actions > Add runner*  
 ```
 curl -O -L https://github.com/actions/runner/releases/download/v<RUNNER_VERSION>/actions-runner-linux-x64-<RUNNER_VERSION>.tar.gz
 tar xzf ./actions-runner-linux-x64-<RUNNER_VERSION>.tar.gz
