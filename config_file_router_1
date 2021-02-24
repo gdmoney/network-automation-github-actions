@@ -5,7 +5,7 @@ platform qfp utilization monitor load 80
 no platform punt-keepalive disable-kernel-core
 platform hardware throughput level 1000000
 !
-hostname ROUTER_11
+hostname ROUTER_1
 !
 boot-start-marker
 boot-end-marker
