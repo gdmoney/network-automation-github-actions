@@ -103,6 +103,8 @@ adduser siteadmin
 su siteadmin
 cd home/siteadmin/
 mkdir actions-runner
+cd actions-runner
+mkdir network-automation-github-actions
 exit
 ```
 
