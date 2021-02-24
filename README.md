@@ -76,15 +76,6 @@ pip3 install keyrings.alt
 pip3 install netmiko
 ```
 
-**Store and encrypt device login credentials**
-```
-python3
-import keyring
-keyring.set_password('<SYSTEM_NAME>', '<USERNAME>', '<PASSWORD>')
-
-keyring.get_password('cisco', 'siteadmin')
-```
-
 **Install [GitHub CLI](https://github.com/cli/cli/blob/trunk/docs/install_linux.md)**
 - *Create a Personal Access Token: github.com > profile pic > Settings > Developer settings > Personal access tokens > Generate new token: repo, read:org*
 ```
@@ -97,7 +88,7 @@ apt install gh
 gh auth login (GitHub.com > HTTPS > n > Paste an authentication token)
 ```
 
-**Create a new user**
+**Create a new user and directories**
 ```
 adduser siteadmin
 su siteadmin
@@ -105,6 +96,17 @@ cd home/siteadmin/
 mkdir actions-runner
 cd actions-runner
 mkdir network-automation-github-actions
+```
+
+**Store and encrypt device login credentials**
+```
+python3
+import keyring
+keyring.set_password('<SYSTEM_NAME>', '<USERNAME>', '<PASSWORD>')
+
+keyring.get_password('cisco', 'siteadmin')
+quit()
+
 exit
 ```
 
