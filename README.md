@@ -35,7 +35,7 @@ Network automation framework based on the following **[GitOps](https://www.gitop
 - commit changes to the new branch and push to origin
 - create a pull request to submit proposed change(s)
 - pull request peer review
-- pre-deployment testing (functional/integration/performance) in non-prod (if applicable)
+- pre-deployment testing (functional/integration/performance) for complex and high risk changes
 - pull request approval
 - merge pull request to update the main branch
 - GitHub Actions workflow is triggered
