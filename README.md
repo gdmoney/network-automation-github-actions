@@ -36,8 +36,7 @@ Network automation framework based on the following **[GitOps](https://www.gitop
 - create a pull request to submit proposed change(s)
 - pull request peer review
 - pre-deployment testing (functional/integration/performance) for complex and high risk changes
-- pull request approval
-- merge pull request to update the main branch
+- pull request approval and merge based on validation tests
 - GitHub Actions workflow is triggered
 - self-hosted runner starts running the job(s)
 - Python script is executed
