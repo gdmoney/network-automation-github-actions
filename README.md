@@ -41,7 +41,7 @@ Network automation framework based on the following **[GitOps](https://www.gitop
 - GitHub Actions workflow is triggered
 - self-hosted runner starts running the job(s)
 - Python script is executed
-- static testing (syntax check/config validation) by the device OS
+- static testing (syntax check/config validation) by the device NOS
 - devices' configuration is replaced
 - Unimus continuously audits device configs and generates change-based alerts
 
