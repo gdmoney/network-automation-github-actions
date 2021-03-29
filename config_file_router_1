@@ -1,6 +1,7 @@
-version 16.6
+version 16.12
 service timestamps debug datetime msec localtime
 service timestamps log datetime msec localtime
+service call-home
 platform qfp utilization monitor load 80
 no platform punt-keepalive disable-kernel-core
 platform hardware throughput level 1000000
@@ -23,12 +24,22 @@ no aaa new-model
 clock timezone PST -8 0
 clock summer-time PDT recurring
 !
+call-home
+ ! If contact email address in call-home is configured as sch-smart-licensing@cisco.com
+ ! the email address configured in Cisco Smart License Portal will be used as contact email address to send SCH notifications.
+ contact-email-addr sch-smart-licensing@cisco.com
+ profile "CiscoTAC-1"
+  active
+  destination transport-method http
+  no destination transport-method email
+!
 ip name-server 8.8.8.8
 ip domain name event.tech
 ip domain lookup source-interface Port-channel1
 !
 login block-for 60 attempts 3 within 10
 login delay 3
+login on-success log
 !
 subscriber templating
 !
@@ -40,12 +51,20 @@ crypto pki trustpoint TP-self-signed-1257261861
  revocation-check none
  rsakeypair TP-self-signed-1257261861
 !
+crypto pki trustpoint SLA-TrustPoint
+ enrollment pkcs12
+ revocation-check crl
+!
 crypto pki certificate chain TP-self-signed-1257261861
 !
+license feature hseck9
 license udi pid ISR4431/K9 sn FOC230163PX
 license accept end user agreement
+!
+memory free low-watermark processor 67076
 diagnostic bootup level minimal
 spanning-tree extend system-id
+!
 archive
  log config
   logging enable
@@ -139,13 +158,13 @@ router ospf 1
  network 192.168.254.13 0.0.0.0 area 0
  default-information originate
 !
-ip nat pool NAT_POOL 12.9.181.113 12.9.181.114 prefix-length 30
-ip nat inside source list NAT_ACL pool NAT_POOL overload
 ip forward-protocol nd
 no ip http server
 no ip http secure-server
 ip http client source-interface Port-channel1
 ip tftp source-interface Port-channel1
+ip nat pool NAT_POOL 12.9.181.113 12.9.181.114 prefix-length 30
+ip nat inside source list NAT_ACL pool NAT_POOL overload
 ip route 0.0.0.0 0.0.0.0 100.64.1.1 track 10
 ip route 1.1.1.1 255.255.255.255 100.64.1.1
 ip route 4.2.2.2 255.255.255.255 100.64.1.1
@@ -165,15 +184,15 @@ ip access-list extended NAT_ACL
  permit ip 192.168.254.0 0.0.0.255 any
 ip sla 1
  icmp-echo 1.1.1.1 source-ip 192.168.254.1
- frequency 5
+  frequency 5
 ip sla schedule 1 life forever start-time now
 ip sla 2
  icmp-echo 4.2.2.2 source-ip 192.168.254.1
- frequency 5
+  frequency 5
 ip sla schedule 2 life forever start-time now
 ip sla 3
  icmp-echo 9.9.9.9 source-ip 192.168.254.1
- frequency 5
+  frequency 5
 ip sla schedule 3 life forever start-time now
 !
 control-plane
@@ -184,7 +203,6 @@ line con 0
  logging synchronous
  login local
  transport preferred none
- transport input none
  transport output ssh
  stopbits 1
 line aux 0
@@ -209,12 +227,5 @@ line vty 5 15
  transport output ssh
 !
 ntp server time.google.com
-wsma agent exec
-!
-wsma agent config
-!
-wsma agent filesys
-!
-wsma agent notify
 !
 end
