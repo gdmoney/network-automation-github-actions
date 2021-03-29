@@ -24,6 +24,7 @@ clock summer-time PDT recurring
 !
 ip name-server 8.8.8.8
 ip domain name event.tech
+ip domain lookup source-interface Port-channel1
 !
 login block-for 60 attempts 3 within 10
 login delay 3
