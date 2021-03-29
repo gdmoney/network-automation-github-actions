@@ -192,8 +192,8 @@ ip sla 2
   frequency 5
 ip sla schedule 2 life forever start-time now
 ip sla 3
-  icmp-echo 9.9.9.9 source-ip 192.168.254.5
- frequency 5
+ icmp-echo 9.9.9.9 source-ip 192.168.254.5
+  frequency 5
 ip sla schedule 3 life forever start-time now
 !
 control-plane
