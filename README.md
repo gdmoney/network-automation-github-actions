@@ -29,8 +29,7 @@ Network automation framework based on the following **[GitOps](https://www.gitop
 ![](/diagram-network-automation-github-actions.png)
 
 **Workflow steps**  
-- clone this repo
-- create a new branch and publish it
+- clone this repo, create a new branch and publish it
 - modify the device configuration files(s)
 - commit changes to the new branch and push to origin
 - create a pull request to submit proposed change(s)
