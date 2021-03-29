@@ -31,6 +31,7 @@ call-home
  source-interface Port-channel1
  profile "CiscoTAC-1"
   active
+  anonymous-reporting-only
   destination transport-method http
   no destination transport-method email
 !
