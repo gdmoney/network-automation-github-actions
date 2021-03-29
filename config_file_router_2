@@ -55,7 +55,6 @@ crypto pki trustpoint SLA-TrustPoint
  enrollment pkcs12
  revocation-check crl
 !
-!
 crypto pki certificate chain TP-self-signed-2157498849
 crypto pki certificate chain SLA-TrustPoint
  certificate ca 01
