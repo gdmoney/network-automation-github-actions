@@ -56,7 +56,6 @@ crypto pki trustpoint SLA-TrustPoint
  revocation-check crl
 !
 crypto pki certificate chain TP-self-signed-1257261861
-crypto pki certificate chain SLA-TrustPoint
 !
 license feature hseck9
 license udi pid ISR4431/K9 sn FOC230163PX
