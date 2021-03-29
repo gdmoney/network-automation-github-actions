@@ -34,8 +34,8 @@ call-home
   no destination transport-method email
 !
 ip name-server 8.8.8.8
-ip domain name event.tech
 ip domain lookup source-interface Port-channel1
+ip domain name event.tech
 !
 login block-for 60 attempts 3 within 10
 login delay 3
@@ -56,14 +56,11 @@ crypto pki trustpoint SLA-TrustPoint
  revocation-check crl
 !
 crypto pki certificate chain TP-self-signed-1257261861
+crypto pki certificate chain SLA-TrustPoint
 !
 license feature hseck9
 license udi pid ISR4431/K9 sn FOC230163PX
 license accept end user agreement
-!
-memory free low-watermark processor 67076
-diagnostic bootup level minimal
-spanning-tree extend system-id
 !
 archive
  log config
@@ -72,6 +69,10 @@ archive
  path tftp://192.168.255.5/$h
  write-memory
  time-period 1440
+!
+memory free low-watermark processor 67076
+diagnostic bootup level minimal
+spanning-tree extend system-id
 !
 username siteadmin privilege 15 secret 9 $9$8BxcXuyWur86w.$cNQlzKnWV8hxAc0yAITmD.5Zf4ruzOSMpDbKok/2ZbM
 !
@@ -175,13 +176,13 @@ ip ssh authentication-retries 2
 ip ssh version 2
 !
 ip access-list standard SSH
- permit 192.168.255.0 0.0.0.255
+ 10 permit 192.168.255.0 0.0.0.255
 !
 ip access-list extended NAT_ACL
- permit ip 10.10.0.0 0.0.7.255 any
- permit ip 10.20.0.0 0.0.7.255 any
- permit ip 192.168.255.0 0.0.0.255 any
- permit ip 192.168.254.0 0.0.0.255 any
+ 10 permit ip 10.10.0.0 0.0.7.255 any
+ 20 permit ip 10.20.0.0 0.0.7.255 any
+ 30 permit ip 192.168.255.0 0.0.0.255 any
+ 40 permit ip 192.168.254.0 0.0.0.255 any
 ip sla 1
  icmp-echo 1.1.1.1 source-ip 192.168.254.1
   frequency 5
