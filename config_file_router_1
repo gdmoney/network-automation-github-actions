@@ -28,6 +28,7 @@ call-home
  ! If contact email address in call-home is configured as sch-smart-licensing@cisco.com
  ! the email address configured in Cisco Smart License Portal will be used as contact email address to send SCH notifications.
  contact-email-addr sch-smart-licensing@cisco.com
+ source-interface Port-channel1
  profile "CiscoTAC-1"
   active
   destination transport-method http
