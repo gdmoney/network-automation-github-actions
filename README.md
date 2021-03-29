@@ -41,7 +41,7 @@ Network automation framework based on the following **[GitOps](https://www.gitop
 - Python script is executed
 - static testing (syntax check/config validation) by the device NOS
 - devices' configuration is replaced
-- Unimus continuously audits device configs and generates alerts if drift is detected
+- Unimus continuously audits devices' operational state and generates alerts if config drift is detected
 - *auto remediation by synchronizing the actual state to the desired state* - WIP
 
 
