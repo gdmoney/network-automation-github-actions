@@ -45,6 +45,9 @@ crypto pki trustpoint SLA-TrustPoint
  enrollment terminal
  revocation-check crl
 !
+crypto pki certificate chain SLA-TrustPoint
+crypto pki certificate pool
+!
 license boot level network-advantage addon dna-advantage
 license smart url default
 license smart transport smart
