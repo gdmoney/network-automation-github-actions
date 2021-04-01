@@ -444,10 +444,12 @@ interface TwentyFiveGigE1/1/1
 interface TwentyFiveGigE1/1/2
 !
 interface AppGigabitEthernet1/0/1
+ switchport mode trunk
 !
 interface Vlan1
  ip address dhcp client-id Vlan1
 !
+iox
 ip forward-protocol nd
 no ip http server
 no ip http secure-server
@@ -490,4 +492,13 @@ line vty 5 15
 !
 ntp server time.google.com
 !
+app-hosting appid netbeez
+ app-vnic AppGigabitEthernet trunk
+  vlan 10 guest-interface 0
+ app-resource docker
+  run-opts 1 "-e 'NB_SECRET_KEY=8c0e41c81cfc8cef9541685c183e44a68e94a73a' -v netbeez:/etc/netbeez/persistence/:rw"
+ app-resource profile custom
+  cpu 7400
+  memory 1000
+  persist-disk 4000
 end
