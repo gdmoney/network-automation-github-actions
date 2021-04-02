@@ -106,6 +106,7 @@ crypto pki trustpoint TP-self-signed-1349214491
 crypto pki certificate chain SLA-TrustPoint
 crypto pki certificate chain TP-self-signed-1349214491
 crypto pki certificate pool
+ cabundle nvram:ios_core.p7b
 !
 license boot level network-advantage addon dna-advantage
 license smart url default
