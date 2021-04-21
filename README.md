@@ -56,8 +56,7 @@ docker container attach <CONTAINER_ID>
 
 **Install required packages**
 ```
-apt update
-apt upgrade
+apt update && apt upgrade -y
 
 apt install apt-utils
 apt install curl
