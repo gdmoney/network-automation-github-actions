@@ -108,8 +108,7 @@ service --status-all
 
 **Clone this repo and store GitHub credentials in Git**
 ```
-su siteadmin
-cd /home/siteadmin/actions-runner/
+su siteadmin && cd /home/siteadmin/actions-runner/
 git clone https://github.com/gdmoney/network-automation-github-actions.git
 git config --global credential.helper store
 ```
