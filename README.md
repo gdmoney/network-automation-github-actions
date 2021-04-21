@@ -49,9 +49,7 @@ Network automation framework based on the following **[GitOps](https://www.gitop
 ```
 sudo -i
 docker pull ubuntu
-docker run -dit ubuntu
-docker ps
-docker container attach <CONTAINER_ID>
+docker run -it ubuntu
 ```
 
 **Install required packages**
