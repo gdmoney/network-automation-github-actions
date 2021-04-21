@@ -58,19 +58,10 @@ docker container attach <CONTAINER_ID>
 ```
 apt update && apt upgrade -y
 
-apt install apt-utils
-apt install curl
-apt install git
-apt install python3-pip
-apt install software-properties-common
-apt install tftpd-hpa
-apt install vim
-apt install wget
+apt install apt-utils curl git python3-pip tftpd-hpa vim wget -y
+apt install software-properties-common -y
 
-pip3 install --upgrade pip
-pip3 install keyring
-pip3 install keyrings.alt
-pip3 install netmiko
+pip3 install --upgrade pip keyring keyrings.alt netmiko
 ```
 
 **Install [GitHub CLI](https://github.com/cli/cli/blob/trunk/docs/install_linux.md)**
