@@ -78,12 +78,8 @@ gh auth login (GitHub.com > HTTPS > n > Paste an authentication token)
 
 **Create a new user and directories**
 ```
-adduser siteadmin
-su siteadmin
-cd home/siteadmin/
-mkdir actions-runner
-cd actions-runner
-mkdir network-automation-github-actions
+adduser siteadmin && su siteadmin
+mkdir /home/siteadmin/actions-runner && mkdir /home/siteadmin/actions-runner/network-automation-github-actions
 ```
 
 **Store and encrypt device login credentials**
