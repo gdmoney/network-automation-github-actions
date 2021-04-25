@@ -124,7 +124,7 @@ Connected to GitHub
 Listening for Jobs
 ```
 
-**Uninstall the agent**  
+**Uninstall the agent (optional)**
 - *Get the token from: github.com > repo > Settings > Actions > ... > Remove*
 ```
 ./config.sh remove --token <TOKEN>
