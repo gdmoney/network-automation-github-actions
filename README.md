@@ -24,7 +24,7 @@ Network automation framework based on the following **[GitOps](https://www.gitop
 
 
 ## Usage
-**Workflow diagram**
+**Architecture**
 ![](/diagram-network-automation-github-actions.png)
 
 **Workflow steps**  
