@@ -88,7 +88,6 @@ keyring.set_password('<SYSTEM_NAME>', '<USERNAME>', '<PASSWORD>')
 keyring.get_password('cisco', 'siteadmin')
 
 quit()
-
 exit
 ```
 
