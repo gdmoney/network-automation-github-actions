@@ -102,6 +102,8 @@ TFTP_ADDRESS=":69"
 TFTP_OPTIONS="--secure"
 
 /etc/init.d/tftpd-hpa start
+
+# verify TFTP service is running
 service --status-all
 ```
 
