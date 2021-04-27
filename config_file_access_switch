@@ -61,7 +61,6 @@ spanning-tree extend system-id
 archive
  path flash:
  write-memory
-!
 memory free low-watermark processor 134344
 !
 username siteadmin privilege 15 secret 9 $14$AofX$6sMZVA0kaJbn5E$jfkHIpPHnQbsbSajBPz/A5ExCD3Ox.jKDuL3NxvSM4g
