@@ -74,7 +74,7 @@ gh auth login (GitHub.com > HTTPS > n > Paste an authentication token)
 
 **Create a new user and directories**
 ```
-adduser siteadmin && su siteadmin
+useradd -ms /bin/bash siteadmin && su siteadmin
 mkdir /home/siteadmin/actions-runner && mkdir /home/siteadmin/actions-runner/network-automation-github-actions
 ```
 
