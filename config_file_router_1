@@ -65,12 +65,8 @@ license udi pid ISR4431/K9 sn FOC230163PX
 license accept end user agreement
 !
 archive
- log config
-  logging enable
-  notify syslog contenttype plaintext
- path tftp://192.168.255.5/$h
+ path flash:config
  write-memory
- time-period 1440
 !
 memory free low-watermark processor 67076
 diagnostic bootup level minimal
