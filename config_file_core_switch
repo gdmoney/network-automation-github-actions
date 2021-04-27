@@ -119,7 +119,7 @@ diagnostic bootup level minimal
 spanning-tree mode rapid-pvst
 spanning-tree extend system-id
 archive
- path flash:
+ path flash:config
  write-memory
 memory free low-watermark processor 134344
 !
