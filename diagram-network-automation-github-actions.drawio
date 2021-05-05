@@ -1,14 +1,14 @@
-<mxfile host="app.diagrams.net" modified="2021-05-05T20:54:42.243Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36" etag="KGJd7g23b-i4KVGIcp8A" version="14.6.10" type="github">
+<mxfile host="app.diagrams.net" modified="2021-05-05T21:03:27.211Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36" etag="Xa1tWK_CwBQM0dEbMzLB" version="14.6.10" type="github">
   <diagram id="ubtK0CXxR8o14yQeXOuR" name="Page-1">
-    <mxGraphModel dx="1193" dy="927" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
+    <mxGraphModel dx="988" dy="767" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="0di4GVNXK07yKZTkaitx-30" value="&lt;b&gt;commit/push&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="116" y="334" width="90" height="20" as="geometry" />
+          <mxGeometry x="120" y="336" width="80" height="20" as="geometry" />
         </mxCell>
         <mxCell id="0di4GVNXK07yKZTkaitx-31" value="&lt;b&gt;workflow&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="299" y="334" width="59" height="20" as="geometry" />
+          <mxGeometry x="299" y="336" width="59" height="20" as="geometry" />
         </mxCell>
         <mxCell id="0di4GVNXK07yKZTkaitx-32" value="device-1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;" parent="1" vertex="1">
           <mxGeometry x="919" y="320" width="100" height="20" as="geometry" />
@@ -26,16 +26,16 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="0di4GVNXK07yKZTkaitx-36" value="&lt;b&gt;deploy&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="850" y="334" width="40" height="20" as="geometry" />
+          <mxGeometry x="850" y="336" width="40" height="20" as="geometry" />
         </mxCell>
         <mxCell id="0di4GVNXK07yKZTkaitx-40" value="&lt;b&gt;Python code&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="751" y="402" width="80" height="20" as="geometry" />
         </mxCell>
         <mxCell id="0di4GVNXK07yKZTkaitx-41" value="&lt;b&gt;start job&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="466" y="334" width="62" height="20" as="geometry" />
+          <mxGeometry x="466" y="336" width="62" height="20" as="geometry" />
         </mxCell>
         <mxCell id="0di4GVNXK07yKZTkaitx-42" value="&lt;b&gt;run script&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="674" y="334" width="67" height="20" as="geometry" />
+          <mxGeometry x="674" y="336" width="67" height="20" as="geometry" />
         </mxCell>
         <mxCell id="0di4GVNXK07yKZTkaitx-11" value="GitHub Actions&lt;br&gt;self-hosted runner" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;" parent="1" vertex="1">
           <mxGeometry x="546" y="330" width="120" height="60" as="geometry" />
@@ -95,10 +95,10 @@
           <mxGeometry x="753.5" y="323" width="75" height="75" as="geometry" />
         </mxCell>
         <mxCell id="NPknkLC1WkhTkJsWbaCz-3" value="standard change" style="text;whiteSpace=wrap;fontStyle=2;fontSize=9;html=1;" parent="1" vertex="1">
-          <mxGeometry x="127.71000000000001" y="362" width="71.29" height="25.29" as="geometry" />
+          <mxGeometry x="127.71" y="355" width="71.29" height="20" as="geometry" />
         </mxCell>
         <mxCell id="NPknkLC1WkhTkJsWbaCz-4" value="normal change" style="text;fontStyle=2;fontSize=9;rotation=0;whiteSpace=wrap;" parent="1" vertex="1">
-          <mxGeometry x="108.99999999999997" y="178" width="66.29" height="25.29" as="geometry" />
+          <mxGeometry x="108.99999999999997" y="181" width="66.29" height="25.29" as="geometry" />
         </mxCell>
         <mxCell id="qhyrtXmqJ49Yqb2OUOIZ-4" value="" style="endArrow=classic;html=1;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
@@ -204,6 +204,15 @@
         </mxCell>
         <mxCell id="_H5GYCs3E-hNSazINAbS-11" value="&lt;b&gt;Slack&lt;br&gt;&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="204" y="603" width="90" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="_H5GYCs3E-hNSazINAbS-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;fontStyle=0" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="369" y="398" as="targetPoint" />
+            <mxPoint x="120" y="398" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_H5GYCs3E-hNSazINAbS-13" value="&lt;span&gt;manual trigger&lt;/span&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=0" vertex="1" parent="1">
+          <mxGeometry x="120" y="379" width="80" height="20" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
