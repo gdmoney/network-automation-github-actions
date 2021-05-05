@@ -24,10 +24,11 @@ Network automation framework based on the following **[GitOps](https://www.gitop
 - [Netmiko Python library](https://github.com/ktbyers/netmiko)
 
 
-## Usage
-**Architecture**
+## Architecture
 ![](/diagram-network-automation-github-actions.png)
 
+
+## Usage
 **Workflow steps**  
 - clone this repo, create a new branch and publish it
 - modify the device configuration files(s)
