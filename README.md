@@ -16,12 +16,12 @@ Network automation framework based on the following **[GitOps](https://www.gitop
 
 
 ## Solution Components
-- [GitHub Actions self-hosted runners](https://docs.github.com/en/free-pro-team@latest/actions/hosting-your-own-runners/about-self-hosted-runners)
-- [Ubuntu 20.04 Docker container](https://hub.docker.com/_/ubuntu)
-- [Opengear OOB access server](https://opengear.com/products/om2200-operations-manager/) running Docker Engine
-- [Unimus network automation tool](https://unimus.net/)
-- Slack
-- [Netmiko Python library](https://github.com/ktbyers/netmiko)
+- [GitHub Actions self-hosted runner](https://docs.github.com/en/actions/hosting-your-own-runners/about-self-hosted-runners) - runs the workflow job
+- [Ubuntu 20.04 Docker container](https://hub.docker.com/_/ubuntu) - runs the GH Actions runner and the TFTP server
+- [Opengear OOB access server](https://opengear.com/products/om2200-operations-manager/) - runs the Docker Engine
+- [Unimus network automation tool](https://unimus.net/) - backs up configs and monitors for drift
+- Slack - sends config change notirications
+- [Netmiko Python library](https://github.com/ktbyers/netmiko) - SSH into devices and replaces config
 
 
 ## Architecture
