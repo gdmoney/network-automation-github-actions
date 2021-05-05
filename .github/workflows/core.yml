@@ -6,6 +6,9 @@ on:
     - main
     paths:
     - 'config_file_core_switch'
+  workflow_dispatch:
+    branches:
+    - main
 
 jobs:
   deploy:

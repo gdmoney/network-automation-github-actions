@@ -6,6 +6,9 @@ on:
     - main
     paths:
     - 'config_file_router_2'
+  workflow_dispatch:
+    branches:
+    - main
 
 jobs:
   deploy:
