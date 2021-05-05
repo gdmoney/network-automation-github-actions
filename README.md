@@ -20,6 +20,7 @@ Network automation framework based on the following **[GitOps](https://www.gitop
 - [Ubuntu 20.04 Docker container](https://hub.docker.com/_/ubuntu)
 - [Opengear OOB access server](https://opengear.com/products/om2200-operations-manager/) running Docker Engine
 - [Unimus network automation tool](https://unimus.net/)
+- Slack
 - [Netmiko Python library](https://github.com/ktbyers/netmiko)
 
 
@@ -41,7 +42,7 @@ Network automation framework based on the following **[GitOps](https://www.gitop
 - static testing (syntax check/config validation) by the device NOS
 - devices' configuration is replaced
 - Unimus continuously audits devices' operational state and generates alerts if config drift is detected
-- *auto remediation by synchronizing devices' actual state to the desired state* - WIP
+- operator gets Slack notifications of config changes
 
 
 ## Build
