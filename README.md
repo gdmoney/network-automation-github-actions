@@ -43,7 +43,7 @@ Network automation framework based on the following **[GitOps](https://www.gitop
 - static testing (syntax check/config validation) by the device NOS
 - devices' configuration is replaced
 - Unimus continuously audits devices' operational state and generates alerts if config drift is detected
-- operator gets Slack notifications of config changes
+- operator gets a Slack notification describing the config change(s)
 
 
 ## Build
