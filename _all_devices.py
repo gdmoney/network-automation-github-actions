@@ -76,22 +76,22 @@ SWITCH_ACCESS_6 = {
     }
 
 router_1 = [
-        ROUTER_1
-        ]
+    ROUTER_1
+    ]
 
 router_2 = [
-        ROUTER_2
-        ]
+    ROUTER_2
+    ]
 
 core_switch = [
-        SWITCH_CORE
-        ]
+    SWITCH_CORE
+    ]
 
 access_switches = [
-        SWITCH_ACCESS_1,
-        SWITCH_ACCESS_2,
-        SWITCH_ACCESS_3,
-        SWITCH_ACCESS_4,
-        SWITCH_ACCESS_5,
-        SWITCH_ACCESS_6
-        ]
+    SWITCH_ACCESS_1,
+    SWITCH_ACCESS_2,
+    SWITCH_ACCESS_3,
+    SWITCH_ACCESS_4,
+    SWITCH_ACCESS_5,
+    SWITCH_ACCESS_6
+    ]
