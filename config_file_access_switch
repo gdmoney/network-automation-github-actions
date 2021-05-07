@@ -5,7 +5,7 @@ service timestamps log datetime msec localtime
 service call-home
 no platform punt-keepalive disable-kernel-core
 !
-hostname SWITCH_ACCESS
+hostname SWITCH_ACCESS_1
 !
 vrf definition Mgmt-vrf
  !
@@ -501,5 +501,3 @@ app-hosting appid netbeez
   memory 1000
   persist-disk 4000
 end
-!
-alias exec i show ip route
