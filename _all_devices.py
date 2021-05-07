@@ -93,5 +93,5 @@ access_switches = [
         SWITCH_ACCESS_3,
         SWITCH_ACCESS_4,
         SWITCH_ACCESS_5,
-        SWITCH_ACCESS_6,
+        SWITCH_ACCESS_6
         ]
