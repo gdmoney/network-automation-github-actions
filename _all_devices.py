@@ -75,17 +75,11 @@ SWITCH_ACCESS_6 = {
     'default_enter': '\r\n'
     }
 
-router_1 = [
-    ROUTER_1
-    ]
+router_1 = [ROUTER_1]
 
-router_2 = [
-    ROUTER_2
-    ]
+router_2 = [ROUTER_2]
 
-core_switch = [
-    SWITCH_CORE
-    ]
+core_switch = [SWITCH_CORE]
 
 access_switches = [
     SWITCH_ACCESS_1,
