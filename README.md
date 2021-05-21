@@ -33,7 +33,7 @@ Network automation framework based on the following **[GitOps](https://www.gitop
 - *Standard* change
   - clone this repo
   - modify the device configuration files(s)
-  - push directly to the mainline
+  - commit and push directly to the mainline
 - *Normal* change
   - clone this repo, create a new branch and publish it
   - modify the device configuration files(s)
