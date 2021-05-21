@@ -24,7 +24,7 @@ Network automation framework based on the following **[GitOps](https://www.gitop
 - [Netmiko Python library](https://github.com/ktbyers/netmiko) - SSH into devices and replaces config
 
 
-## Architecture
+## Reference Architecture
 ![](/diagram-network-automation-github-actions.png)
 
 
