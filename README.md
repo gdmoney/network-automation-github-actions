@@ -117,7 +117,7 @@ TFTP_OPTIONS="--secure"
 service --status-all
 ```
 
-**Clone this repo*
+**Clone this repo**
 ```
 su siteadmin && cd /home/siteadmin/actions-runner/
 git clone https://github.com/gdmoney/network-automation-github-actions.git
