@@ -76,7 +76,9 @@ apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-key C99B11DEB97541F
 apt-add-repository https://cli.github.com/packages
 apt update
 apt install gh
+
 gh auth login (GitHub.com > HTTPS > n > Paste an authentication token)
+
 git config --global credential.helper store
 ```
 
