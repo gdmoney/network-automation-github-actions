@@ -69,7 +69,7 @@ apt install software-properties-common -y
 pip3 install --upgrade pip keyring keyrings.alt netmiko
 ```
 
-**Install [GitHub CLI](https://github.com/cli/cli/blob/trunk/docs/install_linux.md)**
+**Install [GitHub CLI](https://github.com/cli/cli/blob/trunk/docs/install_linux.md), login to GitHub and store GH credentials in git**
 - *Create a Personal Access Token: github.com > profile pic > Settings > Developer settings > Personal access tokens > Generate new token: repo, read:org*
 ```
 apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-key C99B11DEB97541F0
@@ -77,6 +77,7 @@ apt-add-repository https://cli.github.com/packages
 apt update
 apt install gh
 gh auth login (GitHub.com > HTTPS > n > Paste an authentication token)
+git config --global credential.helper store
 ```
 
 **Create a new user and directories**
@@ -114,11 +115,10 @@ TFTP_OPTIONS="--secure"
 service --status-all
 ```
 
-**Clone this repo and store GitHub credentials in Git**
+**Clone this repo*
 ```
 su siteadmin && cd /home/siteadmin/actions-runner/
 git clone https://github.com/gdmoney/network-automation-github-actions.git
-git config --global credential.helper store
 ```
 
 **Download, extract, configure, and run the GitHub Actions self-hosted agent**
