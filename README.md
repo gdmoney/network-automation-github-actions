@@ -43,6 +43,7 @@ Network automation framework based on the following **[GitOps](https://www.gitop
   - pre-deployment testing (functional/integration/performance) for complex and high risk changes
   - pull request approval and merge based on validation test results
 - GitHub Actions workflow is triggered
+  - workflows can also be triggered manually via GH CLI (`gh workflow run <WORKFLOW_NAME>`) or via GUI from the repo's Actions page
 - self-hosted runner starts running the job(s)
 - Python script is executed
 - static testing (syntax check/config validation) by the device NOS
