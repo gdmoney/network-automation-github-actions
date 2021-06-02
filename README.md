@@ -33,7 +33,7 @@ Network automation framework based on the following **[GitOps](https://www.gitop
 - *Standard* change
   - clone this repo
   - modify the device configuration files(s)
-  - commit and push directly to the mainline
+  - commit and push directly to the main branch
 - *Normal* change
   - clone this repo, create a new branch and publish it
   - modify the device configuration files(s)
@@ -43,6 +43,7 @@ Network automation framework based on the following **[GitOps](https://www.gitop
   - pre-deployment testing (functional/integration/performance) for complex and high risk changes
   - pull request approval and merge based on validation test results
 - GitHub Actions workflow is triggered
+  - workflows can also be triggered manually via GH CLI (`gh workflow run <WORKFLOW_NAME>`) or GUI from the repo's Actions page on GH
 - self-hosted runner starts running the job(s)
 - Python script is executed
 - static testing (syntax check/config validation) by the device NOS
