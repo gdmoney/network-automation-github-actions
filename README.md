@@ -9,8 +9,8 @@ Network automation framework based on the following **[GitOps](https://www.gitop
 - all configuration changes are initiated via **Git** and are implemented programmatically via **GitHub Actions**
 - manual changes by directly modifying device configurations are **not permitted**
 - configurations are [immutable](https://en.wikipedia.org/wiki/Immutable_object) - incremental changes are **not permitted**
-- configuration is either fully replaced with `config replace` via **TFTP** or the device is wiped clean when powered off and the new config is loaded via **DHCP** upon reboot
-- rollbacks are simplfied with a single `git revert HEAD` command
+- configuration is either fully replaced (`config replace`) via **TFTP** or the device is wiped clean when powered off and the new config is loaded via **DHCP** upon reboot
+- rollbacks are simplfied with a single command (`git revert HEAD`)
 - devices' **actual** state is continuously monitored and compared to the **desired** state
 - alerts are generated if any configuration changes resulting in deviation from the desired state are detected
 - GitHub documents the entire history of past changes (who did what, when, and why) and all team communication (pull requests, issue tracking, comments)
