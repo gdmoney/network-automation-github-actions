@@ -5,7 +5,7 @@ service timestamps log datetime msec localtime
 service call-home
 no platform punt-keepalive disable-kernel-core
 !
-hostname SWITCH_CORE
+hostname SWITCH_CORE.1
 !
 vrf definition Mgmt-vrf
  !
