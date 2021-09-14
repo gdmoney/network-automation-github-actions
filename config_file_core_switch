@@ -43,7 +43,7 @@ ip dhcp excluded-address 192.168.255.1 192.168.255.20
 ip dhcp pool Net_Mgmt
  network 192.168.255.0 255.255.255.0
  bootfile config_file_desktop_switch
- next-server 172.17.0.2 
+ next-server 172.17.0.3
  default-router 192.168.255.1 
  dns-server 8.8.8.8 8.8.4.4 
  domain-name event.tech
