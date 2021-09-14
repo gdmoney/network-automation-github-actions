@@ -47,7 +47,7 @@ ip dhcp pool Net_Mgmt
  default-router 192.168.255.1 
  dns-server 8.8.8.8 8.8.4.4 
  domain-name event.tech
- lease 0 3
+ lease 0 2
 !
 ip dhcp pool Users
  network 10.10.0.0 255.255.240.0
