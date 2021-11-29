@@ -35,7 +35,7 @@ Network automation framework based on the following **[GitOps](https://www.gitop
   - clone this repo
   - modify the device configuration files(s)
   - commit and push directly to the main branch
-- *Normal* change - a moderate-risk change that requires review and approval before deployment
+- *Normal* change - a moderate-risk change that requires code review and approval before deployment
   - clone this repo, create a new branch and publish it
   - modify the device configuration files(s)
   - commit changes to the new branch and push to origin
