@@ -35,13 +35,13 @@ Network automation framework based on the following **[GitOps](https://www.gitop
   - clone this repo
   - modify the device configuration files(s)
   - commit and push directly to the main branch
-- *Normal* change - a moderate-risk change that requires code review and approval before deployment
+- *Normal* change - a moderate or high-risk change that requires code review and approval prior to deployment
   - clone this repo, create a new branch and publish it
   - modify the device configuration files(s)
   - commit changes to the new branch and push to origin
   - create a pull request to submit proposed change(s)
   - pull request peer review
-  - pre-deployment testing (functional/integration/performance) for complex and high risk changes
+  - pre-deployment testing (functional/integration/performance) for complex and high-risk changes
   - pull request approval and merge based on validation test results
 - GitHub Actions workflow is triggered
   - workflows can also be triggered manually via GH CLI (`gh workflow run <WORKFLOW_NAME>`) or GUI from the repo's Actions page on GH
