@@ -31,11 +31,11 @@ Network automation framework based on the following **[GitOps](https://www.gitop
 
 ## Usage
 **Workflow steps**  
-- *Standard* change
+- *Standard* change - a low-risk change that's pre-approved and follows documented, repeatable tasks
   - clone this repo
   - modify the device configuration files(s)
   - commit and push directly to the main branch
-- *Normal* change
+- *Normal* change - a moderate-risk change that requires review and approval before deployment
   - clone this repo, create a new branch and publish it
   - modify the device configuration files(s)
   - commit changes to the new branch and push to origin
