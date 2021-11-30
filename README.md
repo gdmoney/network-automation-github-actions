@@ -160,7 +160,6 @@ docker container inspect <CONTAINER ID>
 /etc/init.d/tftpd-hpa start
 service --status-all
 
-
 su siteadmin
 cd /home/siteadmin/actions-runner/
 ./run.sh
