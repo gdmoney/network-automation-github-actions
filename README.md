@@ -121,7 +121,8 @@ service --status-all
 
 **Clone this repo**
 ```
-su siteadmin && cd /home/siteadmin/actions-runner/
+su siteadmin
+cd /home/siteadmin/actions-runner/
 git clone https://github.com/gdmoney/network-automation-github-actions.git
 ```
 
