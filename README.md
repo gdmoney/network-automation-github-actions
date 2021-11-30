@@ -148,7 +148,7 @@ Listening for Jobs
 
 ## Troubleshooting
 **After container or Opengear restart**
-- *verify the container's IP address still matches what's in the code*
+- *Verify the container's IP address still matches what's in the code*
 ```
 sudo -i
 docker ps
