@@ -147,15 +147,15 @@ Listening for Jobs
 
 
 ## Troubleshooting
-**After container restart**
-- verify the container's IP address still matches what's in the code
+**After container or Opengear restart**
+- *verify the container's IP address still matches what's in the code*
 ```
 sudo -i
 docker ps
 docker container inspect <CONTAINER ID>
 ```
 
-- Restart TFTP service and the runner
+- *Restart TFTP service and the runner*
 ```
 /etc/init.d/tftpd-hpa start
 service --status-all
