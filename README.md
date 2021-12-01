@@ -152,7 +152,7 @@ Listening for Jobs
 ```
 sudo -i
 docker ps
-docker container inspect <CONTAINER ID>
+docker container inspect <CONTAINER ID> | grep IP
 ```
 
 - *Restart TFTP service and the runner*
