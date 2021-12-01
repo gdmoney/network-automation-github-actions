@@ -157,6 +157,8 @@ docker container inspect <CONTAINER ID>
 
 - *Restart TFTP service and the runner*
 ```
+docker container attach <CONTAINER ID>
+
 /etc/init.d/tftpd-hpa start
 service --status-all
 
