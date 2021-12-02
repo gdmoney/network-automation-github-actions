@@ -148,10 +148,12 @@ Listening for Jobs
 
 ## Troubleshooting
 **After container or Opengear restart**
-- *Verify the container's IP address still matches what's in the code*
+- *Start the containers and verify the Ubuntu container's IP address still matches what's in the code*
 ```
 sudo -i
 docker ps
+
+docker container start <CONTAINER ID>
 docker container inspect <CONTAINER ID> | grep IP
 ```
 
