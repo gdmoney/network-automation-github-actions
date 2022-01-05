@@ -157,7 +157,7 @@ docker container start <CONTAINER ID>
 docker container inspect <CONTAINER ID> | grep IP
 ```
 
-- *Restart TFTP service and the runner*
+- *Start the TFTP service and the runner*
 ```
 docker container attach <CONTAINER ID>
 
