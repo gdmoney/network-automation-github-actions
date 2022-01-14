@@ -157,7 +157,7 @@ docker container start <CONTAINER ID>
 docker container inspect <CONTAINER ID> | grep IP
 ```
 
-- *Start the TFTP service and the runner*
+- *Start the TFTP service and the GitHub Actions runner*
 ```
 docker container attach <CONTAINER ID>
 
