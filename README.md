@@ -65,7 +65,7 @@ docker run -it ubuntu
 ```
 apt update && apt upgrade -y
 
-apt install apt-utils curl git python3-pip tftpd-hpa vim wget -y
+apt install apt-utils curl git iputils-ping python3-pip tftpd-hpa vim wget -y
 apt install software-properties-common -y
 
 pip3 install --upgrade pip keyring keyrings.alt netmiko
