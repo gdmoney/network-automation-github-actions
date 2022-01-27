@@ -6,7 +6,7 @@ platform qfp utilization monitor load 80
 no platform punt-keepalive disable-kernel-core
 platform hardware throughput level 1000000
 !
-hostname ROUTER_2.1
+hostname ROUTER_2.2
 !
 boot-start-marker
 boot system flash isr4400-universalk9.16.12.05.SPA.bin
@@ -55,7 +55,7 @@ crypto pki trustpoint TP-self-signed-2157498849
 !
 crypto pki trustpoint SLA-TrustPoint
  enrollment terminal
- revocation-check crl
+ revocation-check none
 !
 crypto pki certificate chain TP-self-signed-2157498849
 crypto pki certificate chain SLA-TrustPoint
