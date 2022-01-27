@@ -6,7 +6,7 @@ platform qfp utilization monitor load 80
 no platform punt-keepalive disable-kernel-core
 platform hardware throughput level 1000000
 !
-hostname ROUTER_1.3
+hostname ROUTER_1.4
 !
 boot-start-marker
 boot system flash isr4400-universalk9.16.12.05.SPA.bin
@@ -87,6 +87,10 @@ crypto pki certificate chain SLA-TrustPoint
   418616A9 4093E049 4D10AB75 27E86F73 932E35B5 8862FDAE 0275156F 719BB2F0 
   D697DF7F 28
         quit
+!
+license feature hseck9
+license udi pid ISR4431/K9 sn FOC230163PX
+license accept end user agreement
 !
 archive
  path flash:config
