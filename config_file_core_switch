@@ -507,7 +507,7 @@ interface TenGigabitEthernet2/0/11
  description User
  switchport access vlan 10
  switchport mode access
- shutdown
+ no shutdown
  spanning-tree portfast
 !
 interface TenGigabitEthernet2/0/12
