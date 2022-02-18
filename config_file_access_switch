@@ -1,11 +1,10 @@
-version 16.12
-no service pad
+version 17.3
 service timestamps debug datetime msec localtime
 service timestamps log datetime msec localtime
 service call-home
 no platform punt-keepalive disable-kernel-core
 !
-hostname SWITCH_ACCESS
+hostname SWITCH_ACCESS.1
 !
 vrf definition Mgmt-vrf
  !
@@ -16,21 +15,10 @@ vrf definition Mgmt-vrf
  exit-address-family
 !
 no aaa new-model
-boot system switch all flash:cat9k_iosxe.16.12.04.SPA.bin
+boot system switch all flash:cat9k_iosxe.17.03.04.SPA.bin
 clock timezone PST -8 0
 clock summer-time PDT recurring
 switch 1 provision c9300-48uxm
-!
-call-home
- ! If contact email address in call-home is configured as sch-smart-licensing@cisco.com
- ! the email address configured in Cisco Smart License Portal will be used as contact email address to send SCH notifications.
- contact-email-addr sch-smart-licensing@cisco.com
- source-interface Vlan1
- profile "CiscoTAC-1"
-  active
-  anonymous-reporting-only
-  destination transport-method http
-  no destination transport-method email
 !
 ip name-server 8.8.8.8
 ip domain name event.tech
@@ -47,9 +35,11 @@ crypto pki trustpoint SLA-TrustPoint
 !
 crypto pki certificate chain SLA-TrustPoint
 crypto pki certificate pool
+ cabundle nvram:ios_core.p7b
 !
 license boot level network-advantage addon dna-advantage
 license smart url default
+license smart url smart https://smartreceiver.cisco.com/licservice/license
 license smart transport smart
 license smart privacy hostname
 license smart privacy version
@@ -73,13 +63,13 @@ transceiver type all
 lldp run
 !
 class-map match-any system-cpp-police-ewlc-control
-  description EWLC Control
+  description EWLC Control 
 class-map match-any system-cpp-police-topology-control
   description Topology control
 class-map match-any system-cpp-police-sw-forward
   description Sw forwarding, L2 LVX data packets, LOGGING, Transit Traffic
 class-map match-any system-cpp-default
-  description EWLC Data, Inter FED Traffic
+  description EWLC Data, Inter FED Traffic 
 class-map match-any system-cpp-police-sys-data
   description Openflow, Exception, EGR Exception, NFL Sampled Data, RPF Failed
 class-map match-any system-cpp-police-punt-webauth
@@ -91,7 +81,7 @@ class-map match-any system-cpp-police-forus
 class-map match-any system-cpp-police-multicast-end-station
   description MCAST END STATION
 class-map match-any system-cpp-police-high-rate-app
-  description High Rate Applications
+  description High Rate Applications 
 class-map match-any system-cpp-police-multicast
   description MCAST Data
 class-map match-any system-cpp-police-l2-control
@@ -466,14 +456,14 @@ control-plane
  service-policy input system-cpp-policy
 !
 line con 0
- session-timeout 10
+ session-timeout 10 
  logging synchronous
  login local
  transport preferred none
  transport output ssh
  stopbits 1
 line vty 0 4
- session-timeout 10
+ session-timeout 10 
  access-class SSH in
  logging synchronous
  login local
@@ -481,13 +471,26 @@ line vty 0 4
  transport input ssh
  transport output ssh
 line vty 5 15
- session-timeout 10
+ session-timeout 10 
  access-class SSH in
  logging synchronous
  login local
  transport preferred ssh
  transport input ssh
  transport output ssh
+line vty 16 31
+ no login
+ transport input ssh
+!
+call-home
+ ! If contact email address in call-home is configured as sch-smart-licensing@cisco.com
+ ! the email address configured in Cisco Smart License Portal will be used as contact email address to send SCH notifications.
+ contact-email-addr sch-smart-licensing@cisco.com
+ source-interface Vlan1
+ profile "CiscoTAC-1"
+  active
+  anonymous-reporting-only
+  destination transport-method http
 !
 ntp server time.google.com
 !
