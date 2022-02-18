@@ -20,7 +20,7 @@ clock timezone PST -8 0
 clock summer-time PDT recurring
 switch 1 provision c9300-48uxm
 !
-ip name-server 8.8.8.8
+ip name-server 1.1.1.1 9.9.9.9
 ip domain name event.tech
 !
 login block-for 60 attempts 3 within 10
