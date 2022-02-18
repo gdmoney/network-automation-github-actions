@@ -35,7 +35,7 @@ call-home
   destination transport-method http
   no destination transport-method email
 !
-ip name-server 8.8.8.8
+ip name-server 1.1.1.1 9.9.9.9
 ip domain lookup source-interface Port-channel1
 ip domain name event.tech
 !
