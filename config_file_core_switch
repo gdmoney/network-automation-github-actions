@@ -24,7 +24,7 @@ switch 2 provision c9300-24ux
 !
 ip routing
 !
-ip name-server 8.8.8.8
+ip name-server 1.1.1.1 9.9.9.9
 ip domain name event.tech
 ip dhcp excluded-address 10.10.0.1 10.10.0.20
 ip dhcp excluded-address 10.20.0.1 10.20.0.20
@@ -35,21 +35,21 @@ ip dhcp pool Net_Mgmt
  bootfile config_file_desktop_switch
  next-server 172.17.0.3
  default-router 192.168.255.1 
- dns-server 8.8.8.8 8.8.4.4 
+ dns-server 1.1.1.1 9.9.9.9
  domain-name event.tech
  lease 0 2
 !
 ip dhcp pool Users
  network 10.10.0.0 255.255.240.0
  default-router 10.10.0.1 
- dns-server 8.8.8.8 8.8.4.4 
+ dns-server 1.1.1.1 9.9.9.9
  domain-name event.tech
  lease 0 2
 !
 ip dhcp pool Video
  network 10.20.0.0 255.255.240.0
  default-router 10.20.0.1 
- dns-server 8.8.8.8 8.8.4.4 
+ dns-server 1.1.1.1 9.9.9.9
  domain-name event.tech
  lease 0 2
 !
