@@ -30,7 +30,7 @@ Network automation framework based on the following **[GitOps](https://www.gitop
 
 
 ## Usage
-**Workflow steps**  
+**Workflow steps**
 - *Standard* change - a low-risk change that's pre-approved and follows documented, repeatable tasks
   - clone this repo
   - modify the device configuration files(s)
