@@ -149,7 +149,7 @@ Listening for Jobs
 ## Troubleshooting
 **After container or Opengear restart**
 - *Start the containers*
-  - *start the Ubuntu container first so that it gets the .2*
+  - *start the Ubuntu container first so that it gets the .2 IP address*
 ```
 sudo -i
 docker container ls -a
