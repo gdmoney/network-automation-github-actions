@@ -148,7 +148,7 @@ Listening for Jobs
 
 ## Troubleshooting
 **After container or Opengear restart**
-- *Start the containers*
+- *Start Ubuntu and Unimus containers*
   - *start the Ubuntu container first so that it gets the .2 IP address*
 ```
 sudo -i
