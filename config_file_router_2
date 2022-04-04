@@ -60,6 +60,9 @@ crypto pki trustpoint SLA-TrustPoint
 crypto pki certificate chain TP-self-signed-2157498849
 crypto pki certificate chain SLA-TrustPoint
 !
+crypto pki certificate pool
+ cabundle nvram:ios_core.p7b
+!
 license feature hseck9
 license udi pid ISR4431/K9 sn FOC230274YQ
 license accept end user agreement
