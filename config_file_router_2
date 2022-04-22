@@ -136,9 +136,6 @@ interface GigabitEthernet0
  shutdown
  negotiation auto
 !
-interface Vlan1
- no ip address
-!
 router ospf 1
  router-id 169.254.1.2
  passive-interface default
@@ -188,7 +185,7 @@ ip sla schedule 3 life forever start-time now
 control-plane
 !
 line con 0
- session-timeout 20 
+ session-timeout 20
  exec-timeout 20 0
  logging synchronous
  login local
@@ -198,7 +195,7 @@ line con 0
 line aux 0
  stopbits 1
 line vty 0 4
- session-timeout 20 
+ session-timeout 20
  access-class SSH in
  exec-timeout 20 0
  logging synchronous
@@ -207,7 +204,7 @@ line vty 0 4
  transport input ssh
  transport output ssh
 line vty 5 15
- session-timeout 20 
+ session-timeout 20
  access-class SSH in
  exec-timeout 20 0
  logging synchronous
