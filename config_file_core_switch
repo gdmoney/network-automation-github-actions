@@ -34,21 +34,21 @@ ip dhcp pool Net_Mgmt
  network 192.168.255.0 255.255.255.0
  bootfile config_file_desktop_switch
  next-server 172.17.0.2
- default-router 192.168.255.1 
+ default-router 192.168.255.1
  dns-server 1.1.1.1 9.9.9.9
  domain-name event.tech
  lease 0 2
 !
 ip dhcp pool Users
  network 10.10.0.0 255.255.240.0
- default-router 10.10.0.1 
+ default-router 10.10.0.1
  dns-server 1.1.1.1 9.9.9.9
  domain-name event.tech
  lease 0 2
 !
 ip dhcp pool Video
  network 10.20.0.0 255.255.240.0
- default-router 10.20.0.1 
+ default-router 10.20.0.1
  dns-server 1.1.1.1 9.9.9.9
  domain-name event.tech
  lease 0 2
@@ -100,7 +100,6 @@ crypto pki certificate pool
  cabundle nvram:ios_core.p7b
 !
 license boot level network-advantage addon dna-advantage
-license smart url default
 license smart url smart https://smartreceiver.cisco.com/licservice/license
 license smart transport smart
 license smart privacy hostname
@@ -124,13 +123,13 @@ transceiver type all
  monitoring
 !
 class-map match-any system-cpp-police-ewlc-control
-  description EWLC Control 
+  description EWLC Control
 class-map match-any system-cpp-police-topology-control
   description Topology control
 class-map match-any system-cpp-police-sw-forward
   description Sw forwarding, L2 LVX data packets, LOGGING, Transit Traffic
 class-map match-any system-cpp-default
-  description EWLC Data, Inter FED Traffic 
+  description EWLC Data, Inter FED Traffic
 class-map match-any system-cpp-police-sys-data
   description Openflow, Exception, EGR Exception, NFL Sampled Data, RPF Failed
 class-map match-any system-cpp-police-punt-webauth
@@ -142,7 +141,7 @@ class-map match-any system-cpp-police-forus
 class-map match-any system-cpp-police-multicast-end-station
   description MCAST END STATION
 class-map match-any system-cpp-police-high-rate-app
-  description High Rate Applications 
+  description High Rate Applications
 class-map match-any system-cpp-police-multicast
   description MCAST Data
 class-map match-any system-cpp-police-l2-control
@@ -316,7 +315,7 @@ interface TenGigabitEthernet1/0/15
  switchport mode access
  shutdown
  spanning-tree portfast
-!         
+!
 interface TenGigabitEthernet1/0/16
  description Video
  switchport access vlan 20
@@ -640,7 +639,7 @@ interface TenGigabitEthernet2/1/7
 !
 interface TenGigabitEthernet2/1/8
  shutdown
-!         
+!
 interface FortyGigabitEthernet2/1/1
  shutdown
 !
@@ -698,22 +697,22 @@ ip access-list standard SSH
 ip access-list extended Video
  10 permit ip 10.20.0.0 0.0.7.255 any
 !
-route-map Video permit 10 
+route-map Video permit 10
  match ip address Video
  set ip next-hop 192.168.254.5
 !
 control-plane
- service-policy input system-cpp-policy      
+ service-policy input system-cpp-policy
 !
 line con 0
- session-timeout 10 
+ session-timeout 10
  logging synchronous
  login local
  transport preferred none
  transport output ssh
  stopbits 1
 line vty 0 4
- session-timeout 10 
+ session-timeout 10
  access-class SSH in
  logging synchronous
  login local
@@ -721,7 +720,7 @@ line vty 0 4
  transport input ssh
  transport output ssh
 line vty 5 15
- session-timeout 10 
+ session-timeout 10
  access-class SSH in
  logging synchronous
  login local
