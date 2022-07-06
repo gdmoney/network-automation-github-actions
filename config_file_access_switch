@@ -498,7 +498,6 @@ app-hosting appid netbeez
  app-vnic AppGigabitEthernet trunk
   vlan 10 guest-interface 0
  app-resource docker
-  run-opts 1 "-e 'NB_SECRET_KEY=8c0e41c81cfc8cef9541685c183e44a68e94a73a' -v netbeez:/etc/netbeez/persistence/:rw"
  app-resource profile custom
   cpu 7400
   memory 1000
