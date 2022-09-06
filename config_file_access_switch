@@ -263,38 +263,32 @@ interface TwoGigabitEthernet1/0/24
  spanning-tree portfast
 !
 interface TwoGigabitEthernet1/0/25
- switchport access vlan 10
- switchport mode access
+ switchport mode trunk
  power inline port 2-event
  spanning-tree portfast
 !
 interface TwoGigabitEthernet1/0/26
- switchport access vlan 10
- switchport mode access
+ switchport mode trunk
  power inline port 2-event
  spanning-tree portfast
 !
 interface TwoGigabitEthernet1/0/27
- switchport access vlan 10
- switchport mode access
+ switchport mode trunk
  power inline port 2-event
  spanning-tree portfast
 !
 interface TwoGigabitEthernet1/0/28
- switchport access vlan 10
- switchport mode access
+ switchport mode trunk
  power inline port 2-event
  spanning-tree portfast
 !
 interface TwoGigabitEthernet1/0/29
- switchport access vlan 10
- switchport mode access
+ switchport mode trunk
  power inline port 2-event
  spanning-tree portfast
 !
 interface TwoGigabitEthernet1/0/30
- switchport access vlan 10
- switchport mode access
+ switchport mode trunk
  power inline port 2-event
  spanning-tree portfast
 !
@@ -305,32 +299,27 @@ interface TwoGigabitEthernet1/0/31
  spanning-tree portfast
 !
 interface TwoGigabitEthernet1/0/32
- switchport access vlan 10
- switchport mode access
+ switchport mode trunk
  power inline port 2-event
  spanning-tree portfast
 !
 interface TwoGigabitEthernet1/0/33
- switchport access vlan 10
- switchport mode access
+ switchport mode trunk
  power inline port 2-event
  spanning-tree portfast
 !
 interface TwoGigabitEthernet1/0/34
- switchport access vlan 10
- switchport mode access
+ switchport mode trunk
  power inline port 2-event
  spanning-tree portfast
 !
 interface TwoGigabitEthernet1/0/35
- switchport access vlan 10
- switchport mode access
+ switchport mode trunk
  power inline port 2-event
  spanning-tree portfast
 !
 interface TwoGigabitEthernet1/0/36
- switchport access vlan 10
- switchport mode access
+ switchport mode trunk
  power inline port 2-event
  spanning-tree portfast
 !
