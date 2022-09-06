@@ -36,21 +36,21 @@ ip dhcp pool Net_Mgmt
  default-router 192.168.255.1
  dns-server 1.1.1.1 9.9.9.9
  domain-name event.tech
- lease 0 2
+ lease 8
 !
 ip dhcp pool Users
  network 10.10.0.0 255.255.240.0
  default-router 10.10.0.1
  dns-server 1.1.1.1 9.9.9.9
  domain-name event.tech
- lease 0 2
+ lease 0 8
 !
 ip dhcp pool Video
  network 10.20.0.0 255.255.240.0
  default-router 10.20.0.1
  dns-server 1.1.1.1 9.9.9.9
  domain-name event.tech
- lease 0 2
+ lease 0 8
 !
 ip dhcp pool SWITCH_ACCESS_1
  host 192.168.255.11 255.255.255.0
@@ -672,8 +672,8 @@ router ospf 1
  passive-interface default
  no passive-interface Port-channel1
  no passive-interface Port-channel2
- network 10.10.0.0 0.0.7.255 area 0
- network 10.20.0.0 0.0.7.255 area 0
+ network 10.10.0.0 0.0.15.255 area 0
+ network 10.20.0.0 0.0.15.255 area 0
  network 192.168.254.2 0.0.0.0 area 0
  network 192.168.254.6 0.0.0.0 area 0
  network 192.168.255.0 0.0.0.255 area 0
@@ -694,7 +694,7 @@ ip access-list standard SSH
  10 permit 192.168.255.0 0.0.0.255
 !
 ip access-list extended Video
- 10 permit ip 10.20.0.0 0.0.7.255 any
+ 10 permit ip 10.20.0.0 0.0.15.255 any
 !
 route-map Video permit 10
  match ip address Video
