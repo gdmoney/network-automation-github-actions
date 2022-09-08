@@ -293,8 +293,7 @@ interface TwoGigabitEthernet1/0/30
  spanning-tree portfast
 !
 interface TwoGigabitEthernet1/0/31
- switchport access vlan 10
- switchport mode access
+ switchport mode trunk
  power inline port 2-event
  spanning-tree portfast
 !
