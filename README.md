@@ -17,7 +17,7 @@ Network automation framework loosely based on **[GitOps](https://opengitops.dev/
 
 
 ## Solution Components
-- GitHub repository - stores device configurations
+- GitHub repository - source of truth for device configurations
 - [GitHub Actions self-hosted runner](https://docs.github.com/en/actions/hosting-your-own-runners/about-self-hosted-runners) - runs the workflow job
 - [Ubuntu 20.04 Docker container](https://hub.docker.com/_/ubuntu) - hosts the GitHub Actions runner and the TFTP server
 - [Opengear OOB access server](https://opengear.com/products/om2200-operations-manager/) - physical server running the Docker Engine
