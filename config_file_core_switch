@@ -351,17 +351,13 @@ interface TenGigabitEthernet1/0/20
  spanning-tree portfast
 !
 interface TenGigabitEthernet1/0/21
- description Video
- switchport access vlan 20
+ description Net_Mgmt
  switchport mode access
- shutdown
  spanning-tree portfast
 !
 interface TenGigabitEthernet1/0/22
- description Video
- switchport access vlan 20
+ description Net_Mgmt
  switchport mode access
- shutdown
  spanning-tree portfast
 !
 interface TenGigabitEthernet1/0/23
@@ -572,17 +568,13 @@ interface TenGigabitEthernet2/0/20
  spanning-tree portfast
 !
 interface TenGigabitEthernet2/0/21
- description Video
- switchport access vlan 20
+ description Net_Mgmt
  switchport mode access
- shutdown
  spanning-tree portfast
 !
 interface TenGigabitEthernet2/0/22
- description Video
- switchport access vlan 20
+ description Net_Mgmt
  switchport mode access
- shutdown
  spanning-tree portfast
 !
 interface TenGigabitEthernet2/0/23
