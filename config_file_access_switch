@@ -52,6 +52,7 @@ archive
  path flash:config
  write-memory
 memory free low-watermark processor 134344
+hw-module switch 1 upoe-plus
 !
 username siteadmin privilege 15 secret 9 $14$AofX$6sMZVA0kaJbn5E$jfkHIpPHnQbsbSajBPz/A5ExCD3Ox.jKDuL3NxvSM4g
 !
@@ -63,13 +64,13 @@ transceiver type all
 lldp run
 !
 class-map match-any system-cpp-police-ewlc-control
-  description EWLC Control 
+  description EWLC Control
 class-map match-any system-cpp-police-topology-control
   description Topology control
 class-map match-any system-cpp-police-sw-forward
   description Sw forwarding, L2 LVX data packets, LOGGING, Transit Traffic
 class-map match-any system-cpp-default
-  description EWLC Data, Inter FED Traffic 
+  description EWLC Data, Inter FED Traffic
 class-map match-any system-cpp-police-sys-data
   description Openflow, Exception, EGR Exception, NFL Sampled Data, RPF Failed
 class-map match-any system-cpp-police-punt-webauth
@@ -81,7 +82,7 @@ class-map match-any system-cpp-police-forus
 class-map match-any system-cpp-police-multicast-end-station
   description MCAST END STATION
 class-map match-any system-cpp-police-high-rate-app
-  description High Rate Applications 
+  description High Rate Applications
 class-map match-any system-cpp-police-multicast
   description MCAST Data
 class-map match-any system-cpp-police-l2-control
@@ -444,14 +445,14 @@ control-plane
  service-policy input system-cpp-policy
 !
 line con 0
- session-timeout 10 
+ session-timeout 10
  logging synchronous
  login local
  transport preferred none
  transport output ssh
  stopbits 1
 line vty 0 4
- session-timeout 10 
+ session-timeout 10
  access-class SSH in
  logging synchronous
  login local
@@ -459,7 +460,7 @@ line vty 0 4
  transport input ssh
  transport output ssh
 line vty 5 15
- session-timeout 10 
+ session-timeout 10
  access-class SSH in
  logging synchronous
  login local
