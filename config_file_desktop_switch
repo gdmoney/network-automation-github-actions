@@ -62,7 +62,8 @@ interface GigabitEthernet0/7
  spanning-tree portfast edge
 !
 interface GigabitEthernet0/8
- switchport mode trunk
+ switchport access vlan 20
+ switchport mode access
  spanning-tree portfast edge
 !
 interface GigabitEthernet0/9
