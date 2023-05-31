@@ -2,6 +2,7 @@ version 17.3
 service timestamps debug datetime msec localtime
 service timestamps log datetime msec localtime
 service call-home
+service unsupported-transceiver
 no platform punt-keepalive disable-kernel-core
 !
 hostname SWITCH_ACCESS
@@ -52,6 +53,9 @@ archive
  path flash:config
  write-memory
 memory free low-watermark processor 134344
+!
+no errdisable detect cause all
+!
 hw-module switch 1 upoe-plus
 !
 username siteadmin privilege 15 secret 9 $14$AofX$6sMZVA0kaJbn5E$jfkHIpPHnQbsbSajBPz/A5ExCD3Ox.jKDuL3NxvSM4g
@@ -481,7 +485,7 @@ call-home
   anonymous-reporting-only
   destination transport-method http
 !
-ntp server time.google.com
+ntp server time.google.com source vlan 1
 !
 app-hosting appid netbeez
  app-vnic AppGigabitEthernet trunk
