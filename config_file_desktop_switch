@@ -113,7 +113,7 @@ line vty 5 15
  transport input ssh
  transport output ssh
 !
-ntp server time.google.com
+ntp server time.google.com source vlan 1
 !
 crypto key generate rsa modulus 2096
 !
