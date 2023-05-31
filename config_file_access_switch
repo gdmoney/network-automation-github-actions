@@ -53,10 +53,9 @@ archive
  path flash:config
  write-memory
 memory free low-watermark processor 134344
+hw-module switch 1 upoe-plus
 !
 no errdisable detect cause all
-!
-hw-module switch 1 upoe-plus
 !
 username siteadmin privilege 15 secret 9 $14$AofX$6sMZVA0kaJbn5E$jfkHIpPHnQbsbSajBPz/A5ExCD3Ox.jKDuL3NxvSM4g
 !
