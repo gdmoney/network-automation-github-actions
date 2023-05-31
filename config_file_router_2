@@ -213,6 +213,6 @@ line vty 5 15
  transport input ssh
  transport output ssh
 !
-ntp server time.google.com
+ntp server time.google.com source Port-channel1
 !
 end
