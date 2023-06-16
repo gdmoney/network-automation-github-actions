@@ -173,18 +173,6 @@ policy-map system-cpp-policy
 interface Loopback1
  ip address 169.254.1.10 255.255.255.255
 !
-interface Port-channel1
- description ROUTER_1
- no switchport
- ip address 192.168.254.2 255.255.255.252
- ip ospf network point-to-point
-!
-interface Port-channel2
- description ROUTER_2
- no switchport
- ip address 192.168.254.6 255.255.255.252
- ip ospf network point-to-point
-!
 interface Port-channel11
  description SWITCH_ACCESS_1
  switchport mode trunk
@@ -218,14 +206,13 @@ interface GigabitEthernet0/0
 interface TenGigabitEthernet1/0/1
  description ROUTER_1
  no switchport
- no ip address
- channel-group 1 mode on
+ ip address 192.168.254.2 255.255.255.252
+ ip ospf network point-to-point 
+ speed 10000
 !
 interface TenGigabitEthernet1/0/2
- description ROUTER_2
  no switchport
  no ip address
- channel-group 2 mode on
 !
 interface TenGigabitEthernet1/0/3
  description User
@@ -431,16 +418,15 @@ interface AppGigabitEthernet1/0/1
  switchport mode trunk
 !
 interface TenGigabitEthernet2/0/1
- description ROUTER_1
- no switchport
- no ip address
- channel-group 1 mode on
-!
-interface TenGigabitEthernet2/0/2
  description ROUTER_2
  no switchport
+ ip address 192.168.254.6 255.255.255.252
+ ip ospf network point-to-point
+ speed 10000
+!q
+interface TenGigabitEthernet2/0/2
+ no switchport
  no ip address
- channel-group 2 mode on
 !
 interface TenGigabitEthernet2/0/3
  description User
@@ -661,8 +647,8 @@ router ospf 1
  router-id 169.254.1.10
  redistribute static
  passive-interface default
- no passive-interface Port-channel1
- no passive-interface Port-channel2
+ no passive-interface TenGigabitEthernet1/0/1
+ no passive-interface TenGigabitEthernet2/0/1
  network 10.10.0.0 0.0.15.255 area 0
  network 10.20.0.0 0.0.15.255 area 0
  network 192.168.254.2 0.0.0.0 area 0
