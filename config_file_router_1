@@ -38,7 +38,6 @@ crypto pki trustpoint SLA-TrustPoint
  enrollment pkcs12
  revocation-check crl
 !
-!
 crypto pki certificate chain TP-self-signed-873604070
 crypto pki certificate chain SLA-TrustPoint
 !
@@ -173,7 +172,6 @@ mgcp behavior rsip-range tgcp-only
 mgcp behavior comedia-role none
 mgcp behavior comedia-check-media-src disable
 mgcp behavior comedia-sdp-force disable
-!
 mgcp profile default
 !
 line con 0
