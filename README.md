@@ -132,9 +132,9 @@ git clone https://github.com/gdmoney/network-automation-github-actions.git
 **Download, extract, configure, and run the GitHub Actions self-hosted agent**
 - *Get the token from: github.com > repo > Settings > Actions > Runners > New self-hosted runner*
 ```
-curl -o actions-runner-linux-x64-2.304.0.tar.gz -L https://github.com/actions/runner/releases/download/v2.304.0/actions-runner-linux-x64-2.304.0.tar.gz
+curl -o actions-runner-linux-x64-2.305.0.tar.gz -L https://github.com/actions/runner/releases/download/v2.305.0/actions-runner-linux-x64-2.305.0.tar.gz
 
-tar xzf ./actions-runner-linux-x64-2.304.0.tar.gz
+tar xzf ./actions-runner-linux-x64-2.305.0.tar.gz
 
 ./config.sh --url https://github.com/gdmoney/network-automation-github-actions --token <TOKEN>
 
