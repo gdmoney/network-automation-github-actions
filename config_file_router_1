@@ -1,42 +1,23 @@
-version 16.12
+version 17.3
 service timestamps debug datetime msec localtime
 service timestamps log datetime msec localtime
 service call-home
+service unsupported-transceiver
 platform qfp utilization monitor load 80
-no platform punt-keepalive disable-kernel-core
-platform hardware throughput level 1000000
+platform punt-keepalive disable-kernel-core
 !
-hostname ROUTER_1
+hostname ROUTER_1.1
 !
 boot-start-marker
-boot system flash isr4400-universalk9.16.12.05.SPA.bin
+boot system flash c8000be-universalk9.17.03.04a.SPA.bin
 boot-end-marker
-!
-vrf definition Mgmt-intf
- !
- address-family ipv4
- exit-address-family
- !
- address-family ipv6
- exit-address-family
 !
 no aaa new-model
 clock timezone PST -8 0
 clock summer-time PDT recurring
 !
-call-home
- ! If contact email address in call-home is configured as sch-smart-licensing@cisco.com
- ! the email address configured in Cisco Smart License Portal will be used as contact email address to send SCH notifications.
- contact-email-addr sch-smart-licensing@cisco.com
- source-interface Port-channel1
- profile "CiscoTAC-1"
-  active
-  anonymous-reporting-only
-  destination transport-method http
-  no destination transport-method email
-!
 ip name-server 1.1.1.1 9.9.9.9
-ip domain lookup source-interface Port-channel1
+ip domain lookup source-interface TenGigabitEthernet0/0/5
 ip domain name event.tech
 !
 login block-for 60 attempts 3 within 10
@@ -44,34 +25,32 @@ login delay 3
 login on-success log
 !
 subscriber templating
-!
 multilink bundle-name authenticated
+no device-tracking logging theft
 !
-crypto pki trustpoint TP-self-signed-1257261861
+crypto pki trustpoint TP-self-signed-873604070
  enrollment selfsigned
- subject-name cn=IOS-Self-Signed-Certificate-1257261861
+ subject-name cn=IOS-Self-Signed-Certificate-873604070
  revocation-check none
- rsakeypair TP-self-signed-1257261861
+ rsakeypair TP-self-signed-873604070
 !
 crypto pki trustpoint SLA-TrustPoint
- enrollment terminal
- revocation-check none
+ enrollment pkcs12
+ revocation-check crl
 !
-crypto pki certificate chain TP-self-signed-1257261861
+!
+crypto pki certificate chain TP-self-signed-873604070
 crypto pki certificate chain SLA-TrustPoint
 !
-crypto pki certificate pool
- cabundle nvram:ios_core.p7b
-!
 license feature hseck9
-license udi pid ISR4431/K9 sn FOC230163PX
-license accept end user agreement
+license udi pid C8300-1N1S-4T2X sn FLM2722116L
+license boot level network-advantage addon dna-advantage
 !
 archive
- path flash:config
+ path bootflash:config
  write-memory
 !
-memory free low-watermark processor 67076
+memory free low-watermark processor 69075
 diagnostic bootup level minimal
 spanning-tree extend system-id
 !
@@ -79,8 +58,6 @@ username siteadmin privilege 15 secret 9 $9$8BxcXuyWur86w.$cNQlzKnWV8hxAc0yAITmD
 !
 redundancy
  mode none
-!
-vlan internal allocation policy ascending
 !
 track 1 ip sla 1 reachability
  delay down 3 up 30
@@ -100,12 +77,33 @@ interface Loopback1
  ip address 169.254.1.1 255.255.255.255
 !
 interface Port-channel1
- ip address 192.168.254.1 255.255.255.252
+ description ROUTER_2
+ ip address 192.168.254.13 255.255.255.252
  ip nat inside
  ip ospf network point-to-point
  no negotiation auto
 !
 interface GigabitEthernet0/0/0
+ no ip address
+ negotiation auto
+ channel-group 1 mode active
+!
+interface GigabitEthernet0/0/1
+ no ip address
+ negotiation auto
+ channel-group 1 mode active
+!         
+interface GigabitEthernet0/0/2
+ no ip address
+ negotiation auto
+ channel-group 1 mode active
+!
+interface GigabitEthernet0/0/3
+ no ip address
+ negotiation auto
+ channel-group 1 mode active
+!
+interface TenGigabitEthernet0/0/4
  description ISP_1
  ip address 100.64.1.2 255.255.255.252
  ip nat outside
@@ -113,45 +111,31 @@ interface GigabitEthernet0/0/0
  negotiation auto
  no cdp enable
 !
-interface GigabitEthernet0/0/1
- description ROUTER_2
- ip address 192.168.254.13 255.255.255.252
+interface TenGigabitEthernet0/0/5
+ description CORE_SWITCH
+ ip address 192.168.254.1 255.255.255.252
  ip nat inside
  ip ospf network point-to-point
- negotiation auto
-!
-interface GigabitEthernet0/0/2
- no ip address
- negotiation auto
- channel-group 1
-!
-interface GigabitEthernet0/0/3
- no ip address
- negotiation auto
- channel-group 1
-!
-interface GigabitEthernet0
- vrf forwarding Mgmt-intf
- no ip address
- shutdown
- negotiation auto
 !
 router ospf 1
  router-id 169.254.1.1
  passive-interface default
- no passive-interface GigabitEthernet0/0/1
+ no passive-interface TenGigabitEthernet0/0/5
  no passive-interface Port-channel1
  network 192.168.254.1 0.0.0.0 area 0
  network 192.168.254.13 0.0.0.0 area 0
  default-information originate
 !
-ip forward-protocol nd
 no ip http server
+ip http authentication local
 no ip http secure-server
-ip http client source-interface Port-channel1
-ip tftp source-interface Port-channel1
+ip http client source-interface TenGigabitEthernet0/0/5
+ip forward-protocol nd
+ip tftp source-interface TenGigabitEthernet0/0/5
+!
 ip nat pool NAT_POOL 12.9.181.113 12.9.181.114 prefix-length 30
 ip nat inside source list NAT_ACL pool NAT_POOL overload
+!
 ip route 0.0.0.0 0.0.0.0 100.64.1.1 track 10
 ip route 1.1.1.1 255.255.255.255 100.64.1.1
 ip route 4.2.2.2 255.255.255.255 100.64.1.1
@@ -169,6 +153,7 @@ ip access-list extended NAT_ACL
  20 permit ip 10.20.0.0 0.0.15.255 any
  30 permit ip 192.168.255.0 0.0.0.255 any
  40 permit ip 192.168.254.0 0.0.0.255 any
+!
 ip sla 1
  icmp-echo 1.1.1.1 source-ip 192.168.254.1
   frequency 5
@@ -184,8 +169,15 @@ ip sla schedule 3 life forever start-time now
 !
 control-plane
 !
+mgcp behavior rsip-range tgcp-only
+mgcp behavior comedia-role none
+mgcp behavior comedia-check-media-src disable
+mgcp behavior comedia-sdp-force disable
+!
+mgcp profile default
+!
 line con 0
- session-timeout 20
+ session-timeout 20 
  exec-timeout 20 0
  logging synchronous
  login local
@@ -195,7 +187,7 @@ line con 0
 line aux 0
  stopbits 1
 line vty 0 4
- session-timeout 20
+ session-timeout 20 
  access-class SSH in
  exec-timeout 20 0
  logging synchronous
@@ -204,7 +196,7 @@ line vty 0 4
  transport input ssh
  transport output ssh
 line vty 5 15
- session-timeout 20
+ session-timeout 20 
  access-class SSH in
  exec-timeout 20 0
  logging synchronous
@@ -213,6 +205,16 @@ line vty 5 15
  transport input ssh
  transport output ssh
 !
-ntp server time.google.com source Port-channel1
+call-home
+ ! If contact email address in call-home is configured as sch-smart-licensing@cisco.com
+ ! the email address configured in Cisco Smart License Portal will be used as contact email address to send SCH notifications.
+ contact-email-addr sch-smart-licensing@cisco.com
+ source-interface TenGigabitEthernet0/0/5
+ profile "CiscoTAC-1"
+  active
+  anonymous-reporting-only
+  destination transport-method http
+!
+ntp server ip time.google.com source TenGigabitEthernet0/0/5
 !
 end
