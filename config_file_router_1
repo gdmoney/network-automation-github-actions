@@ -80,7 +80,7 @@ interface Port-channel1
  ip address 192.168.254.13 255.255.255.252
  ip nat inside
  ip ospf network point-to-point
- no negotiation auto
+ negotiation auto
 !
 interface GigabitEthernet0/0/0
  no ip address
