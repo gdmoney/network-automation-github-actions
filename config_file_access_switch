@@ -195,134 +195,146 @@ interface TwoGigabitEthernet1/0/12
  spanning-tree portfast
 !
 interface TwoGigabitEthernet1/0/13
- switchport access vlan 20
+ switchport access vlan 10
  switchport mode access
  power inline port 2-event
  spanning-tree portfast
 !
 interface TwoGigabitEthernet1/0/14
- switchport access vlan 20
+ switchport access vlan 10
  switchport mode access
  power inline port 2-event
  spanning-tree portfast
 !
 interface TwoGigabitEthernet1/0/15
- switchport access vlan 20
+ switchport access vlan 10
  switchport mode access
  power inline port 2-event
  spanning-tree portfast
 !
 interface TwoGigabitEthernet1/0/16
- switchport access vlan 20
+ switchport access vlan 10
  switchport mode access
  power inline port 2-event
  spanning-tree portfast
 !
 interface TwoGigabitEthernet1/0/17
- switchport access vlan 20
+ switchport access vlan 10
  switchport mode access
  power inline port 2-event
  spanning-tree portfast
 !
 interface TwoGigabitEthernet1/0/18
- switchport access vlan 20
+ switchport access vlan 10
  switchport mode access
  power inline port 2-event
  spanning-tree portfast
 !
 interface TwoGigabitEthernet1/0/19
- switchport access vlan 20
+ switchport access vlan 10
  switchport mode access
  power inline port 2-event
  spanning-tree portfast
 !
 interface TwoGigabitEthernet1/0/20
- switchport access vlan 20
+ switchport access vlan 10
  switchport mode access
  power inline port 2-event
  spanning-tree portfast
 !
 interface TwoGigabitEthernet1/0/21
- switchport access vlan 20
+ switchport access vlan 10
  switchport mode access
  power inline port 2-event
  spanning-tree portfast
 !
 interface TwoGigabitEthernet1/0/22
- switchport access vlan 20
+ switchport access vlan 10
  switchport mode access
  power inline port 2-event
  spanning-tree portfast
 !
 interface TwoGigabitEthernet1/0/23
- switchport access vlan 20
+ switchport access vlan 10
  switchport mode access
  power inline port 2-event
  spanning-tree portfast
 !
 interface TwoGigabitEthernet1/0/24
- switchport access vlan 20
+ switchport access vlan 10
  switchport mode access
  power inline port 2-event
  spanning-tree portfast
 !
 interface TwoGigabitEthernet1/0/25
- switchport mode trunk
+ switchport access vlan 20
+ switchport mode access
  power inline port 2-event
  spanning-tree portfast
 !
 interface TwoGigabitEthernet1/0/26
- switchport mode trunk
+ switchport access vlan 20
+ switchport mode access
  power inline port 2-event
  spanning-tree portfast
 !
 interface TwoGigabitEthernet1/0/27
- switchport mode trunk
+ switchport access vlan 20
+ switchport mode access
  power inline port 2-event
  spanning-tree portfast
 !
 interface TwoGigabitEthernet1/0/28
- switchport mode trunk
+ switchport access vlan 20
+ switchport mode access
  power inline port 2-event
  spanning-tree portfast
 !
 interface TwoGigabitEthernet1/0/29
- switchport mode trunk
+ switchport access vlan 20
+ switchport mode access
  power inline port 2-event
  spanning-tree portfast
 !
 interface TwoGigabitEthernet1/0/30
- switchport mode trunk
+ switchport access vlan 20
+ switchport mode access
  power inline port 2-event
  spanning-tree portfast
 !
 interface TwoGigabitEthernet1/0/31
- switchport mode trunk
+ switchport access vlan 20
+ switchport mode access
  power inline port 2-event
  spanning-tree portfast
 !
 interface TwoGigabitEthernet1/0/32
- switchport mode trunk
+ switchport access vlan 20
+ switchport mode access
  power inline port 2-event
  spanning-tree portfast
 !
 interface TwoGigabitEthernet1/0/33
- switchport mode trunk
+ switchport access vlan 20
+ switchport mode access
  power inline port 2-event
  spanning-tree portfast
 !
 interface TwoGigabitEthernet1/0/34
- switchport mode trunk
+ switchport access vlan 20
+ switchport mode access
  power inline port 2-event
  spanning-tree portfast
 !
 interface TwoGigabitEthernet1/0/35
- switchport mode trunk
+ switchport access vlan 20
+ switchport mode access
  power inline port 2-event
  spanning-tree portfast
 !
 interface TwoGigabitEthernet1/0/36
- switchport mode trunk
+ switchport access vlan 20
+ switchport mode access
  power inline port 2-event
  spanning-tree portfast
 !
