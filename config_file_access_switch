@@ -496,7 +496,7 @@ call-home
   anonymous-reporting-only
   destination transport-method http
 !
-ntp server time.google.com source vlan 1
+ntp server ip time.google.com source vlan 1
 !
 app-hosting appid netbeez
  app-vnic AppGigabitEthernet trunk
