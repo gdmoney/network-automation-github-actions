@@ -208,7 +208,6 @@ interface TenGigabitEthernet1/0/1
  no switchport
  ip address 192.168.254.2 255.255.255.252
  ip ospf network point-to-point 
- speed 10000
 !
 interface TenGigabitEthernet1/0/2
  no switchport
@@ -422,8 +421,7 @@ interface TenGigabitEthernet2/0/1
  no switchport
  ip address 192.168.254.6 255.255.255.252
  ip ospf network point-to-point
- speed 10000
-!q
+!
 interface TenGigabitEthernet2/0/2
  no switchport
  no ip address
