@@ -213,6 +213,6 @@ call-home
   anonymous-reporting-only
   destination transport-method http
 !
-ntp server ip time.google.com source TenGigabitEthernet0/0/5
+ntp server ip time.cloudflare.com source TenGigabitEthernet0/0/5
 !
 end
