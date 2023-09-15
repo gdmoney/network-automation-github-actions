@@ -170,6 +170,7 @@ docker container attach <CONTAINER ID>
 /etc/init.d/tftpd-hpa start
 service --status-all
 
-cd /home/siteadmin/actions-runner/ && su siteadmin
+su siteadmin
+cd /home/siteadmin/actions-runner/
 ./run.sh
 ```
