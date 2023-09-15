@@ -470,14 +470,12 @@ interface TenGigabitEthernet2/0/9
  description User
  switchport access vlan 10
  switchport mode access
- shutdown
  spanning-tree portfast
 !
 interface TenGigabitEthernet2/0/10
  description User
  switchport access vlan 10
  switchport mode access
- shutdown
  spanning-tree portfast
 !
 interface TenGigabitEthernet2/0/11
