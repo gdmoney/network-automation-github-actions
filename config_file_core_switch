@@ -44,14 +44,14 @@ ip dhcp pool Users
  default-router 10.10.0.1
  dns-server 1.1.1.1 9.9.9.9
  domain-name event.tech
- lease 4
+ lease 0 4
 !
 ip dhcp pool Video
  network 10.20.0.0 255.255.240.0
  default-router 10.20.0.1
  dns-server 1.1.1.1 9.9.9.9
  domain-name event.tech
- lease 4
+ lease 0 4
 !
 ip dhcp pool SWITCH_ACCESS_1
  host 192.168.255.11 255.255.255.0
@@ -259,14 +259,12 @@ interface TenGigabitEthernet1/0/9
  description User
  switchport access vlan 10
  switchport mode access
- shutdown
  spanning-tree portfast
 !
 interface TenGigabitEthernet1/0/10
  description User
  switchport access vlan 10
  switchport mode access
- shutdown
  spanning-tree portfast
 !
 interface TenGigabitEthernet1/0/11
@@ -417,14 +415,14 @@ interface AppGigabitEthernet1/0/1
  switchport mode trunk
 !
 interface TenGigabitEthernet2/0/1
+ switchport mode access
+ shutdown
+!
+interface TenGigabitEthernet2/0/2
  description ROUTER_2
  no switchport
  ip address 192.168.254.6 255.255.255.252
  ip ospf network point-to-point
-!
-interface TenGigabitEthernet2/0/2
- no switchport
- no ip address
 !
 interface TenGigabitEthernet2/0/3
  description User
@@ -646,7 +644,7 @@ router ospf 1
  redistribute static
  passive-interface default
  no passive-interface TenGigabitEthernet1/0/1
- no passive-interface TenGigabitEthernet2/0/1
+ no passive-interface TenGigabitEthernet2/0/2
  network 10.10.0.0 0.0.15.255 area 0
  network 10.20.0.0 0.0.15.255 area 0
  network 192.168.254.2 0.0.0.0 area 0
@@ -715,7 +713,7 @@ call-home
   anonymous-reporting-only
   destination transport-method http
 !
-ntp server ip time.google.com source Vlan1
+ntp server ip time.cloudflare.com source Vlan1
 !
 app-hosting appid netbeez
  app-vnic AppGigabitEthernet trunk
