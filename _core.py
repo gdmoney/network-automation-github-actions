@@ -2,14 +2,13 @@ import threading
 from netmiko import ConnectHandler
 from _all_devices import core_switch as devices
 
-command = 'config replace tftp://172.17.0.2/config_file_core_switch force'
-
 def task(a_device):
-    # with open('config_file_core_switch') as f:
+    # with open('config_file_router_2') as f:
         # config_list = f.read().splitlines()
 
     session = ConnectHandler(**a_device)
-    output = session.send_config_set(command)
+    # output = session.send_config_set(config_list)
+    output = session.command('config replace tftp://172.17.0.2/config_file_core_switch force')
     output += session.save_config()
     # print (output)
 
