@@ -3,7 +3,7 @@ from netmiko import ConnectHandler
 from _all_devices import access_switches as devices
 
 def task(a_device):
-    # with open('config_file_core_switch') as f:
+    # with open('config_file_access_switch') as f:
         # config_list = f.read().splitlines()
 
     session = ConnectHandler(**a_device)
