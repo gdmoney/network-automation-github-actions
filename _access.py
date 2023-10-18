@@ -6,10 +6,9 @@ def task(a_device):
     # with open('config_file_access_switch') as f:
         # config_list = f.read().splitlines()
 
+    command = 'config replace tftp://172.17.0.2/config_file_access_switch force'
     session = ConnectHandler(**a_device)
-    # output = session.send_config_set(config_list)
-    # output = session.send_config_set('config replace tftp://172.17.0.2/config_file_access_switch force')
-    output = session.send_command('config replace tftp://172.17.0.2/config_file_access_switch force')
+    output = session.send_config_set(command)
     output += session.save_config()
     # print (output)
 
