@@ -17,7 +17,7 @@ def main():
         my_thread = threading.Thread(target=task, args=(a_device,))
         my_thread.start()
 
-    main_thread = threading.current_thread()
+    main_thread = threading.currentThread()
     for some_thread in threading.enumerate():
         if some_thread != main_thread:
             print(some_thread)
