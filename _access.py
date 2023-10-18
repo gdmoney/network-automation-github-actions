@@ -3,12 +3,12 @@ from netmiko import ConnectHandler
 from _all_devices import access_switches as devices
 
 def task(a_device):
-    # with open('config_file_access_switch') as f:
-        # config_list = f.read().splitlines()
+    with open('config_replace_access_switch') as f:
+        config_replace = f.read().splitlines()
 
     session = ConnectHandler(**a_device)
-    # output = session.send_config_set(config_list)
-    output = session.send_command('config replace tftp://172.17.0.2/config_file_access_switch force')
+    output = session.send_config_set(config_replace)
+    # output = session.send_command('config replace tftp://172.17.0.2/config_file_access_switch force')
     output += session.save_config()
     # print (output)
 
