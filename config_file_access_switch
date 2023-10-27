@@ -5,7 +5,7 @@ service call-home
 service unsupported-transceiver
 no platform punt-keepalive disable-kernel-core
 !
-hostname SWITCH_ACCESS
+hostname SWITCH_ACCESS.1
 !
 vrf definition Mgmt-vrf
  !
