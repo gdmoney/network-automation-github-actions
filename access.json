@@ -2,5 +2,5 @@
   "commands": "config replace tftp://172.17.0.2/config_file_access_switch force",
   "requireEnableMode": true,
   "requireConfigureMode": false,
-  "tagUuids": "access",
+  "tagUuids": "access"
 }
