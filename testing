@@ -1,11 +1,25 @@
-curl -X POST http://172.17.0.3:8085/api/v3/jobs/push \
-  -H 'Accept: application/json' \
-  -H 'Content-Type: application/json' \
+curl -X 'POST' \
+  'http://172.18.50.1:8085/api/v3/jobs/push' \
+  -H 'accept: application/json' \
   -H 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhdXRoMCJ9.SENSdIUM5ZI7BwHH7mVw2cHyZwMzSQCngz0CNBcyAuU' \
-  -d '@access.json'
-
-
-
-
-curl -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhdXRoMCJ9.SENSdIUM5ZI7BwHH7mVw2cHyZwMzSQCngz0CNBcyAuU" "http://172.17.0.3:8085/api/v2/devices" | jq
-
+  -H 'Content-Type: application/json' \
+  -d '{
+  "commands": [
+    "config replace tftp://172.17.0.2/config_file_access_switch force"
+  ],
+  "requireEnableMode": true,
+  "requireConfigureMode": false,
+  "tagUuids": [
+    "access"
+  ],
+  "advancedSettings": {
+    "promptMatchingMode": "LEARNING",
+    "overrideTimeouts": false,
+    "timeout": 0,
+    "overrideCredentials": false,
+    "username": "string",
+    "password": "string",
+    "enablePassword": "string",
+    "configurePassword": "string"
+  }
+}'
