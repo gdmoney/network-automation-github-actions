@@ -4,7 +4,7 @@
   "requireConfigureMode": false,
   "tagUuids": "access",
   "advancedSettings": {
-    "promptMatchingMode": "Learning",
+    "promptMatchingMode": "LEARNING",
     "overrideTimeouts": false,
     "timeout": 0,
     "overrideCredentials": false,
