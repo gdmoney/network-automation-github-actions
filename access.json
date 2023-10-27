@@ -3,14 +3,4 @@
   "requireEnableMode": true,
   "requireConfigureMode": false,
   "tagUuids": "access",
-  "advancedSettings": {
-    "promptMatchingMode": "LEARNING",
-    "overrideTimeouts": false,
-    "timeout": 0,
-    "overrideCredentials": false,
-    "username": "string",
-    "password": "string",
-    "enablePassword": "string",
-    "configurePassword": "string"
-  }
 }
