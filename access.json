@@ -5,12 +5,11 @@
   "tagUuids": "access",
   "advancedSettings": {
     "promptMatchingMode": "LEARNING",
-    "overrideTimeouts": false,
+    "overrideTimeouts": true,
     "timeout": 0,
-    "overrideCredentials": false,
+    "overrideCredentials": true,
     "username": "string",
     "password": "string",
     "enablePassword": "string",
     "configurePassword": "string"
   }
-}
