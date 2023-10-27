@@ -1,6 +1,4 @@
 #!/bin/sh
-cd /home/siteadmin/actions-runner/network-automation-github-actions
-git pull
 curl -X 'POST' \
   'http://172.18.50.1:8085/api/v3/jobs/push' \
   -H 'accept: application/json' \
@@ -26,4 +24,3 @@ curl -X 'POST' \
     "configurePassword": "string"
   }
 }'
-cd ..
