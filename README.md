@@ -23,7 +23,6 @@ Network automation framework loosely based on **[GitOps](https://opengitops.dev/
 - [Opengear OOB access server](https://opengear.com/products/om2200-operations-manager/) - bare metal server running the Docker Engine
 - [Unimus network automation tool](https://unimus.net/) - backs up and audits device configs
 - [Slack](https://slack.com) - sends config change notifications
-- [Netmiko Python library](https://github.com/ktbyers/netmiko) - SSHs into devices and replaces configs
 
 
 ## Reference Architecture
@@ -45,11 +44,10 @@ Network automation framework loosely based on **[GitOps](https://opengitops.dev/
   - pre-deployment testing (functional/integration/performance) for complex and high-risk changes
   - pull request approval and merge based on validation test results
 - GitHub Actions workflow is triggered
-  - workflows can also be triggered manually via GH CLI (`gh workflow run <WORKFLOW_NAME>`) or GUI from the repo's Actions page on GH
 - self-hosted runner starts running the job(s)
-- Python script is executed
+- Unimus starts the mass config push to the selected devices
 - static testing (syntax check/config validation) by the device NOS
-- devices' configuration is replaced
+- devices' configuration is replaced and saved
 - Unimus continuously audits devices' operational state and generates alerts if config drift is detected
 - operator gets a Slack notification describing the config change(s)
 
