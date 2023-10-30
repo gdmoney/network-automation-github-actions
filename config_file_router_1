@@ -6,11 +6,7 @@ service unsupported-transceiver
 platform qfp utilization monitor load 80
 platform punt-keepalive disable-kernel-core
 !
-<<<<<<< HEAD
-hostname ROUTER_1
-=======
 hostname ROUTER_1.2
->>>>>>> 5317bf96802d9ff40cdc8f2c6218f45a4ec622d3
 !
 boot-start-marker
 boot system flash c8000be-universalk9.17.03.04a.SPA.bin
