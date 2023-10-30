@@ -43,7 +43,7 @@ crypto pki certificate chain SLA-TrustPoint
 !
 license feature hseck9
 license udi pid C8300-1N1S-4T2X sn FLM2722116J
-license boot level network-advantage addon dna-
+license boot level network-advantage addon dna-advantage
 !
 archive
  path bootflash:config
