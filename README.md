@@ -68,8 +68,6 @@ apt update && apt upgrade -y
 
 apt install apt-utils curl git iputils-ping nano tftpd-hpa wget -y
 apt install software-properties-common -y
-
-pip3 install --upgrade pip keyring keyrings.alt netmiko
 ```
 
 **Install [GitHub CLI](https://github.com/cli/cli/blob/trunk/docs/install_linux.md), login to GitHub and store GH credentials in git**
