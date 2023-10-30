@@ -16,5 +16,5 @@ jobs:
       run: |
         cd /home/siteadmin/actions-runner/network-automation-github-actions
         git pull
-        ./core.sh
+        ./_core.sh
         cd ..

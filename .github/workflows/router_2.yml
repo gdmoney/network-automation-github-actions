@@ -16,5 +16,5 @@ jobs:
       run: |
         cd /home/siteadmin/actions-runner/network-automation-github-actions
         git pull
-        ./router_2.sh
+        ./_router_2.sh
         cd ..
