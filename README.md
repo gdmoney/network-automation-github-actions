@@ -91,19 +91,6 @@ useradd -ms /bin/bash siteadmin && su siteadmin
 mkdir /home/siteadmin/actions-runner && mkdir /home/siteadmin/actions-runner/network-automation-github-actions
 ```
 
-**Store and encrypt device login credentials**
-```
-python3
-import keyring
-keyring.set_password('<SYSTEM_NAME>', '<USERNAME>', '<PASSWORD>')
-
-# verify the password
-keyring.get_password('cisco', 'siteadmin')
-
-quit()
-exit
-```
-
 **Configure and start the TFTP service as root**
 ```
 cat /etc/default/tftpd-hpa
@@ -128,7 +115,7 @@ git clone https://github.com/gdmoney/network-automation-github-actions.git
 ```
 
 **Download, extract, configure, and run the GitHub Actions self-hosted agent**
-- *Get the token from: github.com > repo > Settings > Actions > Runners > New self-hosted runner*
+- *Get the token from: github.com > repo > Settings > Actions > Runners > New runner > New self-hosted runner*
 ```
 curl -o actions-runner-linux-x64-2.305.0.tar.gz -L https://github.com/actions/runner/releases/download/v2.305.0/actions-runner-linux-x64-2.305.0.tar.gz
 
