@@ -6,7 +6,8 @@ curl -X 'POST' \
   -H 'Content-Type: application/json' \
   -d '{
   "commands": [
-    "config replace tftp://172.17.0.2/config_file_router_2 force"
+    "config replace tftp://172.17.0.2/config_file_router_1 force",
+    "write memory"
   ],
   "requireEnableMode": true,
   "requireConfigureMode": false,
