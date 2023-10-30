@@ -12,7 +12,7 @@ curl -X 'POST' \
   "requireEnableMode": true,
   "requireConfigureMode": false,
   "tagUuids": [
-    "27ac3847-ddcf-4109-9984-544fbb52a80f"
+    "b541b2fe-1f65-4cfb-b830-d606d0a732ae"
   ],
   "advancedSettings": {
     "promptMatchingMode": "LEARNING",
