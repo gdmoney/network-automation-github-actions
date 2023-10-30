@@ -6,7 +6,11 @@ service unsupported-transceiver
 platform qfp utilization monitor load 80
 platform punt-keepalive disable-kernel-core
 !
+<<<<<<< HEAD
 hostname ROUTER_2
+=======
+hostname ROUTER_2.2
+>>>>>>> 5317bf96802d9ff40cdc8f2c6218f45a4ec622d3
 !
 boot-start-marker
 boot system flash c8000be-universalk9.17.03.04a.SPA.bin
@@ -48,7 +52,7 @@ license boot level network-advantage addon dna-
 archive
  path bootflash:config
  write-memory
- !
+!
 memory free low-watermark processor 69075
 diagnostic bootup level minimal
 spanning-tree extend system-id
