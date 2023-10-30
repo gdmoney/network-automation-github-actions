@@ -5,11 +5,7 @@ service call-home
 service unsupported-transceiver
 no platform punt-keepalive disable-kernel-core
 !
-<<<<<<< HEAD
-hostname SWITCH_CORE
-=======
 hostname SWITCH_CORE.2
->>>>>>> 5317bf96802d9ff40cdc8f2c6218f45a4ec622d3
 !
 vrf definition Mgmt-vrf
  !
