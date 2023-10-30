@@ -127,29 +127,12 @@ Connected to GitHub
 Listening for Jobs
 ```
 
-**Uninstall the agent (optional)**
-- *Get the token from: github.com > repo > Settings > Actions > ... > Remove*
-```
-./config.sh remove --token <TOKEN>
-```
-
 
 ## Troubleshooting
 **After container or Opengear restart**
-- *Start Ubuntu and Unimus containers*
-  - *start the Ubuntu container first so that it gets the .2 IP address*
+- *Verify that the Ubuntu container still has the .2 IP address*
+- *Start the TFTP service as root and the GitHub Actions runner as siteadmin*
 ```
-sudo -i
-docker container ls -a
-
-docker container start <CONTAINER ID>
-docker container inspect <CONTAINER ID> | grep IP
-```
-
-- *Start the TFTP service and the GitHub Actions runner*
-```
-docker container attach <CONTAINER ID>
-
 /etc/init.d/tftpd-hpa start
 service --status-all
 
