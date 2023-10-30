@@ -99,9 +99,10 @@ TFTP_DIRECTORY="/home/siteadmin/actions-runner/network-automation-github-actions
 TFTP_ADDRESS=":69"
 TFTP_OPTIONS="--secure"
 
+# start the TFTP service
 /etc/init.d/tftpd-hpa start
 
-# verify TFTP service is running
+# and verify that it's running
 service --status-all
 ```
 
