@@ -31,7 +31,7 @@ Network automation framework based on **[GitOps](https://opengitops.dev/)** prin
 
 ## Usage
 **Workflow steps**
-- Network operator initiates a change to modify a device(s)' configuration state
+- Network operator proposes a change to modify a device(s)' configuration state
   - *Standard* change - a low-risk change that's pre-approved and follows documented, repeatable tasks
     - clone this repo
     - modify the device configuration files(s)
