@@ -11,6 +11,7 @@ boot-end-marker
 !
 username siteadmin privilege 15 secret 5 $1$jdO0$npL69Z.0Xrelnv67Dj4hj1
 no aaa new-model
+!
 clock timezone PST -8 0
 clock summer-time PDT recurring
 system mtu routing 1500
@@ -113,7 +114,7 @@ line vty 5 15
  transport input ssh
  transport output ssh
 !
-ntp server time.google.com source vlan 1
+ntp server time.cloudflare.com source vlan 1
 !
 crypto key generate rsa modulus 2096
 !
