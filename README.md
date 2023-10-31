@@ -13,7 +13,7 @@ Network automation framework based on **[GitOps](https://opengitops.dev/)** prin
 - rollbacks are simplified with a single command (`git revert HEAD`)
 - devices' **actual** state is continuously monitored and compared to the **desired** state
 - **alerts** are generated if any configuration changes resulting in **deviation** from the desired state are detected
-- GitHub documents the entire history of past changes (who did what, when, and why) and all team communication (pull requests, issue tracking, comments)
+- GitHub documents the entire history of past changes (who did what, when, and why) and all team collaboration (pull requests, issue tracking, comments)
 
 
 ## Solution Components
