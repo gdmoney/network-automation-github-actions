@@ -4,15 +4,15 @@
 ## Project Overview
 Network automation framework based on **[GitOps](https://opengitops.dev/)** principles:
 - **GitHub** is assumed to be the [Single Source of Truth](https://en.wikipedia.org/wiki/Single_source_of_truth) - all data related to the definition of the solution is documented here
-- all device configurations are defined as `code` and stored in a [distributed version control system](https://en.wikipedia.org/wiki/Distributed_version_control) repository
-- configuration files are in **raw format** and use a [declarative](https://en.wikipedia.org/wiki/Declarative_programming) language syntax to describe the **desired** system state
-- all configuration changes are initiated via **Git** and are implemented programmatically via **GitHub Actions**
-- manual changes by directly modifying device configurations are **not permitted**
-- configurations are [immutable](https://en.wikipedia.org/wiki/Immutable_object) - incremental changes are **not permitted**
-- configuration is either fully replaced (`config replace`) via **TFTP** or a device is wiped clean when powered off and new config is loaded via **DHCP** upon reboot
-- rollbacks are simplified with a single command (`git revert HEAD`)
-- devices' **actual** state is continuously monitored and compared to the **desired** state
-- **alerts** are generated if any configuration changes resulting in **deviation** from the desired state are detected
+- All device configurations are defined as `code` and stored in a [distributed version control system](https://en.wikipedia.org/wiki/Distributed_version_control) repository
+- Configuration files are in **raw format** and use a [declarative](https://en.wikipedia.org/wiki/Declarative_programming) language syntax to describe the **desired** system state
+- All configuration changes are initiated via **Git** and are implemented programmatically via **GitHub Actions**
+- Manual changes by directly modifying device configurations are **not permitted**
+- Configurations are [immutable](https://en.wikipedia.org/wiki/Immutable_object) - incremental changes are **not permitted**
+- Configuration is either fully replaced (`config replace`) via **TFTP** or a device is wiped clean when powered off and new config is loaded via **DHCP** upon reboot
+- Rollbacks are simplified with a single command (`git revert HEAD`)
+- Devices' **actual** state is continuously monitored and compared to the **desired** state
+- **Alerts** are generated if any configuration changes resulting in **deviation** from the desired state are detected
 - GitHub documents the entire history of past changes (who did what, when, and why) and all team collaboration (pull requests, issue tracking, comments)
 
 
