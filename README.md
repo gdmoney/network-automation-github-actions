@@ -31,25 +31,26 @@ Network automation framework based on **[GitOps](https://opengitops.dev/)** prin
 
 ## Usage
 **Workflow steps**
-- *Standard* change - a low-risk change that's pre-approved and follows documented, repeatable tasks
-  - clone this repo
-  - modify the device configuration files(s)
-  - commit and push directly to the main branch
-- *Normal* change - a moderate or high-risk change that requires code review and approval prior to deployment
-  - clone this repo, create a new branch and publish it
-  - modify the device configuration files(s)
-  - commit changes to the new branch and push to origin
-  - create a pull request to submit proposed change(s)
-  - pull request peer review
-  - pre-deployment testing (functional/integration/performance) for complex and high-risk changes
-  - pull request approval and merge based on validation test results
+- Network operator initiates a change to modify a device(s)' configuration state
+  - *Standard* change - a low-risk change that's pre-approved and follows documented, repeatable tasks
+    - clone this repo
+    - modify the device configuration files(s)
+    - commit and push directly to the main branch
+  - *Normal* change - a moderate or high-risk change that requires code review and approval prior to deployment
+    - clone this repo, create a new branch and publish it
+    - modify the device configuration files(s)
+    - commit changes to the new branch and push to origin
+    - create a pull request to submit proposed change(s)
+    - pull request peer review
+    - pre-deployment testing (functional/integration/performance) for complex and high-risk changes
+    - pull request approval and merge based on validation test results
 - GitHub Actions workflow is triggered
-- self-hosted runner starts running the job(s)
+- Self-hosted runner starts running the job(s)
 - Unimus starts the mass config push to the selected devices
-- static testing (syntax check/config validation) by the device NOS
-- devices' configuration is replaced and saved
+- Static testing (syntax check/config validation) by the device NOS
+- Devices' configuration is replaced and saved
+- Operator gets a Slack notification describing the config change(s)
 - Unimus continuously audits devices' operational state and generates alerts if config drift is detected
-- operator gets a Slack notification describing the config change(s)
 
 
 ## Build
