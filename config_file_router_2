@@ -44,6 +44,8 @@ crypto pki certificate chain SLA-TrustPoint
 license feature hseck9
 license udi pid C8300-1N1S-4T2X sn FLM2722116J
 license boot level network-advantage addon dna-advantage
+license smart url https://smartreceiver.cisco.com/licservice/license
+license smart url smart https://smartreceiver.cisco.com/licservice/license
 !
 archive
  path bootflash:config
@@ -143,6 +145,9 @@ ip route 9.9.9.9 255.255.255.255 100.64.1.5
 ip ssh time-out 30
 ip ssh authentication-retries 2
 ip ssh version 2
+ip ssh client algorithm mac hmac-sha2-256 hmac-sha2-256-etm@openssh.com hmac-sha2-512 hmac-sha2-512-etm@openssh.com
+ip ssh client algorithm encryption aes128-cbc aes128-ctr aes128-gcm aes192-cbc aes192-ctr aes256-cbc aes256-ctr aes256-gcm
+ip ssh client algorithm kex diffie-hellman-group14-sha1 ecdh-sha2-nistp256 ecdh-sha2-nistp384 ecdh-sha2-nistp521
 !
 ip access-list standard SSH
  10 permit 192.168.255.0 0.0.0.255
