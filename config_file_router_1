@@ -44,6 +44,8 @@ crypto pki certificate chain SLA-TrustPoint
 license feature hseck9
 license udi pid C8300-1N1S-4T2X sn FLM2722116L
 license boot level network-advantage addon dna-advantage
+license smart url https://smartreceiver.cisco.com/licservice/license
+license smart url smart https://smartreceiver.cisco.com/licservice/license
 !
 archive
  path bootflash:config
