@@ -484,7 +484,7 @@ line vty 5 15
  transport output ssh
 line vty 16 31
  no login
- transport input ssh
+ transport input none
 !
 call-home
  ! If contact email address in call-home is configured as sch-smart-licensing@cisco.com
