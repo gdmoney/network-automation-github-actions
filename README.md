@@ -2,7 +2,7 @@
 
 
 ## Project Overview
-Network automation framework loosely based on **[GitOps](https://opengitops.dev/)** principles:
+Network automation framework based on **[GitOps](https://opengitops.dev/)** principles:
 - **GitHub** is assumed to be the [Single Source of Truth](https://en.wikipedia.org/wiki/Single_source_of_truth) - all data related to the definition of the solution is documented here
 - all device configurations are defined as `code` and stored in a [distributed version control system](https://en.wikipedia.org/wiki/Distributed_version_control) repository
 - configuration files are in **raw format** and use a [declarative](https://en.wikipedia.org/wiki/Declarative_programming) language syntax to describe the **desired** system state
