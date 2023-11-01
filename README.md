@@ -65,7 +65,7 @@ docker run -it ubuntu
 ```
 apt update && apt upgrade -y
 
-apt install apt-utils curl git iputils-ping nano tftpd-hpa vim wget -y
+apt install apt-utils curl git iputils-ping tftpd-hpa vim wget -y
 apt install software-properties-common -y
 ```
 
