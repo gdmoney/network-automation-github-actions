@@ -116,7 +116,7 @@ git clone https://github.com/gdmoney/network-automation-github-actions.git
 
 **Modify file permissions**
 ```
-chmod 774 _access.sh _core.sh _router_1.sh _router_2.sh
+chmod 755 _access.sh _core.sh _router_1.sh _router_2.sh
 ```
 
 **Download, extract, configure, and run the GitHub Actions self-hosted agent**
