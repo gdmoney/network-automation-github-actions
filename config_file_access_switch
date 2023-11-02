@@ -507,3 +507,4 @@ app-hosting appid netbeez
   cpu 7400
   memory 1000
   persist-disk 4000
+end
