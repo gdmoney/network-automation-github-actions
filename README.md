@@ -21,8 +21,8 @@ Network automation framework based on the following **[GitOps](https://opengitop
 - [GitHub Actions self-hosted runner](https://docs.github.com/en/actions/hosting-your-own-runners/about-self-hosted-runners) - runs the workflow job
 - [Ubuntu 20.04 Docker container](https://hub.docker.com/_/ubuntu) - hosts the GitHub Actions runner and the TFTP server
 - [Opengear OOB access server](https://opengear.com/products/om2200-operations-manager/) - bare metal server running the Docker Engine
-- [Unimus network automation tool](https://unimus.net/) - backs up and audits device configs
-- [Slack](https://slack.com) - sends config change notifications
+- [Unimus network automation tool](https://unimus.net/) - mass config push and device backup/audit
+- [Slack](https://slack.com) - config change notifications
 
 
 ## Reference Architecture
