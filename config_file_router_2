@@ -6,7 +6,7 @@ service unsupported-transceiver
 platform qfp utilization monitor load 80
 platform punt-keepalive disable-kernel-core
 !
-hostname ROUTER_2
+hostname ROUTER_2.1
 !
 boot-start-marker
 boot system flash c8000be-universalk9.17.09.04a.SPA.bin
@@ -97,7 +97,7 @@ interface GigabitEthernet0/0/1
  no ip address
  negotiation auto
  channel-group 1 mode active
-!         
+!
 interface GigabitEthernet0/0/2
  no ip address
  negotiation auto
@@ -121,6 +121,7 @@ interface TenGigabitEthernet0/0/5
  ip address 192.168.254.5 255.255.255.252
  ip nat inside
  ip ospf network point-to-point
+ negotiation auto
 !
 router ospf 1
  router-id 169.254.1.2
