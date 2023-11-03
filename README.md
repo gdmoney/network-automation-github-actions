@@ -2,7 +2,7 @@
 
 
 ## Project Overview
-Network automation framework based on **[GitOps](https://opengitops.dev/)** principles:
+Network automation framework based on the following **[GitOps](https://opengitops.dev/)** principles:
 - **GitHub** is assumed to be the [Single Source of Truth](https://en.wikipedia.org/wiki/Single_source_of_truth) - all data related to the definition of the solution is documented here
 - All device configurations are defined as `code` and stored in a [distributed version control system](https://en.wikipedia.org/wiki/Distributed_version_control) repository
 - Configuration files are in **raw format** and use a [declarative](https://en.wikipedia.org/wiki/Declarative_programming) language syntax to describe the **desired** system state
@@ -18,11 +18,11 @@ Network automation framework based on **[GitOps](https://opengitops.dev/)** prin
 
 ## Solution Components
 - GitHub repository - the source of truth for device configurations
-- [GitHub Actions self-hosted runner](https://docs.github.com/en/actions/hosting-your-own-runners/about-self-hosted-runners) - runs the workflow job
+- [GitHub Actions self-hosted runner](https://docs.github.com/en/actions/hosting-your-own-runners/about-self-hosted-runners) - is connected to this repo and runs the workflow job when a config file change is committed
 - [Ubuntu 20.04 Docker container](https://hub.docker.com/_/ubuntu) - hosts the GitHub Actions runner and the TFTP server
 - [Opengear OOB access server](https://opengear.com/products/om2200-operations-manager/) - bare metal server running the Docker Engine
-- [Unimus network automation tool](https://unimus.net/) - backs up and audits device configs
-- [Slack](https://slack.com) - sends config change notifications
+- [Unimus](https://unimus.net/) - network automation tool for mass config push and device backup/audit/drift detection
+- [Slack](https://slack.com) - config change notifications
 
 
 ## Reference Architecture
