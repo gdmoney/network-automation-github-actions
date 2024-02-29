@@ -138,7 +138,7 @@ Listening for Jobs
 ## Troubleshooting
 **After container or Opengear restart**
 - *Verify that the Ubuntu container still has the .2 IP address*
-- *Start the TFTP service as root and the GitHub Actions runner as siteadmin*
+- *Start the TFTP service as `root` and the GitHub Actions runner as `siteadmin`*
 ```
 /etc/init.d/tftpd-hpa start
 service --status-all
