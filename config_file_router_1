@@ -6,7 +6,7 @@ service unsupported-transceiver
 platform qfp utilization monitor load 80
 platform punt-keepalive disable-kernel-core
 !
-hostname ROUTER_1.6
+hostname ROUTER_1.7
 !
 boot-start-marker
 boot system flash c8000be-universalk9.17.09.04a.SPA.bin
@@ -63,6 +63,9 @@ crypto pki certificate chain SLA-TrustPoint
   418616A9 4093E049 4D10AB75 27E86F73 932E35B5 8862FDAE 0275156F 719BB2F0 
   D697DF7F 28
         quit
+!
+crypto pki certificate pool
+ cabundle nvram:ios_core.p7b
 !
 license feature hseck9
 license udi pid C8300-1N1S-4T2X sn FLM2722116L
