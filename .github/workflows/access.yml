@@ -3,7 +3,7 @@ name: access switch
 on:
   push:
     branches:
-    - main
+      - main
     paths:
     - 'config_file_access_switch'
   workflow_dispatch:
