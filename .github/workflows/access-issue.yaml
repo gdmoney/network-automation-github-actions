@@ -1,0 +1,17 @@
+name: access switch - issue labeled
+
+on:
+  issues:
+    types:
+      - labeled
+
+jobs:
+  run_if_label_matches:
+    if: github.event.label.name == 'access'
+    runs-on: [self-hosted, linux]
+    steps:
+    - run: |
+        cd /home/siteadmin/actions-runner/network-automation-github-actions
+        git pull
+        ./_access.sh
+        cd ..
