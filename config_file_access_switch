@@ -5,7 +5,7 @@ service call-home
 service unsupported-transceiver
 no platform punt-keepalive disable-kernel-core
 !
-hostname SWITCH_ACCESS
+hostname SWITCH_ACCESS.1
 !
 vrf definition Mgmt-vrf
  !
@@ -34,8 +34,9 @@ crypto pki trustpoint SLA-TrustPoint
  revocation-check crl
 !
 crypto pki certificate chain SLA-TrustPoint
+ certificate ca 01 nvram:CiscoLicensi#1CA.cer
+!
 crypto pki certificate pool
- cabundle nvram:ios_core.p7b
 !
 license boot level network-advantage addon dna-advantage
 license smart url https://smartreceiver.cisco.com/licservice/license
