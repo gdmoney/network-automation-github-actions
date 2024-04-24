@@ -17,8 +17,8 @@ curl -X 'POST' \
   ],
   "advancedSettings": {
     "promptMatchingMode": "LEARNING",
-    "overrideTimeouts": true,
-    "timeout": 5000,
+    "overrideTimeouts": false,
+    "timeout": 0,
     "overrideCredentials": false,
     "username": "string",
     "password": "string",
