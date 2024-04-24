@@ -6,7 +6,7 @@ service unsupported-transceiver
 platform qfp utilization monitor load 80
 platform punt-keepalive disable-kernel-core
 !
-hostname ROUTER_1.3
+hostname ROUTER_1.4
 !
 boot-start-marker
 boot system flash c8000be-universalk9.17.09.04a.SPA.bin
@@ -35,7 +35,9 @@ crypto pki trustpoint SLA-TrustPoint
  revocation-check crl
 !
 crypto pki certificate chain SLA-TrustPoint
- nvram:CiscoLicensi#1CA.cer
+ certificate ca 01 nvram:CiscoLicensi#1CA.cer
+!
+crypto pki certificate pool
 !
 license feature hseck9
 license udi pid C8300-1N1S-4T2X sn FLM2722116L
