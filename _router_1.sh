@@ -8,7 +8,8 @@ curl -X 'POST' \
   -d '{
   "commands": [
     "config replace tftp://172.17.0.2/config_file_router_1 force",
-    "write memory"
+    "write memory",
+  
   ],
   "requireEnableMode": true,
   "requireConfigureMode": false,
