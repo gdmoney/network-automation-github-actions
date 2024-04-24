@@ -1,3 +1,5 @@
+name: router_2 - config change detected workflow
+
 on:
   issues:
     types:
@@ -5,7 +7,7 @@ on:
 
 jobs:
   run_if_label_matches:
-    if: github.event.label.name == 'access'
+    if: github.event.label.name == 'router_2'
     runs-on: [self-hosted, linux]
     steps:
     - run: |

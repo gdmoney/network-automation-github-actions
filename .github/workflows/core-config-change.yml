@@ -1,0 +1,17 @@
+name: core switch - config change detected workflow
+
+on:
+  issues:
+    types:
+      - labeled
+
+jobs:
+  run_if_label_matches:
+    if: github.event.label.name == 'core'
+    runs-on: [self-hosted, linux]
+    steps:
+    - run: |
+        cd /home/siteadmin/actions-runner/network-automation-github-actions
+        git pull
+        ./_access.sh
+        cd ..

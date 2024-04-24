@@ -1,19 +1,16 @@
-name: access switch
+name: access switch - config change detected workflow
 
 on:
-  push:
-    branches:
-      - main
-    paths:
-    - 'config_file_access_switch'
-  workflow_dispatch:
+  issues:
+    types:
+      - labeled
 
 jobs:
-  deploy:
+  run_if_label_matches:
+    if: github.event.label.name == 'access'
     runs-on: [self-hosted, linux]
     steps:
-    - name: Run
-      run: |
+    - run: |
         cd /home/siteadmin/actions-runner/network-automation-github-actions
         git pull
         ./_access.sh

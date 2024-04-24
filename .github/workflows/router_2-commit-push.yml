@@ -1,11 +1,11 @@
-name: core switch
+name: router_2 - commit push workflow
 
 on:
   push:
     branches:
     - main
     paths:
-    - 'config_file_core_switch'
+    - 'config_file_router_2'
   workflow_dispatch:
 
 jobs:
@@ -16,5 +16,5 @@ jobs:
       run: |
         cd /home/siteadmin/actions-runner/network-automation-github-actions
         git pull
-        ./_core.sh
+        ./_router_2.sh
         cd ..

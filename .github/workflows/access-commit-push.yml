@@ -1,0 +1,20 @@
+name: access switch - commit push workflow
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+    - 'config_file_access_switch'
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: [self-hosted, linux]
+    steps:
+    - name: Run
+      run: |
+        cd /home/siteadmin/actions-runner/network-automation-github-actions
+        git pull
+        ./_access.sh
+        cd ..
