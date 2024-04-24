@@ -6,7 +6,7 @@ service unsupported-transceiver
 platform qfp utilization monitor load 80
 platform punt-keepalive disable-kernel-core
 !
-hostname ROUTER_2
+hostname ROUTER_2.1
 !
 boot-start-marker
 boot system flash c8000be-universalk9.17.09.04a.SPA.bin
@@ -30,18 +30,14 @@ vtp version 1
 !
 multilink bundle-name authenticated
 !
-crypto pki trustpoint TP-self-signed-2773900489
- enrollment selfsigned
- subject-name cn=IOS-Self-Signed-Certificate-2773900489
- revocation-check none
- rsakeypair TP-self-signed-2773900489
-!
 crypto pki trustpoint SLA-TrustPoint
- enrollment pkcs12
+ enrollment terminal
  revocation-check crl
 !
-crypto pki certificate chain TP-self-signed-2773900489
 crypto pki certificate chain SLA-TrustPoint
+ certificate ca 01 nvram:CiscoLicensi#1CA.cer
+!
+crypto pki certificate pool
 !
 license feature hseck9
 license udi pid C8300-1N1S-4T2X sn FLM2722116J

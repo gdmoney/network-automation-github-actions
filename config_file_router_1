@@ -6,7 +6,7 @@ service unsupported-transceiver
 platform qfp utilization monitor load 80
 platform punt-keepalive disable-kernel-core
 !
-hostname ROUTER_1.8
+hostname ROUTER_1.1
 !
 boot-start-marker
 boot system flash c8000be-universalk9.17.09.04a.SPA.bin
@@ -33,7 +33,6 @@ multilink bundle-name authenticated
 crypto pki trustpoint SLA-TrustPoint
  enrollment terminal
  revocation-check crl
-!
 !
 crypto pki certificate chain SLA-TrustPoint
  certificate ca 01 nvram:CiscoLicensi#1CA.cer
