@@ -22,7 +22,8 @@ Network automation framework based on the following **[GitOps Principles](https:
 - [Ubuntu 20.04 Docker container](https://hub.docker.com/_/ubuntu) - hosts the GitHub Actions runner and the TFTP server
 - [Opengear OOB access server](https://opengear.com/products/om2200-operations-manager/) - bare metal server running the Docker Engine
 - [Unimus](https://unimus.net/) - network automation tool for mass config push and device backup/audit/drift detection
-- [Slack](https://slack.com) - config change notifications
+- [Slack](https://slack.com) - Unimus config change notifications, GitHub activities notifications, and GitHub issues & PR actions
+- [Zapier](https://zapier.com) - workflow automation tool generating GitHub issues from config change Slack messages from Unimus
 
 
 ## Reference Architecture
@@ -51,6 +52,9 @@ Network automation framework based on the following **[GitOps Principles](https:
 - Devices' configuration is replaced and saved
 - Operator gets a Slack notification describing the config change(s)
 - Unimus continuously audits devices' operational state and generates alerts if config drift is detected
+- If a device's configuration is changed manually, network operator will get a Slack message describing the change which will intern automatically create a new GitHub issue
+- Operator can take action on the issue directly from Slack (assign, label, close, reopen)
+- Assigning a label will start GitHub actions workflow to restore the device's current state config to match it's desired state config as described in the GitHub repo
 
 
 ## Build
