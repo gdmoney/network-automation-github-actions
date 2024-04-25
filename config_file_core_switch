@@ -78,7 +78,7 @@ ip dhcp pool SWITCH_ACCESS_6
  client-identifier 012c.73a0.9c6c.c7
 !
 login block-for 60 attempts 3 within 10
-login delay 3
+login delay 4
 login on-success log
 !
 no device-tracking logging theft
@@ -87,14 +87,7 @@ crypto pki trustpoint SLA-TrustPoint
  enrollment terminal
  revocation-check crl
 !
-crypto pki trustpoint TP-self-signed-1349214491
- enrollment selfsigned
- subject-name cn=IOS-Self-Signed-Certificate-1349214491
- revocation-check none
- rsakeypair TP-self-signed-1349214491
-!
 crypto pki certificate chain SLA-TrustPoint
-crypto pki certificate chain TP-self-signed-1349214491
 !
 crypto pki certificate pool
  cabundle nvram:ios_core.p7b
