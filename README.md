@@ -54,7 +54,7 @@ Network automation framework based on the following **[GitOps Principles](https:
 - Unimus continuously audits devices' operational state and generates alerts if config drift is detected
 - If a device's configuration is changed manually, network operator will get a Slack message describing the change which will intern automatically create a new GitHub issue
 - Operator can take action on the issue directly from Slack (assign, label, close, reopen)
-- Assigning a label will start GitHub actions workflow to restore the device's current state config to match it's desired state config as described in the GitHub repo
+- Assigning a label will start a corresponding GitHub actions workflow to restore the device's modified current state config to match it's desired state config as described in the GitHub repo
 
 
 ## Build
