@@ -21,7 +21,7 @@ ip domain lookup source-interface TenGigabitEthernet0/0/5
 ip domain name event.tech
 !
 login block-for 60 attempts 3 within 10
-login delay 1
+login delay 3
 login on-success log
 !
 subscriber templating
@@ -31,13 +31,11 @@ vtp version 1
 multilink bundle-name authenticated
 !
 crypto pki trustpoint SLA-TrustPoint
- enrollment terminal
+ enrollment pkcs12
  revocation-check crl
 !
 crypto pki certificate chain SLA-TrustPoint
  certificate ca 01 nvram:CiscoLicensi#1CA.cer
-!
-crypto pki certificate pool
 !
 license feature hseck9
 license udi pid C8300-1N1S-4T2X sn FLM2722116J
