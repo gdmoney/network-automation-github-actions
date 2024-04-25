@@ -25,7 +25,7 @@ ip name-server 1.1.1.1 9.9.9.9
 ip domain name event.tech
 !
 login block-for 60 attempts 3 within 10
-login delay 4
+login delay 5
 login on-success log
 vtp version 1
 !
