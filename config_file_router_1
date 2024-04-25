@@ -21,7 +21,7 @@ ip domain lookup source-interface TenGigabitEthernet0/0/5
 ip domain name event.tech
 !
 login block-for 60 attempts 3 within 10
-login delay 3
+login delay 4
 login on-success log
 !
 subscriber templating
@@ -35,7 +35,6 @@ crypto pki trustpoint SLA-TrustPoint
  revocation-check crl
 !
 crypto pki certificate chain SLA-TrustPoint
- certificate ca 01 nvram:CiscoLicensi#1CA.cer
 !
 crypto pki certificate pool
 !
