@@ -22,7 +22,7 @@ Network automation framework based on the following **[GitOps Principles](https:
 - [Ubuntu 20.04 Docker container](https://hub.docker.com/_/ubuntu) - hosts the GitHub Actions runner and the TFTP server
 - [Opengear OOB access server](https://opengear.com/products/om2200-operations-manager/) - bare metal server running the Docker Engine
 - [Unimus](https://unimus.net/) - network automation tool for mass config push and device backup/audit/drift detection
-- [Slack](https://slack.com) - Unimus config change notifications, GitHub activities notifications, and GitHub issues & PR actions
+- [Slack](https://slack.com) - Unimus config change notifications, GitHub repo activities notifications, and GitHub issues actions
 - [Zapier](https://zapier.com) - workflow automation tool generating GitHub issues from config change Slack messages from Unimus
 
 
