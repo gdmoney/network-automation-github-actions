@@ -21,9 +21,9 @@ Network automation framework based on the following **[GitOps Principles](https:
 - [GitHub Actions self-hosted runner](https://docs.github.com/en/actions/hosting-your-own-runners/about-self-hosted-runners) - connects to this repo and runs the workflow job when a config file change is committed
 - [Ubuntu 20.04 Docker container](https://hub.docker.com/_/ubuntu) - hosts the GitHub Actions runner and the TFTP server
 - [Opengear OOB access server](https://opengear.com/products/om2200-operations-manager/) - bare metal server running the Docker Engine
-- [Unimus](https://unimus.net/) - network automation tool for mass config push and device backup, audit, and drift detection
+- [Unimus](https://unimus.net/) - network automation tool for mass config push, device backup, config audit, and drift detection
 - [Slack](https://slack.com) - Unimus config change notifications, GitHub repo activities notifications, and GitHub issues actions
-- [Zapier](https://zapier.com) - workflow automation tool generating GitHub issues from config change Slack messages from Unimus
+- [Zapier](https://zapier.com) - workflow automation tool generating GitHub issues from the config change notifications sent from Unimus to Slack
 
 
 ## Reference Architecture
