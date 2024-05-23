@@ -75,33 +75,26 @@ track 10 list boolean or
 interface Loopback1
  ip address 169.254.1.1 255.255.255.255
 !
-interface Port-channel1
- description ROUTER_2
- ip address 192.168.254.13 255.255.255.252
- ip nat inside
- ip ospf network point-to-point
- negotiation auto
-!
 interface GigabitEthernet0/0/0
  no ip address
+ shutdown
  negotiation auto
- channel-group 1 mode active
 !
 interface GigabitEthernet0/0/1
  no ip address
+ shutdown
  negotiation auto
- channel-group 1 mode active
 !
 interface GigabitEthernet0/0/2
  no ip address
+ shutdown
  negotiation auto
- channel-group 1 mode active
-!
+!         
 interface GigabitEthernet0/0/3
  no ip address
+ shutdown 
  negotiation auto
- channel-group 1 mode active
-!
+!         
 interface TenGigabitEthernet0/0/4
  description ISP_1
  ip address 100.64.1.2 255.255.255.252
@@ -109,19 +102,26 @@ interface TenGigabitEthernet0/0/4
  load-interval 30
  negotiation auto
  no cdp enable
-!
+!         
 interface TenGigabitEthernet0/0/5
  description CORE_SWITCH
  ip address 192.168.254.1 255.255.255.252
  ip nat inside
  ip ospf network point-to-point
  negotiation auto
-!
+!         
+interface TenGigabitEthernet0/1/0
+ description ROUTER_2
+ ip address 192.168.254.13 255.255.255.252
+ ip nat inside
+ ip ospf network point-to-point
+ negotiation auto
+!         
 router ospf 1
  router-id 169.254.1.1
  passive-interface default
  no passive-interface TenGigabitEthernet0/0/5
- no passive-interface Port-channel1
+ no passive-interface TenGigabitEthernet0/1/0
  network 192.168.254.1 0.0.0.0 area 0
  network 192.168.254.13 0.0.0.0 area 0
  default-information originate
