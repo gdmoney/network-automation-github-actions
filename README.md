@@ -123,7 +123,7 @@ git clone https://github.com/gdmoney/network-automation-github-actions.git
 chmod 755 _access.sh _core.sh _router_1.sh _router_2.sh
 ```
 
-**Download, extract, configure, and run the GitHub Actions self-hosted agent**
+**Download, extract, configure, and run the GitHub Actions self-hosted runner**
 - *Get the token from: github.com > repo > Settings > Actions > Runners > New runner > New self-hosted runner*
 ```
 curl -o actions-runner-linux-x64-2.305.0.tar.gz -L https://github.com/actions/runner/releases/download/v2.305.0/actions-runner-linux-x64-2.305.0.tar.gz
@@ -149,5 +149,11 @@ service --status-all
 
 su siteadmin
 cd /home/siteadmin/actions-runner/
+./run.sh
+```
+**Reconfigure self-hosted runner after deleting it on GitHub**
+```
+rm .runner
+./config.sh --url https://github.com/gdmoney/network-automation-github-actions --token <TOKEN>
 ./run.sh
 ```
