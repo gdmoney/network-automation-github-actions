@@ -200,14 +200,18 @@ interface GigabitEthernet0/0
  negotiation auto
 !
 interface TenGigabitEthernet1/0/1
- description ROUTER_1
- no switchport
- ip address 192.168.254.2 255.255.255.252
- ip ospf network point-to-point 
+ description User
+ switchport access vlan 10
+ switchport mode access
+ shutdown
+ spanning-tree portfast
 !
 interface TenGigabitEthernet1/0/2
- no switchport
- no ip address
+ description User
+ switchport access vlan 10
+ switchport mode access
+ shutdown
+ spanning-tree portfast
 !
 interface TenGigabitEthernet1/0/3
  description User
@@ -393,7 +397,10 @@ interface TenGigabitEthernet1/1/7
  shutdown
 !
 interface TenGigabitEthernet1/1/8
- shutdown
+ description ROUTER_1
+ no switchport
+ ip address 192.168.254.2 255.255.255.252
+ ip ospf network point-to-point
 !
 interface FortyGigabitEthernet1/1/1
  shutdown
@@ -411,14 +418,18 @@ interface AppGigabitEthernet1/0/1
  switchport mode trunk
 !
 interface TenGigabitEthernet2/0/1
+ description User
+ switchport access vlan 10
  switchport mode access
  shutdown
+ spanning-tree portfast
 !
 interface TenGigabitEthernet2/0/2
- description ROUTER_2
- no switchport
- ip address 192.168.254.6 255.255.255.252
- ip ospf network point-to-point
+ description User
+ switchport access vlan 10
+ switchport mode access
+ shutdown
+ spanning-tree portfast
 !
 interface TenGigabitEthernet2/0/3
  description User
@@ -604,7 +615,10 @@ interface TenGigabitEthernet2/1/7
  shutdown
 !
 interface TenGigabitEthernet2/1/8
- shutdown
+ description ROUTER_2
+ no switchport
+ ip address 192.168.254.6 255.255.255.252
+ ip ospf network point-to-point
 !
 interface FortyGigabitEthernet2/1/1
  shutdown
@@ -637,8 +651,8 @@ router ospf 1
  router-id 169.254.1.10
  redistribute static
  passive-interface default
- no passive-interface TenGigabitEthernet1/0/1
- no passive-interface TenGigabitEthernet2/0/2
+ no passive-interface TenGigabitEthernet1/1/8
+ no passive-interface TenGigabitEthernet2/1/8
  network 10.10.0.0 0.0.15.255 area 0
  network 10.20.0.0 0.0.15.255 area 0
  network 192.168.254.2 0.0.0.0 area 0
