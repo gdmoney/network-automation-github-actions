@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2024-04-25T19:18:06.259Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36" etag="-63LXH7fm1eCGlRSdIUM" version="23.1.7" type="device">
+<mxfile host="app.diagrams.net" modified="2024-05-28T21:52:34.221Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36" etag="3MihbUGGn5qFz3TKrXao" version="24.4.8" type="device">
   <diagram id="ubtK0CXxR8o14yQeXOuR" name="Page-1">
-    <mxGraphModel dx="1480" dy="670" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="#ffffff" math="0" shadow="1">
+    <mxGraphModel dx="1466" dy="749" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="#ffffff" math="0" shadow="1">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -152,9 +152,10 @@
         <mxCell id="y1HGqrhGTZ1kONXhhS_t-1" value="" style="pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#000000;shape=mxgraph.mscae.system_center.admin_console;aspect=fixed;" parent="1" vertex="1">
           <mxGeometry x="20" y="336" width="69.44" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="yazv2A0uvIkX0p8Q7sWj-4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="_H5GYCs3E-hNSazINAbS-3">
+        <mxCell id="yazv2A0uvIkX0p8Q7sWj-4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=classic;startFill=1;" parent="1" edge="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="220" y="469" as="targetPoint" />
+            <mxPoint x="220" y="466" as="targetPoint" />
+            <mxPoint x="220" y="517" as="sourcePoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="_H5GYCs3E-hNSazINAbS-3" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn4.iconfinder.com/data/icons/logos-brands-5/24/slack-128.png" parent="1" vertex="1">
@@ -205,8 +206,8 @@
             <mxPoint x="90" y="360" as="sourcePoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="yazv2A0uvIkX0p8Q7sWj-5" value="&lt;ul&gt;&lt;li&gt;GH issues actions&lt;/li&gt;&lt;/ul&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="201" y="470" width="157" height="51" as="geometry" />
+        <mxCell id="yazv2A0uvIkX0p8Q7sWj-5" value="&lt;ul&gt;&lt;li&gt;GH issues actions&lt;/li&gt;&lt;/ul&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="201" y="468" width="157" height="51" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
