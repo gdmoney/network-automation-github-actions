@@ -114,7 +114,7 @@ class-map match-any system-cpp-police-ios-feature
 policy-map system-cpp-policy
 !
 interface Port-channel1
- description SWITCH_CORE.1
+ description SWITCH_CORE
  switchport mode trunk
 !
 interface GigabitEthernet0/0
