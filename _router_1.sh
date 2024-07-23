@@ -1,7 +1,7 @@
 #!/bin/sh
 
 curl -X 'POST' \
-  'http://172.18.50.1:8085/api/v3/jobs/push' \
+  'http://192.168.255.5:8085/api/v3/jobs/push' \
   -H 'accept: application/json' \
   -H 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhdXRoMCJ9.SENSdIUM5ZI7BwHH7mVw2cHyZwMzSQCngz0CNBcyAuU' \
   -H 'Content-Type: application/json' \
