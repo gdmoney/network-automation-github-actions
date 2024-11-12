@@ -73,7 +73,7 @@ track 10 list boolean or
  object 3
 !
 interface Loopback1
- description 1
+ description 1.1
  ip address 169.254.1.2 255.255.255.255
 !
 interface GigabitEthernet0/0/0
