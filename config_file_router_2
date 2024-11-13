@@ -73,7 +73,7 @@ track 10 list boolean or
  object 3
 !
 interface Loopback1
- description 1.1
+ description 1.2
  ip address 169.254.1.2 255.255.255.255
 !
 interface GigabitEthernet0/0/0
@@ -152,8 +152,8 @@ ip access-list standard SSH
  10 permit 192.168.255.0 0.0.0.255
 !
 ip access-list extended NAT_ACL
- 10 permit ip 10.10.0.0 0.0.15.255 any
- 20 permit ip 10.20.0.0 0.0.15.255 any
+ 10 permit ip 10.10.240.0 0.0.15.255 any
+ 20 permit ip 10.20.240.0 0.0.15.255 any
  30 permit ip 192.168.255.0 0.0.0.255 any
  40 permit ip 192.168.254.0 0.0.0.255 any
 !
