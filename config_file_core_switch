@@ -26,8 +26,8 @@ ip routing
 !
 ip name-server 8.8.8.8 8.8.4.4
 ip domain name event.tech
-ip dhcp excluded-address 10.10.0.1 10.10.0.20
-ip dhcp excluded-address 10.20.0.1 10.20.0.20
+ip dhcp excluded-address 10.10.240.1 10.10.0.20
+ip dhcp excluded-address 10.20.240.1 10.20.0.20
 ip dhcp excluded-address 192.168.255.1 192.168.255.20
 !
 ip dhcp pool Net_Mgmt
@@ -41,14 +41,14 @@ ip dhcp pool Net_Mgmt
 !
 ip dhcp pool Users
  network 10.10.0.0 255.255.240.0
- default-router 10.10.0.1
+ default-router 10.10.240.1
  dns-server 8.8.8.8 8.8.4.4
  domain-name event.tech
  lease 0 4
 !
 ip dhcp pool Video
  network 10.20.0.0 255.255.240.0
- default-router 10.20.0.1
+ default-router 10.20.240.1
  dns-server 8.8.8.8 8.8.4.4
  domain-name event.tech
  lease 0 4
@@ -167,7 +167,7 @@ class-map match-any system-cpp-police-ios-feature
 policy-map system-cpp-policy
 !
 interface Loopback1
- description 1.1
+ description 1.2
  ip address 169.254.1.10 255.255.255.255
 !
 interface Port-channel11
@@ -641,11 +641,11 @@ interface Vlan1
 !
 interface Vlan10
  description Users
- ip address 10.10.0.1 255.255.240.0
+ ip address 10.10.240.1 255.255.240.0
 !
 interface Vlan20
  description Video
- ip address 10.20.0.1 255.255.240.0
+ ip address 10.20.240.1 255.255.240.0
  ip policy route-map Video
 !
 router ospf 1
@@ -654,8 +654,8 @@ router ospf 1
  passive-interface default
  no passive-interface TenGigabitEthernet1/1/8
  no passive-interface TenGigabitEthernet2/1/8
- network 10.10.0.0 0.0.15.255 area 0
- network 10.20.0.0 0.0.15.255 area 0
+ network 10.10.240.0 0.0.15.255 area 0
+ network 10.20.240.0 0.0.15.255 area 0
  network 192.168.254.2 0.0.0.0 area 0
  network 192.168.254.6 0.0.0.0 area 0
  network 192.168.255.0 0.0.0.255 area 0
