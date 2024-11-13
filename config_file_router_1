@@ -155,7 +155,7 @@ ip access-list standard SSH
 ip access-list extended NAT_ACL
  10 permit ip 10.10.240.0 0.0.15.255 any
  20 permit ip 10.20.240.0 0.0.15.255 any
- 25 deny ip 192.168.255.0 0.0.0.255 10.10.8.0 0.0.7.255
+ 25 deny ip host 192.168.255.5 10.10.8.0 0.0.7.255
  30 permit ip 192.168.255.0 0.0.0.255 any
  40 permit ip 192.168.254.0 0.0.0.255 any
 !
