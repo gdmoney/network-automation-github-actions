@@ -40,14 +40,14 @@ ip dhcp pool Net_Mgmt
  lease 8
 !
 ip dhcp pool Users
- network 10.10.0.0 255.255.240.0
+ network 10.10.240.0 255.255.240.0
  default-router 10.10.240.1
  dns-server 8.8.8.8 8.8.4.4
  domain-name event.tech
  lease 0 4
 !
 ip dhcp pool Video
- network 10.20.0.0 255.255.240.0
+ network 10.20.240.0 255.255.240.0
  default-router 10.20.240.1
  dns-server 8.8.8.8 8.8.4.4
  domain-name event.tech
