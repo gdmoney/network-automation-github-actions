@@ -26,8 +26,8 @@ ip routing
 !
 ip name-server 8.8.8.8 8.8.4.4
 ip domain name event.tech
-ip dhcp excluded-address 10.10.240.1 10.10.0.20
-ip dhcp excluded-address 10.20.240.1 10.20.0.20
+ip dhcp excluded-address 10.10.240.1 10.10.240.20
+ip dhcp excluded-address 10.20.240.1 10.20.240.20
 ip dhcp excluded-address 192.168.255.1 192.168.255.20
 !
 ip dhcp pool Net_Mgmt
@@ -169,7 +169,7 @@ class-map match-any system-cpp-police-ios-feature
 policy-map system-cpp-policy
 !
 interface Loopback1
- description 1.2
+ description 1.3
  ip address 169.254.1.10 255.255.255.255
 !
 interface Port-channel11
