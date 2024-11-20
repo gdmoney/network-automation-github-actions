@@ -103,6 +103,8 @@ archive
  path flash:config
  write-memory
 memory free low-watermark processor 134344
+hw-module switch 1 upoe-plus
+hw-module switch 2 upoe-plus
 !
 diagnostic bootup level minimal
 !
