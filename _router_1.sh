@@ -16,7 +16,7 @@ curl -X 'POST' \
     "6a31a8fd-eea7-430a-a126-25d00a3e5928"
   ],
   "advancedSettings": {
-    "promptMatchingMode": "LEARNING",
+    "promptMatchingModeEnum": "LEARNING",
     "overrideTimeouts": false,
     "timeout": 0,
     "overrideCredentials": false,
