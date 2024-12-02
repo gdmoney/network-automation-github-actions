@@ -21,7 +21,7 @@ clock summer-time PDT recurring
 boot system switch all flash:cat9k_iosxe.17.09.04a.SPA.bin
 switch 1 provision c9300-48uxm
 !
-ip name-server 1.1.1.1 9.9.9.9
+ip name-server 8.8.8.8 8.8.4.4
 ip domain name event.tech
 !
 login block-for 60 attempts 3 within 10
@@ -48,6 +48,7 @@ archive
  path flash:config
  write-memory
 memory free low-watermark processor 134344
+hw-module switch 1 upoe-plus
 !
 diagnostic bootup level minimal
 !
