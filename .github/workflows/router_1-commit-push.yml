@@ -12,8 +12,7 @@ jobs:
   deploy:
     runs-on: [self-hosted, linux]
     steps:
-    - name: Run
-      run: |
+    - run: |
         cd /home/siteadmin/actions-runner/network-automation-github-actions
         git pull
         ./_router_1.sh
