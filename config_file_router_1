@@ -110,7 +110,7 @@ interface TenGigabitEthernet0/0/5
  ip nat inside
  ip ospf network point-to-point
  negotiation auto
-!         
+!
 interface TenGigabitEthernet0/1/0
  description ROUTER_2
  ip address 192.168.254.13 255.255.255.252
@@ -134,8 +134,7 @@ ip http client source-interface TenGigabitEthernet0/0/5
 ip forward-protocol nd
 ip tftp source-interface TenGigabitEthernet0/0/5
 !
-ip nat pool NAT_POOL 12.13.232.163 12.13.232.164 prefix-length 29
-ip nat inside source list NAT_ACL pool NAT_POOL overload
+ip nat inside source list NAT_ACL interface TenGigabitEthernet0/0/4 overload
 !
 ip route 0.0.0.0 0.0.0.0 12.13.232.161 track 10
 ip route 4.2.2.2 255.255.255.255 12.13.232.161
