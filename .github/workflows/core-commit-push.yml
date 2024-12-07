@@ -3,17 +3,17 @@ name: core switch - config push workflow
 on:
   push:
     branches:
-    - main
+      - main
     paths:
-    - 'config_file_core_switch'
+      - 'config_file_core_switch'
   workflow_dispatch:
 
 jobs:
   deploy:
     runs-on: [self-hosted, linux]
     steps:
-    - run: |
-        cd /home/siteadmin/actions-runner/network-automation-github-actions
-        git pull
-        ./_core.sh
-        cd ..
+      - run: |
+          cd /home/siteadmin/actions-runner/network-automation-github-actions
+          git pull
+          ./_core.sh
+          cd ..

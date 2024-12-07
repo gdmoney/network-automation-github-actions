@@ -3,17 +3,17 @@ name: router_1 - commit push workflow
 on:
   push:
     branches:
-    - main
+      - main
     paths:
-    - 'config_file_router_1'
+      - 'config_file_router_1'
   workflow_dispatch:
 
 jobs:
   deploy:
     runs-on: [self-hosted, linux]
     steps:
-    - run: |
-        cd /home/siteadmin/actions-runner/network-automation-github-actions
-        git pull
-        ./_router_1.sh
-        cd ..
+      - run: |
+          cd /home/siteadmin/actions-runner/network-automation-github-actions
+          git pull
+          ./_router_1.sh
+          cd ..
