@@ -1,14 +1,11 @@
 #!/bin/bash
 
-API_URL="http://192.168.255.5:8085/api/v3/jobs/push"
-AUTH_TOKEN="Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhdXRoMCJ9.SENSdIUM5ZI7BwHH7mVw2cHyZwMzSQCngz0CNBcyAuU"
-TAG_UUID="b29da665-3147-4790-a775-ac8ed583231b"
-
-curl -X "POST" "${API_URL}" \
-  -H "accept: application/json" \
-  -H "Authorization: ${AUTH_TOKEN}" \
-  -H "Content-Type: application/json" \
-  -d "{
+curl -X 'POST' \
+  'http://192.168.255.5:8085/api/v3/jobs/push' \
+  -H 'accept: application/json' \
+  -H 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhdXRoMCJ9.SENSdIUM5ZI7BwHH7mVw2cHyZwMzSQCngz0CNBcyAuU' \
+  -H 'Content-Type: application/json' \
+  -d '{
   "commands": [
     "config replace tftp://172.18.0.2/config_file_access_switch force",
     "write memory"
@@ -16,7 +13,7 @@ curl -X "POST" "${API_URL}" \
   "requireEnableMode": true,
   "requireConfigureMode": false,
   "tagUuids": [
-    "${TAG_UUID}"
+    "b29da665-3147-4790-a775-ac8ed583231b"
   ],
   "advancedSettings": {
     "promptMatchingModeEnum": "LEARNING",
@@ -28,4 +25,4 @@ curl -X "POST" "${API_URL}" \
     "enablePassword": "string",
     "configurePassword": "string"
   }
-}"
+}'
