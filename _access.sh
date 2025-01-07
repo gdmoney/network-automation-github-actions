@@ -1,39 +1,28 @@
 #!/bin/bash
 
-# Variables
-API_URL="http://192.168.255.5:8085/api/v3/jobs/push"
-AUTH_TOKEN="Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhdXRoMCJ9.SENSdIUM5ZI7BwHH7mVw2cHyZwMzSQCngz0CNBcyAuU"
-TAG_UUID="b29da665-3147-4790-a775-ac8ed583231b"
-COMMAND1="config replace tftp://172.18.0.2/config_file_access_switch force"
-COMMAND2="write memory"
-USERNAME="string"
-PASSWORD="string"
-ENABLE_PASSWORD="string"
-CONFIGURE_PASSWORD="string"
-
-# Curl command
-curl -X 'POST' ${API_URL} \
+curl -X 'POST' \
+  'http://192.168.255.5:8085/api/v3/jobs/push' \
   -H 'accept: application/json' \
-  -H "Authorization: ${AUTH_TOKEN}" \
+  -H 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhdXRoMCJ9.SENSdIUM5ZI7BwHH7mVw2cHyZwMzSQCngz0CNBcyAuU' \
   -H 'Content-Type: application/json' \
-  -d "{
-  \"commands\": [
-    \"${COMMAND1}\",
-    \"${COMMAND2}\"
+  -d '{
+  "commands": [
+    "config replace tftp://172.18.0.2/config_file_access_switch force",
+    "write memory"
   ],
-  \"requireEnableMode\": true,
-  \"requireConfigureMode\": false,
-  \"tagUuids\": [
-    \"${TAG_UUID}\"
+  "requireEnableMode": true,
+  "requireConfigureMode": false,
+  "tagUuids": [
+    "b29da665-3147-4790-a775-ac8ed583231b"
   ],
-  \"advancedSettings\": {
-    \"promptMatchingModeEnum\": \"LEARNING\",
-    \"overrideTimeouts\": false,
-    \"timeout\": 0,
-    \"overrideCredentials\": false,
-    \"username\": \"${USERNAME}\",
-    \"password\": \"${PASSWORD}\",
-    \"enablePassword\": \"${ENABLE_PASSWORD}\",
-    \"configurePassword\": \"${CONFIGURE_PASSWORD}\"
+  "advancedSettings": {
+    "promptMatchingModeEnum": "LEARNING",
+    "overrideTimeouts": false,
+    "timeout": 0,
+    "overrideCredentials": false,
+    "username": "string",
+    "password": "string",
+    "enablePassword": "string",
+    "configurePassword": "string"
   }
-}"
+}'
