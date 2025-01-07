@@ -6,7 +6,7 @@ TAG_UUID="b29da665-3147-4790-a775-ac8ed583231b"
 
 curl -X "POST" "${API_URL}" \
   -H "accept: application/json" \
-  -H "Authorization: ${AUTH_TOKEN}" \
+  -H "Authorization: "${AUTH_TOKEN}"" \
   -H "Content-Type: application/json" \
   -d "{
   "commands": [
