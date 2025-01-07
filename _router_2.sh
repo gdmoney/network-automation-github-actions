@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 curl -X 'POST' \
   'http://192.168.255.5:8085/api/v3/jobs/push' \
