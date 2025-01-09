@@ -17,6 +17,7 @@ env:
 jobs:
   deploy:
     runs-on: [self-hosted, linux]
+    if: github.event_name == 'push' || (github.event_name == 'issues' && github.event.label.name == 'access')
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -26,9 +27,3 @@ jobs:
           git pull
           ./_access.sh
         working-directory: ${{ env.REPO_PATH }}
-
-    deploy-on-push:
-      if: github.event_name == 'push'
-
-    deploy-on-label:
-      if: github.event_name == 'issues' && github.event.label.name == 'access'
