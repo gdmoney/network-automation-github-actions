@@ -13,6 +13,7 @@ on:
 
 env:
   REPO_PATH: /home/siteadmin/actions-runner/network-automation-github-actions
+  AUTH_TOKEN: ${{ secrets.AUTH_TOKEN }}
 
 jobs:
   deploy:
