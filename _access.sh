@@ -37,3 +37,6 @@ curl -X 'POST' ${API_URL} \
     \"configurePassword\": \"${CONFIGURE_PASSWORD}\"
   }
 }"
+
+echo "Running _access.sh script"
+echo "AUTH_TOKEN: $AUTH_TOKEN"
