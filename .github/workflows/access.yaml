@@ -1,4 +1,4 @@
-name: access switch workflows
+name: access switch workflow
 
 on:
   push:
@@ -22,7 +22,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Pull latest changes and run access script
+      - name: Pull latest changes and run the 'access' script
         run: |
           git pull
           ./_access.sh

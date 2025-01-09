@@ -1,0 +1,33 @@
+name: core switch workflows
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'config_file_core_switch'
+  issues:
+    types:
+      - labeled
+  workflow_dispatch:
+
+jobs:
+  deploy-on-push:
+    runs-on: [self-hosted, linux]
+    if: github.event_name == 'push'
+    steps:
+      - run: |
+          cd /home/siteadmin/actions-runner/network-automation-github-actions
+          git pull
+          ./_core.sh
+          cd ..
+
+  deploy-on-label:
+    runs-on: [self-hosted, linux]
+    if: github.event_name == 'issues' && github.event.label.name == 'core'
+    steps:
+      - run: |
+          cd /home/siteadmin/actions-runner/network-automation-github-actions
+          git pull
+          ./_core.sh
+          cd ..

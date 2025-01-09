@@ -1,4 +1,4 @@
-name: core switch workflows
+name: core switch workflow
 
 on:
   push:
@@ -11,23 +11,19 @@ on:
       - labeled
   workflow_dispatch:
 
-jobs:
-  deploy-on-push:
-    runs-on: [self-hosted, linux]
-    if: github.event_name == 'push'
-    steps:
-      - run: |
-          cd /home/siteadmin/actions-runner/network-automation-github-actions
-          git pull
-          ./_core.sh
-          cd ..
+env:
+  REPO_PATH: /home/siteadmin/actions-runner/network-automation-github-actions
 
-  deploy-on-label:
+jobs:
+  deploy:
     runs-on: [self-hosted, linux]
-    if: github.event_name == 'issues' && github.event.label.name == 'core'
+    if: github.event_name == 'push' || (github.event_name == 'issues' && github.event.label.name == 'core')
     steps:
-      - run: |
-          cd /home/siteadmin/actions-runner/network-automation-github-actions
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Pull latest changes and run the 'core' script
+        run: |
           git pull
           ./_core.sh
-          cd ..
+        working-directory: ${{ env.REPO_PATH }}

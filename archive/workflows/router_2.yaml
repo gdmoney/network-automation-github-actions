@@ -1,0 +1,33 @@
+name: router_2 workflows
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'config_file_router_2'
+  issues:
+    types:
+      - labeled
+  workflow_dispatch:
+
+jobs:
+  deploy-on-push:
+    runs-on: [self-hosted, linux]
+    if: github.event_name == 'push'
+    steps:
+      - run: |
+          cd /home/siteadmin/actions-runner/network-automation-github-actions
+          git pull
+          ./_router_2.sh
+          cd ..
+
+  deploy-on-label:
+    runs-on: [self-hosted, linux]
+    if: github.event_name == 'issues' && github.event.label.name == 'router_2'
+    steps:
+      - run: |
+          cd /home/siteadmin/actions-runner/network-automation-github-actions
+          git pull
+          ./_router_2.sh
+          cd ..
