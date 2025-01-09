@@ -24,7 +24,7 @@ jobs:
 
       - name: Pull latest changes and run the 'access' script
         env:
-          AUTH_TOKEN: ${{ secrets.AUTH_TOKEN }}
+          API_TOKEN: ${{ secrets.AUTH_TOKEN }}
         run: |
           git pull
           ./_access.sh
