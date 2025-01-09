@@ -1,0 +1,34 @@
+name: access switch workflows
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'config_file_access_switch'
+  issues:
+    types:
+      - labeled
+  workflow_dispatch:
+
+env:
+  REPO_PATH: /home/siteadmin/actions-runner/network-automation-github-actions
+
+jobs:
+  deploy:
+    runs-on: [self-hosted, linux]
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Pull latest changes and run access script
+        run: |
+          git pull
+          ./_access.sh
+        working-directory: ${{ env.REPO_PATH }}
+
+    deploy-on-push:
+      if: github.event_name == 'push'
+
+    deploy-on-label:
+      if: github.event_name == 'issues' && github.event.label.name == 'access'
