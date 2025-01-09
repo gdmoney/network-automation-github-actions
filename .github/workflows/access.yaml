@@ -26,5 +26,5 @@ jobs:
       - name: Pull latest changes and run the 'access' script
         run: |
           git pull
-          ./_access.sh $AUTH_TOKEN
+          ./_access.sh "$AUTH_TOKEN"
         working-directory: ${{ env.REPO_PATH }}
