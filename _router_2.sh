@@ -2,7 +2,7 @@
 
 # Variables
 API_URL="http://192.168.255.5:8085/api/v3/jobs/push"
-AUTH_TOKEN="Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhdXRoMCJ9.SENSdIUM5ZI7BwHH7mVw2cHyZwMzSQCngz0CNBcyAuU"
+AUTH_TOKEN="${AUTH_TOKEN}"
 TAG_UUID="27ac3847-ddcf-4109-9984-544fbb52a80f"
 COMMAND1="config replace tftp://172.18.0.2/config_file_router_2 force"
 COMMAND2="write memory"
