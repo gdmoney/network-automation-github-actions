@@ -1,4 +1,4 @@
-# Network Automation Using GitHub Actions and Unimuis
+# Network Automation Using GitHub Actions and Unimus
 
 
 ## Project Overview
