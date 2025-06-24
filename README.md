@@ -9,7 +9,7 @@ Network automation framework based on the following **[GitOps Principles](https:
 - All configuration changes are initiated via **Git** and are implemented programmatically via **GitHub Actions**
 - Manual changes by directly modifying device configurations are **not permitted**
 - Configurations are [immutable](https://en.wikipedia.org/wiki/Immutable_object) - incremental changes are **not permitted**
-- Devices' configuration is either fully replaced (`config replace`) via **TFTP** or a device is wiped clean when powered off and new config is loaded via **DHCP** upon reboot
+- Devices' configuration is either fully replaced (`config replace`) via **TFTP** or a device is wiped clean when powered off, and new config is loaded via **DHCP** upon reboot
 - Rollbacks are simplified with a single command (`git revert HEAD`)
 - Devices' **actual** state is continuously monitored and compared to the **desired** state
 - **Alerts** are generated if any configuration changes resulting in **deviation** from the desired state are detected
@@ -35,11 +35,11 @@ Network automation framework based on the following **[GitOps Principles](https:
 - Network operator proposes a change to modify a device(s)' configuration state
   - *Standard* change - a low-risk change that's pre-approved and follows documented, repeatable tasks
     - clone this repo
-    - modify the device configuration files(s)
+    - modify the device configuration file(s)
     - commit and push directly to the main branch
   - *Normal* change - a moderate or high-risk change that requires code review and approval prior to deployment
     - clone this repo, create a new branch and publish it
-    - modify the device configuration files(s)
+    - modify the device configuration file(s)
     - commit changes to the new branch and push to origin
     - create a pull request to submit proposed change(s)
     - pull request peer review
@@ -54,7 +54,7 @@ Network automation framework based on the following **[GitOps Principles](https:
 - Unimus continuously backs up and audits devices' operational state and generates alerts if config drift is detected
 - If a device's configuration is changed manually, network operator will get a Slack message describing the change which will in turn automatically create a new GitHub issue
 - Operator can take action on the issue directly from Slack (assign, label, close, reopen)
-- Assigning a label will start a corresponding GitHub actions workflow to restore the device's modified current state config to match it's desired state config as described in the GitHub repo
+- Assigning a label will start a corresponding GitHub Actions workflow to restore the device's modified current state config to match its desired state config as described in the GitHub repo
 
 
 ## Build
