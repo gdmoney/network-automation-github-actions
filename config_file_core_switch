@@ -169,7 +169,7 @@ class-map match-any system-cpp-police-ios-feature
 policy-map system-cpp-policy
 !
 interface Loopback1
- description 1.4
+ description 1.1
  ip address 169.254.1.10 255.255.255.255
 !
 interface Port-channel11
