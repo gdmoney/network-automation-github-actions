@@ -1,4 +1,4 @@
-version 17.9
+version 17.12
 service timestamps debug datetime msec localtime
 service timestamps log datetime msec localtime
 service call-home
@@ -9,7 +9,7 @@ platform punt-keepalive disable-kernel-core
 hostname ROUTER_1
 !
 boot-start-marker
-boot system flash c8000be-universalk9.17.09.04a.SPA.bin
+boot system flash c8000be-universalk9_npe.17.12.03a.SPA.conf
 boot-end-marker
 !
 no aaa new-model
@@ -39,7 +39,7 @@ crypto pki certificate chain SLA-TrustPoint
 crypto pki certificate pool
 !
 license feature hseck9
-license udi pid C8300-1N1S-4T2X sn FLM2722116L
+license udi pid C8300-1N1S-4T2X sn FLM2715129A
 license boot level network-advantage addon dna-advantage
 license smart url https://smartreceiver.cisco.com/licservice/license
 license smart url smart https://smartreceiver.cisco.com/licservice/license
@@ -60,17 +60,6 @@ redundancy
 !
 track 1 ip sla 1 reachability
  delay down 3 up 30
-!
-track 2 ip sla 2 reachability
- delay down 3 up 30
-!
-track 3 ip sla 3 reachability
- delay down 3 up 30
-!
-track 10 list boolean or
- object 1
- object 2
- object 3
 !
 interface Loopback1
  description 1.1
@@ -136,10 +125,8 @@ ip tftp source-interface TenGigabitEthernet0/0/5
 !
 ip nat inside source list NAT_ACL interface TenGigabitEthernet0/0/4 overload
 !
-ip route 0.0.0.0 0.0.0.0 12.13.232.161 track 10
-ip route 4.2.2.2 255.255.255.255 12.13.232.161
+ip route 0.0.0.0 0.0.0.0 12.13.232.161 track 1
 ip route 8.8.8.8 255.255.255.255 12.13.232.161
-ip route 9.9.9.9 255.255.255.255 12.13.232.161
 !
 ip ssh time-out 30
 ip ssh authentication-retries 2
@@ -159,17 +146,9 @@ ip access-list extended NAT_ACL
  40 permit ip 192.168.254.0 0.0.0.255 any
 !
 ip sla 1
- icmp-echo 4.2.2.2 source-ip 192.168.254.1
-  frequency 5
-ip sla schedule 1 life forever start-time now
-ip sla 2
  icmp-echo 8.8.8.8 source-ip 192.168.254.1
-  frequency 5
-ip sla schedule 2 life forever start-time now
-ip sla 3
- icmp-echo 9.9.9.9 source-ip 192.168.254.1
-  frequency 5
-ip sla schedule 3 life forever start-time now
+  frequency 3
+ip sla schedule 1 life forever start-time now
 !
 control-plane
 !
