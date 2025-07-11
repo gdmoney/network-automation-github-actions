@@ -61,17 +61,6 @@ redundancy
 track 1 ip sla 1 reachability
  delay down 3 up 30
 !
-track 2 ip sla 2 reachability
- delay down 3 up 30
-!
-track 3 ip sla 3 reachability
- delay down 3 up 30
-!
-track 10 list boolean or
- object 1
- object 2
- object 3
-!
 interface Loopback1
  description 1.1
  ip address 169.254.1.2 255.255.255.255
@@ -136,7 +125,7 @@ ip tftp source-interface TenGigabitEthernet0/0/5
 !
 ip nat inside source list NAT_ACL interface TenGigabitEthernet0/0/4 overload
 !
-ip route 0.0.0.0 0.0.0.0 192.168.11.1 track 10
+ip route 0.0.0.0 0.0.0.0 192.168.11.1 track 1
 ip route 4.2.2.2 255.255.255.255 192.168.11.1
 ip route 8.8.8.8 255.255.255.255 192.168.11.1
 ip route 9.9.9.9 255.255.255.255 192.168.11.1
@@ -159,17 +148,9 @@ ip access-list extended NAT_ACL
  40 permit ip 192.168.254.0 0.0.0.255 any
 !
 ip sla 1
- icmp-echo 4.2.2.2 source-ip 192.168.254.5
-  frequency 5
-ip sla schedule 1 life forever start-time now
-ip sla 2
  icmp-echo 8.8.8.8 source-ip 192.168.254.5
   frequency 5
-ip sla schedule 2 life forever start-time now
-ip sla 3
- icmp-echo 9.9.9.9 source-ip 192.168.254.5
-  frequency 5
-ip sla schedule 3 life forever start-time now
+ip sla schedule 1 life forever start-time now
 !
 control-plane
 !
