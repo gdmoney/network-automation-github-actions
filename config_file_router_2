@@ -147,7 +147,7 @@ ip access-list extended NAT_ACL
 !
 ip sla 1
  icmp-echo 8.8.8.8 source-ip 192.168.254.5
-  frequency 3
+  frequency 5
 ip sla schedule 1 life forever start-time now
 !
 control-plane
