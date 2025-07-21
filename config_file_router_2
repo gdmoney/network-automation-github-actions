@@ -125,6 +125,7 @@ ip tftp source-interface TenGigabitEthernet0/0/5
 !
 ip nat inside source list NAT_ACL interface TenGigabitEthernet0/0/4 overload
 !
+!
 ip route 0.0.0.0 0.0.0.0 192.168.123.1 track 1
 ip route 8.8.8.8 255.255.255.255 192.168.123.1
 !
@@ -146,8 +147,10 @@ ip access-list extended NAT_ACL
  40 permit ip 192.168.254.0 0.0.0.255 any
 !
 ip sla 1
- icmp-echo 8.8.8.8 source-ip 192.168.254.5
-  frequency 5
+ icmp-echo 8.8.8.8 source-ip 192.168.254.1
+  threshold 3000
+  timeout 3000
+  frequency 3
 ip sla schedule 1 life forever start-time now
 !
 control-plane

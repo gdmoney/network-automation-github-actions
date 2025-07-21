@@ -148,6 +148,8 @@ ip access-list extended NAT_ACL
 !
 ip sla 1
  icmp-echo 8.8.8.8 source-ip 192.168.254.1
+  threshold 3000
+  timeout 3000
   frequency 3
 ip sla schedule 1 life forever start-time now
 !
