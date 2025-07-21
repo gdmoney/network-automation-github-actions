@@ -33,6 +33,7 @@ multilink bundle-name authenticated
 crypto pki trustpoint SLA-TrustPoint
  enrollment terminal
  revocation-check crl
+ hash sha256
 !
 crypto pki certificate chain SLA-TrustPoint
 !
@@ -41,8 +42,7 @@ crypto pki certificate pool
 license feature hseck9
 license udi pid C8300-1N1S-4T2X sn FLM2715129A
 license boot level network-advantage addon dna-advantage
-license smart url https://smartreceiver.cisco.com/licservice/license
-license smart url smart https://smartreceiver.cisco.com/licservice/license
+license smart transport smart
 !
 archive
  path bootflash:config
