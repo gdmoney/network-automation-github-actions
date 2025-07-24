@@ -153,6 +153,8 @@ ip sla 1
   frequency 3
 ip sla schedule 1 life forever start-time now
 !
+snmp-server community H0ck3y RO
+!
 control-plane
 !
 mgcp behavior rsip-range tgcp-only
