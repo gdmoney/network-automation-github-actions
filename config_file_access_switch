@@ -457,7 +457,9 @@ ip ssh version 2
 !
 ip access-list standard SSH
  10 permit 192.168.255.0 0.0.0.255
-!         
+!
+snmp-server community H0ck3y RO
+!
 control-plane
  service-policy input system-cpp-policy
 !
