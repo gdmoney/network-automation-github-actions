@@ -684,6 +684,8 @@ route-map Video permit 10
  match ip address Video
  set ip next-hop 192.168.254.5
 !
+snmp-server community H0ck3y RO
+!
 control-plane
  service-policy input system-cpp-policy
 !
