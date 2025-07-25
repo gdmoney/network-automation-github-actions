@@ -106,7 +106,6 @@ interface GigabitEthernet0/0/3
 !         
 interface TenGigabitEthernet0/0/4
  description ISP_1
- ip flow monitor FlowMonitor output
  ip address 70.165.34.34 255.255.255.240
  ip nat outside
  load-interval 30
@@ -115,6 +114,7 @@ interface TenGigabitEthernet0/0/4
 !         
 interface TenGigabitEthernet0/0/5
  description CORE_SWITCH
+ ip flow monitor FlowMonitor input
  ip address 192.168.254.1 255.255.255.252
  ip nat inside
  ip ospf network point-to-point
@@ -122,6 +122,7 @@ interface TenGigabitEthernet0/0/5
 !
 interface TenGigabitEthernet0/1/0
  description ROUTER_2
+ip flow monitor FlowMonitor input
  ip address 192.168.254.13 255.255.255.252
  ip nat inside
  ip ospf network point-to-point
