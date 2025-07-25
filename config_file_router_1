@@ -30,6 +30,25 @@ vtp version 1
 !
 multilink bundle-name authenticated
 !
+flow record FlowRecord
+ match ipv4 protocol
+ match ipv4 source address
+ match ipv4 destination address
+ match transport destination-port
+ match transport source-port
+ collect counter bytes long
+ collect counter packets long
+!
+flow exporter FlowExporter
+ destination 172.18.0.6
+ source TenGigabitEthernet0/0/5
+ transport udp 2055
+!
+flow monitor FlowMonitor
+ exporter FlowExporter
+ cache timeout active 60
+ record FlowRecord
+!
 crypto pki trustpoint SLA-TrustPoint
  enrollment terminal
  revocation-check crl
@@ -87,6 +106,7 @@ interface GigabitEthernet0/0/3
 !         
 interface TenGigabitEthernet0/0/4
  description ISP_1
+ ip flow monitor FlowMonitor output
  ip address 70.165.34.34 255.255.255.240
  ip nat outside
  load-interval 30
