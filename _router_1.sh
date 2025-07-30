@@ -4,7 +4,17 @@
 API_URL="http://192.168.255.5:8085/api/v3/jobs/push"
 AUTH_TOKEN="${AUTH_TOKEN}"
 TAG_UUID="6a31a8fd-eea7-430a-a126-25d00a3e5928"
-COMMAND1="config replace tftp://172.18.0.2/config_file_router_1 force"
+
+# Get TFTP server IP from container name
+TFTP_CONTAINER_NAME="ubuntu"
+TFTP_SERVER_IP=$(docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' ${TFTP_CONTAINER_NAME})
+
+if [ -z "$TFTP_SERVER_IP" ]; then
+  echo "Could not determine IP address for container ${TFTP_CONTAINER_NAME}"
+  exit 1
+fi
+
+COMMAND1="config replace tftp://${TFTP_SERVER_IP}/config_file_router_1 force"
 COMMAND2="write memory"
 USERNAME="string"
 PASSWORD="string"
