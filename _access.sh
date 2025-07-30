@@ -6,6 +6,16 @@ AUTH_TOKEN="${AUTH_TOKEN}"
 TAG_UUID="b29da665-3147-4790-a775-ac8ed583231b"
 COMMAND1="config replace tftp://172.18.0.2/config_file_access_switch force"
 COMMAND2="write memory"
+
+# Lookup server's IP address
+TFTP_SERVER_HOSTNAME="ubuntu"
+TFTP_SERVER_IP=$(getent hosts "${TFTP_SERVER_HOSTNAME}" | awk '{ print $1 }')
+
+if [ -z "$TFTP_SERVER_IP" ]; then
+  echo "Could not resolve IP address for ${TFTP_SERVER_HOSTNAME}"
+  exit 1
+fi
+
 USERNAME="string"
 PASSWORD="string"
 ENABLE_PASSWORD="string"
