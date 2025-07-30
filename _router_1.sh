@@ -5,12 +5,12 @@ API_URL="http://192.168.255.5:8085/api/v3/jobs/push"
 AUTH_TOKEN="${AUTH_TOKEN}"
 TAG_UUID="6a31a8fd-eea7-430a-a126-25d00a3e5928"
 
-# Get TFTP server IP from container name
-TFTP_CONTAINER_NAME="ubuntu"
-TFTP_SERVER_IP=$(docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' ${TFTP_CONTAINER_NAME})
+# Lookup server's IP address
+TFTP_SERVER_HOSTNAME="ubuntu"
+TFTP_SERVER_IP=$(getent hosts "${TFTP_SERVER_HOSTNAME}" | awk '{ print $1 }')
 
 if [ -z "$TFTP_SERVER_IP" ]; then
-  echo "Could not determine IP address for container ${TFTP_CONTAINER_NAME}"
+  echo "Could not resolve IP address for ${TFTP_SERVER_HOSTNAME}"
   exit 1
 fi
 
