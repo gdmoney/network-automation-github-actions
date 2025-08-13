@@ -4,8 +4,6 @@
 API_URL="http://192.168.255.5:8085/api/v3/jobs/push"
 AUTH_TOKEN="${AUTH_TOKEN}"
 TAG_UUID="b29da665-3147-4790-a775-ac8ed583231b"
-COMMAND1="config replace tftp://172.18.0.2/config_file_access_switch force"
-COMMAND2="write memory"
 
 # Lookup server's IP address
 TFTP_SERVER_HOSTNAME="ubuntu"
@@ -16,6 +14,8 @@ if [ -z "$TFTP_SERVER_IP" ]; then
   exit 1
 fi
 
+COMMAND1="config replace tftp://${TFTP_SERVER_IP}/config_file_access_switch force"
+COMMAND2="write memory"
 USERNAME="string"
 PASSWORD="string"
 ENABLE_PASSWORD="string"
