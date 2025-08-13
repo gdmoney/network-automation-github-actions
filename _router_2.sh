@@ -14,7 +14,7 @@ if [ -z "$TFTP_SERVER_IP" ]; then
   exit 1
 fi
 
-COMMAND1="config replace tftp://172.18.0.2/config_file_router_2 force"
+COMMAND1="config replace tftp://${TFTP_SERVER_IP}/config_file_router_2 force"
 COMMAND2="write memory"
 USERNAME="string"
 PASSWORD="string"
