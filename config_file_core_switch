@@ -642,11 +642,15 @@ interface Vlan1
 interface Vlan10
  description Users
  ip address 10.10.240.1 255.255.240.0
+ no ip unreachables
+ no ip redirects
 !
 interface Vlan20
  description Video
  ip address 10.20.240.1 255.255.240.0
  ip policy route-map Video
+ no ip unreachables
+ no ip redirects
 !
 router ospf 1
  router-id 169.254.1.10
