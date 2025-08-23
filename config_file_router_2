@@ -106,8 +106,8 @@ interface GigabitEthernet0/0/3
 !
 interface TenGigabitEthernet0/0/4
  description ISP_2
- bandwidth 2000000
- ip address 192.168.123.2 255.255.255.0
+ bandwidth 1000000
+ ip address 47.176.60.42 255.255.255.248
  ip nat outside
  load-interval 30
  negotiation auto
@@ -148,8 +148,8 @@ ip tftp source-interface TenGigabitEthernet0/0/5
 ip nat inside source list NAT_ACL interface TenGigabitEthernet0/0/4 overload
 !
 !
-ip route 0.0.0.0 0.0.0.0 192.168.123.1 track 1
-ip route 8.8.8.8 255.255.255.255 192.168.123.1
+ip route 0.0.0.0 0.0.0.0 47.176.60.41 track 1
+ip route 8.8.8.8 255.255.255.255 47.176.60.41
 !
 ip ssh time-out 30
 ip ssh authentication-retries 2
