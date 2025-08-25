@@ -108,6 +108,7 @@ diagnostic bootup level minimal
 !
 spanning-tree mode rapid-pvst
 spanning-tree extend system-id
+spanning-tree vlan 1,10,20 priority 24576
 !
 no errdisable detect cause all
 !
