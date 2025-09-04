@@ -81,7 +81,7 @@ track 1 ip sla 1 reachability
  delay down 3 up 30
 !
 interface Loopback1
- description 1.1
+ description 1.2
  ip address 169.254.1.2 255.255.255.255
 !
 interface GigabitEthernet0/0/0
@@ -110,7 +110,6 @@ interface TenGigabitEthernet0/0/4
  ip address 47.176.60.42 255.255.255.248
  ip nat outside
  load-interval 30
- negotiation auto
  no cdp enable
 !
 interface TenGigabitEthernet0/0/5
@@ -146,7 +145,6 @@ ip forward-protocol nd
 ip tftp source-interface TenGigabitEthernet0/0/5
 !
 ip nat inside source list NAT_ACL interface TenGigabitEthernet0/0/4 overload
-!
 !
 ip route 0.0.0.0 0.0.0.0 47.176.60.41 track 1
 ip route 8.8.8.8 255.255.255.255 47.176.60.41
