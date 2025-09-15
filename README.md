@@ -141,7 +141,7 @@ Listening for Jobs
 
 ## Troubleshooting
 **After container or Opengear restart**
-- *Verify that the Datadog container still has the .6 IP address*
+- *Manually start the Datadog container and verify it still has the .6 IP address*
 - *Start the TFTP service as `root` and the GitHub Actions runner as `siteadmin`*
 ```
 /etc/init.d/tftpd-hpa start
@@ -157,4 +157,3 @@ rm .runner
 ./config.sh --url https://github.com/gdmoney/network-automation-github-actions --token <TOKEN>
 ./run.sh
 ```
-
