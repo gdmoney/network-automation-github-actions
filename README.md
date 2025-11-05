@@ -140,7 +140,7 @@ Listening for Jobs
 
 
 ## Troubleshooting
-**After container or Opengear restart**
+**After Opengear restart**
 - *Manually start the Datadog container and verify it still has the .6 IP address*
 - *Attach to the Ubuntu container, start the TFTP service as `root` and the GitHub Actions runner as `siteadmin`*
 ```
@@ -157,4 +157,3 @@ rm .runner
 ./config.sh --url https://github.com/gdmoney/network-automation-github-actions --token <TOKEN>
 ./run.sh
 ```
-
