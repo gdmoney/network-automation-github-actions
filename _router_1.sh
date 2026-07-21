@@ -3,7 +3,7 @@
 # Variables
 API_URL="http://192.168.255.5:8085/api/v3/jobs/push"
 AUTH_TOKEN="${AUTH_TOKEN}"
-TAG_UUID="6a31a8fd-eea7-430a-a126-25d00a3e5928"
+TAG_UUID="cf112050-3623-422e-a8b0-d20d5df8b5ac"
 
 # Lookup server's IP address
 TFTP_SERVER_HOSTNAME="ubuntu"
