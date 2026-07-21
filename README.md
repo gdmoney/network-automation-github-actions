@@ -69,7 +69,7 @@ docker run -it ubuntu
 ```
 apt update && apt upgrade -y
 
-apt install apt-utils curl git iputils-ping tftpd-hpa vim wget -y
+apt install apt-utils curl git iputils-ping nano tftpd-hpa vim wget -y
 apt install software-properties-common -y
 ```
 
@@ -97,7 +97,7 @@ mkdir /home/siteadmin/actions-runner && mkdir /home/siteadmin/actions-runner/net
 **Configure and start the TFTP service as root**
 ```
 cat /etc/default/tftpd-hpa
-vi /etc/default/tftpd-hpa
+nano /etc/default/tftpd-hpa
 
 TFTP_USERNAME="siteadmin"
 TFTP_DIRECTORY="/home/siteadmin/actions-runner/network-automation-github-actions"
