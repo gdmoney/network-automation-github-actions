@@ -133,6 +133,8 @@ tar xzf ./actions-runner-linux-x64-2.305.0.tar.gz
 
 ./config.sh --url https://github.com/gdmoney/network-automation-github-actions --token <TOKEN>
 
+# if you get a Libicu dependencies error, exit to root and run: cd /home/siteadmin/actions-runner && ./bin/installdependencies.sh and then re-run the above command
+
 ./run.sh
 
 Connected to GitHub
