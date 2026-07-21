@@ -120,6 +120,7 @@ git clone https://github.com/gdmoney/network-automation-github-actions.git
 
 **Modify file permissions**
 ```
+cd network-automation-github-actions
 chmod 755 _access.sh _core.sh _router_1.sh _router_2.sh
 ```
 
