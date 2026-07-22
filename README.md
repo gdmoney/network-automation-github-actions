@@ -20,7 +20,7 @@ Network automation framework based on the following **[GitOps Principles](https:
 - GitHub repository - the source of truth for device configurations
 - [GitHub Actions self-hosted runner](https://docs.github.com/en/actions/hosting-your-own-runners/about-self-hosted-runners) - software agent that runs GitHub Actions workflow jobs
 - [Ubuntu 26.04 Docker container](https://hub.docker.com/_/ubuntu) - hosts the GitHub Actions runner and the TFTP server
-- [Ugreen NAS](https://ai.ugreen.com/products/ugreen-nasync-dxp480t-plus-nas-storage) - bare metal NAS appliance running the Docker Engine
+- [Ugreen NAS](https://ai.ugreen.com/products/ugreen-nasync-dxp480t-plus-nas-storage) - NAS appliance running the Docker Engine
 - [Unimus](https://unimus.net/) - network automation tool for mass config push, device backup, config audit, and drift detection
 - [Slack](https://slack.com) - Unimus config change notifications, GitHub repo activities notifications, and GitHub issues actions
 - [Pabbly](https://connect.pabbly.com/) - workflow automation tool generating GitHub issues from the config change notifications sent from Unimus to Slack
