@@ -143,13 +143,17 @@ Listening for Jobs
 
 
 ## Troubleshooting
-**After Opengear restart**
-- *Manually start the Datadog container and verify it still has the .6 IP address*
-- *Attach to the Ubuntu container, start the TFTP service as `root` and the GitHub Actions runner as `siteadmin`*
+**After NAS appliance reboot**
+- *Verify the Datadog container has the .6 IP address*
+- *Verify the TFTP service and the GitHub Actions runner are running*
 ```
-/etc/init.d/tftpd-hpa start
 service --status-all
+# If not running
+/etc/init.d/tftpd-hpa start
 
+Repo > Settings > Actions > Runners > Status: Idle
+
+# If not connected
 su siteadmin
 cd /home/siteadmin/actions-runner/
 ./run.sh
