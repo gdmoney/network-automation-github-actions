@@ -24,7 +24,7 @@ jobs:
     if: github.event_name == 'push' || (github.event_name == 'issues' && github.event.label.name == 'core')
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Pull latest changes and run the 'core' script
         env:
