@@ -24,7 +24,7 @@ CONFIGURE_PASSWORD="string"
 # Curl command
 curl -X 'POST' ${API_URL} \
   -H 'accept: application/json' \
-  -H "Authorization: ${AUTH_TOKEN}" \
+  -H "Authorization: Bearer ${AUTH_TOKEN}" \
   -H 'Content-Type: application/json' \
   -d "{
   \"commands\": [
