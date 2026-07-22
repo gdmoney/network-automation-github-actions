@@ -2,7 +2,7 @@
 
 # Variables
 API_URL="http://192.168.255.5:8085/api/v3/jobs/push"
-AUTH_TOKEN="Bearer ${AUTH_TOKEN}"
+AUTH_TOKEN="${AUTH_TOKEN}"
 TAG_UUID="cf112050-3623-422e-a8b0-d20d5df8b5ac"
 
 # Lookup server's IP address
