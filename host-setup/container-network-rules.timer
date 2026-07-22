@@ -1,0 +1,8 @@
+[Unit]
+Description=Apply container network rules shortly after boot
+
+[Timer]
+OnBootSec=3min
+
+[Install]
+WantedBy=timers.target

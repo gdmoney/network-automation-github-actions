@@ -1,16 +1,6 @@
 [Unit]
 Description=Restore iptables rules for container access (TFTP/Unimus automation)
-After=docker.service network-online.target
-Wants=network-online.target
-Requires=docker.service
 
 [Service]
 Type=oneshot
-# Give the NAS vendor's own firewall setup time to install its rules first,
-# so our raw-table ACCEPTs end up above its DROPs.
-ExecStartPre=/bin/sleep 30
 ExecStart=/usr/local/sbin/container-network-rules.sh
-RemainAfterExit=yes
-
-[Install]
-WantedBy=multi-user.target
