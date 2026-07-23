@@ -163,3 +163,9 @@ rm .runner
 ./config.sh --url https://github.com/gdmoney/network-automation-github-actions --token <TOKEN>
 ./run.sh
 ```
+
+**Get Unimus tag UUIDs**
+```
+curl -s -H "Authorization: Bearer <TOKEN>" \
+ "http://192.168.255.5:8085/api/v3/tags" | python3 -m json.tool
+```
