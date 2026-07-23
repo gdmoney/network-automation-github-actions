@@ -58,7 +58,7 @@ Network automation framework based on the following **[GitOps Principles](https:
 
 
 ## Build
-**Download and run Ubuntu on Opengear**
+**Download and run Ubuntu on the NAS appliance**
 ```
 sudo -i
 docker pull ubuntu
@@ -152,7 +152,6 @@ service --status-all
 /etc/init.d/tftpd-hpa start
 
 Repo > Settings > Actions > Runners > Status: Idle
-
 # If not connected
 su siteadmin
 cd /home/siteadmin/actions-runner/
