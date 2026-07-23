@@ -101,6 +101,10 @@ curl -i -X POST "http://192.168.255.5:8085/api/v3/jobs/push" \
   -H "Authorization: Bearer <TOKEN>" -H 'Content-Type: application/json' \
   -d '{"commands":["show clock"],"tagUuids":["<TAG_UUID>"]}'
 
+# Verify iptables FW rules on the NAS appliance
+sudo iptables -t raw -L PREROUTING -n -v --line-numbers
+sudo iptables -L DOCKER-USER -n -v --line-numbers
+
 # Count packets without affecting them (target-less rule = counter only)
 sudo iptables -t raw -I PREROUTING 1 -p icmp -d <container-ip>
 sudo iptables -t raw -L PREROUTING -n -v --line-numbers
