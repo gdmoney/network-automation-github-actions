@@ -167,5 +167,5 @@ rm .runner
 **Get Unimus tag UUIDs**
 ```
 curl -s -H "Authorization: Bearer <TOKEN>" \
- "http://192.168.255.5:8085/api/v3/tags" | python3 -m json.tool
+ "http://192.168.255.5:8085/api/v3/tags" | jq
 ```
