@@ -128,12 +128,10 @@ chmod 755 _access.sh _core.sh _router_1.sh _router_2.sh
 - *Get the version number and the token from: github.com > repo > Settings > Actions > Runners > New runner > New self-hosted runner*
 ```
 curl -o actions-runner-linux-x64-2.305.0.tar.gz -L https://github.com/actions/runner/releases/download/v2.305.0/actions-runner-linux-x64-2.305.0.tar.gz
-
 tar xzf ./actions-runner-linux-x64-2.305.0.tar.gz
-
 ./config.sh --url https://github.com/gdmoney/network-automation-github-actions --token <TOKEN>
 
-# if you get a Libicu dependencies error, exit to root and run: cd /home/siteadmin/actions-runner && ./bin/installdependencies.sh and then re-run the above command
+# if you get a Libicu dependency error, exit to root and run: 'cd /home/siteadmin/actions-runner && ./bin/installdependencies.sh' and then re-run the above command
 
 ./run.sh
 
