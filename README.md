@@ -69,7 +69,7 @@ docker run -it ubuntu
 ```
 apt update && apt upgrade -y
 
-apt install apt-utils curl git iputils-ping nano tftpd-hpa vim wget -y
+apt install apt-utils curl git iputils-ping nano tftpd-hpa -y
 apt install software-properties-common -y
 ```
 
@@ -85,7 +85,7 @@ curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | dd of
 
 gh auth login (GitHub.com > HTTPS > n > Paste an authentication token)
 
-git config --global credential.helper store
+git config --global credential.helper store      #confirm if this is still required
 ```
 
 **Create a new user and directories**
